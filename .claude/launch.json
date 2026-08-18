@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "dogfit-dev",
+      "runtimeExecutable": "cmd.exe",
+      "runtimeArgs": ["/c", "C:\\Users\\Caro\\claude site marie\\.claude\\run-dev.cmd"],
+      "port": 3000
+    }
+  ]
+}
