@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/button";
+import { PasswordInput } from "@/components/password-input";
 import { signUp } from "@/lib/actions/auth";
 
 export const metadata = { title: "Inscription" };
@@ -54,14 +55,7 @@ export default async function InscriptionPage({
           <label htmlFor="password" className="text-sm font-semibold text-brand-brown">
             Mot de passe
           </label>
-          <input
-            id="password"
-            name="password"
-            type="password"
-            required
-            minLength={6}
-            className="mt-1 w-full rounded-lg border border-brand-brown/20 px-4 py-2.5 focus:border-brand-turquoise focus:outline-none"
-          />
+          <PasswordInput id="password" name="password" required minLength={6} />
         </div>
         <Button type="submit" className="w-full">
           Créer mon compte
