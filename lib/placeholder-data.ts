@@ -171,12 +171,6 @@ export const dogfitPrestations = [
     hrefLabel: "Voir les formules",
   },
   {
-    id: "frisbee",
-    name: "Frisbee",
-    description:
-      "Envie de tester une nouvelle discipline ? Marie propose les bases du frisbee canin lors de stages.",
-  },
-  {
     id: "technique-saut",
     name: "Technique de saut",
     description:
