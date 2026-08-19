@@ -21,15 +21,19 @@ export function VideoEmbed({ url }: { url: string }) {
   const embedUrl = toEmbedUrl(url);
 
   if (!embedUrl) {
+    // Pas YouTube/Vimeo : probablement une vidéo envoyée directement
+    // (bibliothèque DOGFIT) — on la lit nativement.
     return (
-      <a
-        href={url}
-        target="_blank"
-        rel="noreferrer"
-        className="font-semibold text-brand-turquoise-dark underline"
+      <video
+        controls
+        preload="metadata"
+        className="aspect-video w-full rounded-xl bg-black"
       >
-        Voir la vidéo
-      </a>
+        <source src={url} />
+        <a href={url} target="_blank" rel="noreferrer" className="text-brand-turquoise-dark underline">
+          Voir la vidéo
+        </a>
+      </video>
     );
   }
 

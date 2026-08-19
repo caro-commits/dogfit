@@ -1,7 +1,8 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { getCourseWithLessons } from "@/lib/data/admin";
+import { getCourseWithLessons, getVideos } from "@/lib/data/admin";
 import { Button } from "@/components/button";
+import { VideoUrlField } from "@/components/video-url-field";
 import { updateCourse, deleteCourse, createLesson, deleteLesson } from "./actions";
 
 export default async function AdminCourseDetailPage({
@@ -10,7 +11,10 @@ export default async function AdminCourseDetailPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const course = await getCourseWithLessons(id);
+  const [course, videos] = await Promise.all([
+    getCourseWithLessons(id),
+    getVideos(),
+  ]);
 
   if (!course) notFound();
 
@@ -141,16 +145,20 @@ export default async function AdminCourseDetailPage({
               </div>
             </div>
             <div>
-              <label htmlFor="video_url" className="text-sm font-semibold text-brand-brown">
-                URL vidéo (Vimeo / YouTube non répertorié)
+              <label className="text-sm font-semibold text-brand-brown">
+                Vidéo (bibliothèque, ou lien Vimeo / YouTube non répertorié)
               </label>
-              <input
-                id="video_url"
-                name="video_url"
-                type="url"
-                placeholder="https://vimeo.com/..."
-                className="mt-1 w-full rounded-lg border border-brand-brown/20 px-4 py-2.5 focus:border-brand-turquoise focus:outline-none"
-              />
+              <div className="mt-1">
+                <VideoUrlField
+                  videos={videos.map((v) => ({ id: v.id, title: v.title, url: v.url }))}
+                />
+              </div>
+              <Link
+                href="/admin/videos"
+                className="mt-1 inline-block text-xs text-brand-turquoise-dark hover:underline"
+              >
+                + Envoyer une nouvelle vidéo dans la bibliothèque
+              </Link>
             </div>
             <div>
               <label htmlFor="content" className="text-sm font-semibold text-brand-brown">

@@ -139,6 +139,15 @@ export async function getEventById(id: string) {
   return data ?? null;
 }
 
+export async function getVideos() {
+  const supabase = await createClient();
+  const { data } = await supabase
+    .from("videos")
+    .select("*")
+    .order("created_at", { ascending: false });
+  return data ?? [];
+}
+
 export async function getDashboardStats() {
   const supabase = await createClient();
   const [{ count: coursesCount }, { count: studentsCount }, { count: pendingCount }, { count: messagesCount }] =
