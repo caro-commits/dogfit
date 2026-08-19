@@ -14,7 +14,7 @@ export default async function BlogPostPage({
 
   return (
     <Container className="max-w-3xl py-16">
-      <p className="text-xs font-medium uppercase tracking-wide text-brand-turquoise-dark">
+      <p className="text-xs font-medium uppercase tracking-wide text-brand-orange">
         {new Date(post.published_at).toLocaleDateString("fr-FR", {
           day: "numeric",
           month: "long",

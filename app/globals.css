@@ -11,6 +11,8 @@
   --color-brand-brown-light: #6b4f3a;
   --color-brand-cream: #fdfbf8;
   --color-brand-cream-dark: #f4ede3;
+  --color-brand-orange: #cd5f15;
+  --color-brand-orange-light: #fbe9dc;
 }
 
 @theme inline {
@@ -23,6 +25,8 @@
   --color-brand-brown-light: var(--color-brand-brown-light);
   --color-brand-cream: var(--color-brand-cream);
   --color-brand-cream-dark: var(--color-brand-cream-dark);
+  --color-brand-orange: var(--color-brand-orange);
+  --color-brand-orange-light: var(--color-brand-orange-light);
   --font-sans: var(--font-outfit);
 }
 

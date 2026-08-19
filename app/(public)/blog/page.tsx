@@ -23,7 +23,7 @@ export default async function BlogPage() {
             href={`/blog/${post.slug}`}
             className="flex flex-col rounded-2xl bg-white p-6 shadow-sm ring-1 ring-brand-brown/5 transition-shadow hover:shadow-md"
           >
-            <p className="text-xs font-medium uppercase tracking-wide text-brand-turquoise-dark">
+            <p className="text-xs font-medium uppercase tracking-wide text-brand-orange">
               {new Date(post.published_at).toLocaleDateString("fr-FR", {
                 day: "numeric",
                 month: "long",

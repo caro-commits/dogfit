@@ -1,13 +1,15 @@
 import Link from "next/link";
 import type { ButtonHTMLAttributes } from "react";
 
-type Variant = "primary" | "secondary" | "ghost";
+type Variant = "primary" | "secondary" | "accent" | "ghost";
 
 const variantClasses: Record<Variant, string> = {
   primary:
     "bg-brand-turquoise text-white hover:bg-brand-turquoise-dark",
   secondary:
     "bg-brand-brown text-white hover:bg-brand-brown-light",
+  accent:
+    "bg-brand-orange text-white hover:bg-brand-orange/90",
   ghost:
     "bg-transparent text-brand-brown border border-brand-brown/30 hover:border-brand-brown",
 };

@@ -373,7 +373,7 @@ export default function CoursesPage() {
         </p>
 
         <div className="mt-8">
-          <LinkButton href="/contact">Organiser un stage</LinkButton>
+          <LinkButton href="/contact" variant="accent">Organiser un stage</LinkButton>
         </div>
       </div>
     </Container>

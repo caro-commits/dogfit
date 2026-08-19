@@ -48,18 +48,21 @@ export default function HomePage() {
               {
                 title: "Des cours structurés",
                 text: "Vidéos, fiches PDF et exercices progressifs pour avancer à votre rythme.",
+                color: "bg-brand-turquoise",
               },
               {
                 title: "Des corrections personnalisées",
                 text: "Envoyez vos exercices, Marie les corrige avec note, commentaires et conseils.",
+                color: "bg-brand-orange",
               },
               {
                 title: "Un vrai suivi",
                 text: "Retrouvez votre progression, vos exercices et vos corrections dans votre espace élève.",
+                color: "bg-brand-brown-light",
               },
             ].map((item) => (
               <div key={item.title}>
-                <div className="mb-4 h-10 w-10 rounded-full bg-brand-turquoise" />
+                <div className={`mb-4 h-10 w-10 rounded-full ${item.color}`} />
                 <h3 className="text-lg font-bold text-brand-brown">
                   {item.title}
                 </h3>
