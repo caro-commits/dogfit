@@ -149,8 +149,6 @@ export default async function ExerciceDetailPage({
                   <div className="mt-4 rounded-xl bg-brand-turquoise-light p-4">
                     <p className="text-sm font-bold text-brand-turquoise-dark">
                       Correction de Marie
-                      {submission.correction.grade != null &&
-                        ` — Note : ${submission.correction.grade}/20`}
                     </p>
                     {submission.correction.comment && (
                       <p className="mt-2 text-sm text-brand-brown/80">

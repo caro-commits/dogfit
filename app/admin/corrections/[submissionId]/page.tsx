@@ -83,21 +83,6 @@ export default async function AdminCorrectionDetailPage({
         </h2>
         <form action={correctAction} className="mt-4 space-y-4">
           <div>
-            <label htmlFor="grade" className="text-sm font-semibold text-brand-brown">
-              Note / 20 (facultatif)
-            </label>
-            <input
-              id="grade"
-              name="grade"
-              type="number"
-              min="0"
-              max="20"
-              step="0.5"
-              defaultValue={correction?.grade ?? ""}
-              className="mt-1 w-32 rounded-lg border border-brand-brown/20 px-4 py-2.5 focus:border-brand-turquoise focus:outline-none"
-            />
-          </div>
-          <div>
             <label htmlFor="comment" className="text-sm font-semibold text-brand-brown">
               Commentaire
             </label>

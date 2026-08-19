@@ -28,9 +28,7 @@ export default async function MesCorrectionsPage() {
               <p className="mt-1 font-bold text-brand-brown">
                 {correction.submission?.exercise?.title}
               </p>
-              <p className="mt-2 text-sm text-brand-turquoise-dark">
-                {correction.grade != null ? `Note : ${correction.grade}/20` : "Voir la correction"}
-              </p>
+              <p className="mt-2 text-sm text-brand-turquoise-dark">Voir la correction</p>
               {correction.comment && (
                 <p className="mt-2 text-sm text-brand-brown/70">{correction.comment}</p>
               )}

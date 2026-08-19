@@ -10,7 +10,6 @@ export async function submitCorrection(submissionId: string, formData: FormData)
     data: { user },
   } = await supabase.auth.getUser();
 
-  const gradeRaw = String(formData.get("grade") ?? "").trim();
   const comment = String(formData.get("comment") ?? "").trim();
   const file = formData.get("file") as File | null;
 
@@ -38,7 +37,6 @@ export async function submitCorrection(submissionId: string, formData: FormData)
 
   const payload = {
     submission_id: submissionId,
-    grade: gradeRaw ? Number(gradeRaw) : null,
     comment: comment || null,
     file_url: fileUrl,
     corrected_by: user?.id ?? null,
