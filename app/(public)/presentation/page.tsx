@@ -81,7 +81,7 @@ export default function PresentationPage() {
             </p>
           </div>
           <div className="mt-8 flex flex-wrap gap-4">
-            <LinkButton href="/cours">Découvrir les cours</LinkButton>
+            <LinkButton href="/cours">Découvrir les prestations</LinkButton>
             <LinkButton href="/contact" variant="ghost">
               Contact
             </LinkButton>

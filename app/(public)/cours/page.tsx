@@ -3,7 +3,7 @@ import { Container } from "@/components/container";
 import { LinkButton } from "@/components/button";
 import { dogfitFormulas, dogfitPrestations } from "@/lib/placeholder-data";
 
-export const metadata = { title: "Cours" };
+export const metadata = { title: "Prestations" };
 
 export default function CoursesPage() {
   return (

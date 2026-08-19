@@ -14,7 +14,7 @@ export default async function MesCoursPage() {
         <p className="mt-6 text-sm text-brand-brown/60">
           Vous n&apos;avez pas encore accès à un cours. Rendez-vous sur la{" "}
           <Link href="/cours" className="font-semibold text-brand-turquoise-dark hover:underline">
-            page des cours
+            page des prestations
           </Link>{" "}
           pour découvrir les programmes DOGFIT.
         </p>

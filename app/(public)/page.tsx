@@ -22,7 +22,7 @@ export default function HomePage() {
               vous soyez.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
-              <LinkButton href="/cours">Découvrir les cours</LinkButton>
+              <LinkButton href="/cours">Découvrir les prestations</LinkButton>
               <LinkButton href="/presentation" variant="ghost">
                 Qui est Marie ?
               </LinkButton>
