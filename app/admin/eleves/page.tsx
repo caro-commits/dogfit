@@ -23,21 +23,26 @@ export default async function AdminElevesPage() {
               <p className="font-semibold text-brand-brown">
                 {student.full_name || "Élève sans nom"}
               </p>
-              <div className="mt-3 flex flex-wrap gap-2">
+              <div className="mt-3 space-y-2">
                 {student.enrollments.length === 0 && (
                   <span className="text-xs text-brand-brown/50">Aucun accès pour l&apos;instant</span>
                 )}
                 {student.enrollments.map((enrollment: { id: string; course: { title: string } | null }) => {
                   const revokeAction = revokeAccess.bind(null, enrollment.id);
                   return (
-                    <form key={enrollment.id} action={revokeAction}>
-                      <button
-                        title="Cliquer pour révoquer"
-                        className="rounded-full bg-brand-turquoise-light px-3 py-1 text-xs font-semibold text-brand-turquoise-dark hover:bg-red-50 hover:text-red-700"
-                      >
-                        {enrollment.course?.title} ✕
-                      </button>
-                    </form>
+                    <div
+                      key={enrollment.id}
+                      className="flex items-center justify-between gap-3 rounded-lg bg-brand-turquoise-light px-3 py-2"
+                    >
+                      <span className="text-xs font-semibold text-brand-turquoise-dark">
+                        {enrollment.course?.title}
+                      </span>
+                      <form action={revokeAction}>
+                        <button className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-red-600 shadow-sm hover:bg-red-50">
+                          Retirer l&apos;accès
+                        </button>
+                      </form>
+                    </div>
                   );
                 })}
               </div>
