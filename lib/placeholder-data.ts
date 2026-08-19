@@ -181,8 +181,58 @@ export const dogfitPrestations = [
     name: "Technique de saut",
     description:
       "Fort de son expérience, Marie vous accompagne sur la technique de saut pour améliorer et optimiser en sécurité les sauts de votre chien.",
+    href: "#technique-saut",
+    hrefLabel: "Voir le programme",
   },
 ] as const;
+
+// Contenu du stage "Technique de saut et fitness adapté aux sauts",
+// destiné aux clubs/organisateurs qui accueillent Marie pour une journée
+// ou demi-journée de stage.
+export const dogfitJumpStage = {
+  hooks: [
+    "fait régulièrement tomber des barres ?",
+    "hésite ou piétine devant les haies ?",
+    "prend ses appels trop près ou trop loin de la haie ?",
+    "a des difficultés à gérer ses foulées entre les haies ?",
+    "manque de fluidité sur les enroulés ou les sauts à plat ?",
+    "peine à ralentir ou à relancer efficacement sa course ?",
+  ],
+  programme: [
+    "Analyse de la technique de saut de chaque chien",
+    "Exercices progressifs pour améliorer la qualité du geste",
+    "Travail de la coordination, de la gestion des foulées et du contrôle du corps",
+    "Exercices de fitness spécifiquement adaptés aux exigences du saut",
+  ],
+  formules: [
+    "Journée complète Technique de saut",
+    "Journée complète Fitness adapté au saut",
+    "Formule mixte : ½ journée Technique de saut, ½ journée Fitness adapté au saut",
+  ],
+  conditions: [
+    "Seuls les chiens en bonne santé et aptes à la pratique d'une activité physique sont acceptés, quel que soit leur niveau",
+    "Les chiots sont acceptés à partir de 8 mois (doit savoir aller chercher un jouet ou de la nourriture)",
+    "Maximum 8 binômes par journée, ou 4 par demi-journée",
+    "Auditeurs libres acceptés",
+  ],
+  infrastructures: [
+    "Technique de saut : un terrain plat (herbe, synthétique ou sable) d'au moins 20 m × 20 m, et 3 haies d'agility",
+    "Fitness adapté au saut : un espace abrité (barnum, salle, auvent...) d'environ 5 m × 5 m",
+    "Marie apporte l'ensemble du matériel spécifique nécessaire au déroulement du stage",
+  ],
+  horaires: [
+    "Arrivée : 8h30 pour sortir les chiens et prendre un café",
+    "Début : 9h",
+    "Pause déjeuner : 13h – 14h",
+    "Fin : 18h",
+  ],
+  aPrevoir: [
+    "Des friandises et/ou un jouet de motivation",
+    "De quoi prendre des notes pour reproduire les exercices à la maison",
+    "De l'eau pour le chien (et pour vous !)",
+    "De quoi permettre au chien de patienter confortablement en voiture entre les passages",
+  ],
+} as const;
 
 // Contenu réel (services et tarifs de coaching en ligne DOGFIT), fourni par
 // Marie. Ne dépend pas de Supabase : ce sont des forfaits fixes, pas des
