@@ -36,6 +36,7 @@ export default async function InscriptionPage({
             id="full_name"
             name="full_name"
             required
+            autoComplete="name"
             className="mt-1 w-full rounded-lg border border-brand-brown/20 px-4 py-2.5 focus:border-brand-turquoise focus:outline-none"
           />
         </div>
@@ -48,6 +49,7 @@ export default async function InscriptionPage({
             name="email"
             type="email"
             required
+            autoComplete="email"
             className="mt-1 w-full rounded-lg border border-brand-brown/20 px-4 py-2.5 focus:border-brand-turquoise focus:outline-none"
           />
         </div>
@@ -55,7 +57,13 @@ export default async function InscriptionPage({
           <label htmlFor="password" className="text-sm font-semibold text-brand-brown">
             Mot de passe
           </label>
-          <PasswordInput id="password" name="password" required minLength={6} />
+          <PasswordInput
+            id="password"
+            name="password"
+            required
+            minLength={6}
+            autoComplete="new-password"
+          />
         </div>
         <Button type="submit" className="w-full">
           Créer mon compte

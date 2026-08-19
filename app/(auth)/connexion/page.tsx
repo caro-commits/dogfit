@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/button";
 import { PasswordInput } from "@/components/password-input";
+import { RememberedEmailInput } from "@/components/remembered-email-input";
 import { signIn } from "@/lib/actions/auth";
 
 export const metadata = { title: "Connexion" };
@@ -32,23 +33,17 @@ export default async function ConnexionPage({
 
       <form action={signIn} className="mt-6 space-y-4">
         <input type="hidden" name="next" value={next ?? "/espace"} />
-        <div>
-          <label htmlFor="email" className="text-sm font-semibold text-brand-brown">
-            Email
-          </label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            required
-            className="mt-1 w-full rounded-lg border border-brand-brown/20 px-4 py-2.5 focus:border-brand-turquoise focus:outline-none"
-          />
-        </div>
+        <RememberedEmailInput />
         <div>
           <label htmlFor="password" className="text-sm font-semibold text-brand-brown">
             Mot de passe
           </label>
-          <PasswordInput id="password" name="password" required />
+          <PasswordInput
+            id="password"
+            name="password"
+            required
+            autoComplete="current-password"
+          />
         </div>
         <Button type="submit" className="w-full">
           Se connecter
