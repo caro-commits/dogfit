@@ -12,6 +12,14 @@ const statusLabels: Record<string, string> = {
   corrected: "Corrigé",
 };
 
+// Anciennes soumissions : certains élèves ont collé leur lien vidéo
+// directement dans le champ description avant l'ajout du champ dédié.
+function extractLegacyVideoLink(content: string | null) {
+  if (!content) return null;
+  const trimmed = content.trim();
+  return /^https?:\/\/\S+$/.test(trimmed) ? trimmed : null;
+}
+
 export default async function ExerciceDetailPage({
   params,
 }: {
@@ -71,6 +79,19 @@ export default async function ExerciceDetailPage({
               className="mt-1 block w-full text-sm text-brand-brown/70"
             />
           </div>
+          <div>
+            <label htmlFor="video_url" className="text-sm font-semibold text-brand-brown">
+              Ou lien vidéo YouTube / Vimeo (si vous préférez ne pas envoyer
+              le fichier directement)
+            </label>
+            <input
+              id="video_url"
+              name="video_url"
+              type="url"
+              placeholder="https://youtu.be/..."
+              className="mt-1 w-full rounded-lg border border-brand-brown/20 px-4 py-2.5 focus:border-brand-turquoise focus:outline-none"
+            />
+          </div>
           <Button type="submit">Envoyer pour correction</Button>
         </form>
       </div>
@@ -79,7 +100,9 @@ export default async function ExerciceDetailPage({
         <div className="mt-10">
           <h2 className="text-base font-bold text-brand-brown">Historique</h2>
           <div className="mt-4 space-y-4">
-            {submissions.map((submission) => (
+            {submissions.map((submission) => {
+              const legacyVideoLink = extractLegacyVideoLink(submission.content);
+              return (
               <div
                 key={submission.id}
                 className="rounded-2xl border border-brand-brown/10 bg-white p-6"
@@ -93,7 +116,7 @@ export default async function ExerciceDetailPage({
                     {statusLabels[submission.status]}
                   </span>
                 </div>
-                {submission.content && (
+                {submission.content && !legacyVideoLink && (
                   <p className="mt-2 text-sm text-brand-brown/70">{submission.content}</p>
                 )}
                 {submission.file_url && (
@@ -115,6 +138,11 @@ export default async function ExerciceDetailPage({
                       Voir mon fichier envoyé
                     </a>
                   )
+                )}
+                {(submission.video_url || legacyVideoLink) && (
+                  <div className="mt-3">
+                    <VideoEmbed url={submission.video_url || legacyVideoLink!} />
+                  </div>
                 )}
 
                 {submission.correction && (
@@ -142,7 +170,8 @@ export default async function ExerciceDetailPage({
                   </div>
                 )}
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       )}

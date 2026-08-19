@@ -13,6 +13,7 @@ export async function submitExercise(exerciseId: string, formData: FormData) {
   if (!user) redirect("/connexion");
 
   const content = String(formData.get("content") ?? "").trim();
+  const videoUrl = String(formData.get("video_url") ?? "").trim();
   const file = formData.get("file") as File | null;
 
   let fileUrl: string | null = null;
@@ -33,6 +34,7 @@ export async function submitExercise(exerciseId: string, formData: FormData) {
     student_id: user.id,
     content: content || null,
     file_url: fileUrl,
+    video_url: videoUrl || null,
     status: "submitted",
   });
 

@@ -3,7 +3,16 @@ import Link from "next/link";
 import { getSubmissionDetail } from "@/lib/data/admin";
 import { Button } from "@/components/button";
 import { VideoAnnotator, isVideoUrl } from "@/components/video-annotator";
+import { VideoEmbed } from "@/components/video-embed";
 import { submitCorrection, addAnnotation, deleteAnnotation } from "./actions";
+
+// Anciennes soumissions : certains élèves ont collé leur lien vidéo
+// directement dans le champ description avant l'ajout du champ dédié.
+function extractLegacyVideoLink(content: string | null) {
+  if (!content) return null;
+  const trimmed = content.trim();
+  return /^https?:\/\/\S+$/.test(trimmed) ? trimmed : null;
+}
 
 export default async function AdminCorrectionDetailPage({
   params,
@@ -16,6 +25,7 @@ export default async function AdminCorrectionDetailPage({
   if (!data) notFound();
 
   const { submission, correction, annotations } = data;
+  const legacyVideoLink = extractLegacyVideoLink(submission.content);
   const correctAction = submitCorrection.bind(null, submissionId);
   const addAnnotationAction = addAnnotation.bind(null, submissionId);
   const deleteAnnotationAction = deleteAnnotation.bind(null, submissionId);
@@ -35,8 +45,13 @@ export default async function AdminCorrectionDetailPage({
         <p className="mt-2 text-xs text-brand-brown/50">
           Envoyé le {new Date(submission.submitted_at).toLocaleDateString("fr-FR")}
         </p>
-        {submission.content && (
+        {submission.content && !legacyVideoLink && (
           <p className="mt-3 text-sm text-brand-brown/80">{submission.content}</p>
+        )}
+        {(submission.video_url || legacyVideoLink) && (
+          <div className="mt-4">
+            <VideoEmbed url={submission.video_url || legacyVideoLink!} />
+          </div>
         )}
         {submission.file_url && (
           isVideoUrl(submission.file_url) ? (
