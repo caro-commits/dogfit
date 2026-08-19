@@ -74,7 +74,12 @@ export async function getExerciseForStudent(exerciseId: string) {
         .select("*")
         .eq("submission_id", submission.id)
         .maybeSingle();
-      return { ...submission, correction };
+      const { data: annotations } = await supabase
+        .from("submission_annotations")
+        .select("*")
+        .eq("submission_id", submission.id)
+        .order("timestamp_seconds", { ascending: true });
+      return { ...submission, correction, annotations: annotations ?? [] };
     }),
   );
 

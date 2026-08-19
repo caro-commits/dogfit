@@ -77,7 +77,13 @@ export async function getSubmissionDetail(submissionId: string) {
     .eq("submission_id", submissionId)
     .maybeSingle();
 
-  return { submission, correction };
+  const { data: annotations } = await supabase
+    .from("submission_annotations")
+    .select("*")
+    .eq("submission_id", submissionId)
+    .order("timestamp_seconds", { ascending: true });
+
+  return { submission, correction, annotations: annotations ?? [] };
 }
 
 type EnrollmentCourse = { id: string; title: string };

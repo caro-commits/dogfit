@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getExerciseForStudent } from "@/lib/data/student";
 import { Button } from "@/components/button";
 import { VideoEmbed } from "@/components/video-embed";
+import { VideoAnnotator, isVideoUrl } from "@/components/video-annotator";
 import { submitExercise } from "./actions";
 
 const statusLabels: Record<string, string> = {
@@ -96,14 +97,24 @@ export default async function ExerciceDetailPage({
                   <p className="mt-2 text-sm text-brand-brown/70">{submission.content}</p>
                 )}
                 {submission.file_url && (
-                  <a
-                    href={submission.file_url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-2 inline-block text-sm font-semibold text-brand-turquoise-dark hover:underline"
-                  >
-                    Voir mon fichier envoyé
-                  </a>
+                  isVideoUrl(submission.file_url) ? (
+                    <div className="mt-3">
+                      <VideoAnnotator
+                        url={submission.file_url}
+                        annotations={submission.annotations ?? []}
+                        canEdit={false}
+                      />
+                    </div>
+                  ) : (
+                    <a
+                      href={submission.file_url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mt-2 inline-block text-sm font-semibold text-brand-turquoise-dark hover:underline"
+                    >
+                      Voir mon fichier envoyé
+                    </a>
+                  )
                 )}
 
                 {submission.correction && (

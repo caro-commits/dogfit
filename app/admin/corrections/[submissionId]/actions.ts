@@ -57,3 +57,25 @@ export async function submitCorrection(submissionId: string, formData: FormData)
   revalidatePath("/admin/corrections");
   redirect("/admin/corrections");
 }
+
+export async function addAnnotation(submissionId: string, formData: FormData) {
+  const supabase = await createClient();
+  const timestampSeconds = Number(formData.get("timestamp_seconds") ?? 0);
+  const comment = String(formData.get("comment") ?? "").trim();
+
+  if (!comment) return;
+
+  await supabase.from("submission_annotations").insert({
+    submission_id: submissionId,
+    timestamp_seconds: timestampSeconds,
+    comment,
+  });
+
+  revalidatePath(`/admin/corrections/${submissionId}`);
+}
+
+export async function deleteAnnotation(submissionId: string, annotationId: string) {
+  const supabase = await createClient();
+  await supabase.from("submission_annotations").delete().eq("id", annotationId);
+  revalidatePath(`/admin/corrections/${submissionId}`);
+}

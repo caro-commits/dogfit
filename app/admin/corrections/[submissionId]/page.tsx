@@ -2,7 +2,8 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getSubmissionDetail } from "@/lib/data/admin";
 import { Button } from "@/components/button";
-import { submitCorrection } from "./actions";
+import { VideoAnnotator, isVideoUrl } from "@/components/video-annotator";
+import { submitCorrection, addAnnotation, deleteAnnotation } from "./actions";
 
 export default async function AdminCorrectionDetailPage({
   params,
@@ -14,8 +15,10 @@ export default async function AdminCorrectionDetailPage({
 
   if (!data) notFound();
 
-  const { submission, correction } = data;
+  const { submission, correction, annotations } = data;
   const correctAction = submitCorrection.bind(null, submissionId);
+  const addAnnotationAction = addAnnotation.bind(null, submissionId);
+  const deleteAnnotationAction = deleteAnnotation.bind(null, submissionId);
 
   return (
     <div>
@@ -36,14 +39,26 @@ export default async function AdminCorrectionDetailPage({
           <p className="mt-3 text-sm text-brand-brown/80">{submission.content}</p>
         )}
         {submission.file_url && (
-          <a
-            href={submission.file_url}
-            target="_blank"
-            rel="noreferrer"
-            className="mt-3 inline-block text-sm font-semibold text-brand-turquoise-dark hover:underline"
-          >
-            Voir le fichier envoyé par l&apos;élève
-          </a>
+          isVideoUrl(submission.file_url) ? (
+            <div className="mt-4">
+              <VideoAnnotator
+                url={submission.file_url}
+                annotations={annotations}
+                canEdit
+                addAction={addAnnotationAction}
+                deleteAction={deleteAnnotationAction}
+              />
+            </div>
+          ) : (
+            <a
+              href={submission.file_url}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-3 inline-block text-sm font-semibold text-brand-turquoise-dark hover:underline"
+            >
+              Voir le fichier envoyé par l&apos;élève
+            </a>
+          )
         )}
       </div>
 
