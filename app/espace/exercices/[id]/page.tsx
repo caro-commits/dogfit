@@ -119,30 +119,30 @@ export default async function ExerciceDetailPage({
                 {submission.content && !legacyVideoLink && (
                   <p className="mt-2 text-sm text-brand-brown/70">{submission.content}</p>
                 )}
-                {submission.file_url && (
-                  isVideoUrl(submission.file_url) ? (
+                {(() => {
+                  const videoUrl =
+                    (submission.file_url && isVideoUrl(submission.file_url) ? submission.file_url : null) ||
+                    submission.video_url ||
+                    legacyVideoLink;
+                  return videoUrl ? (
                     <div className="mt-3">
                       <VideoAnnotator
-                        url={submission.file_url}
+                        url={videoUrl}
                         annotations={submission.annotations ?? []}
                         canEdit={false}
                       />
                     </div>
-                  ) : (
-                    <a
-                      href={submission.file_url}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="mt-2 inline-block text-sm font-semibold text-brand-turquoise-dark hover:underline"
-                    >
-                      Voir mon fichier envoyé
-                    </a>
-                  )
-                )}
-                {(submission.video_url || legacyVideoLink) && (
-                  <div className="mt-3">
-                    <VideoEmbed url={submission.video_url || legacyVideoLink!} />
-                  </div>
+                  ) : null;
+                })()}
+                {submission.file_url && !isVideoUrl(submission.file_url) && (
+                  <a
+                    href={submission.file_url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-2 inline-block text-sm font-semibold text-brand-turquoise-dark hover:underline"
+                  >
+                    Voir mon fichier envoyé
+                  </a>
                 )}
 
                 {submission.correction && (

@@ -3,7 +3,6 @@ import Link from "next/link";
 import { getSubmissionDetail } from "@/lib/data/admin";
 import { Button } from "@/components/button";
 import { VideoAnnotator, isVideoUrl } from "@/components/video-annotator";
-import { VideoEmbed } from "@/components/video-embed";
 import { submitCorrection, addAnnotation, deleteAnnotation } from "./actions";
 
 // Anciennes soumissions : certains élèves ont collé leur lien vidéo
@@ -26,6 +25,10 @@ export default async function AdminCorrectionDetailPage({
 
   const { submission, correction, annotations } = data;
   const legacyVideoLink = extractLegacyVideoLink(submission.content);
+  const videoUrl =
+    (submission.file_url && isVideoUrl(submission.file_url) ? submission.file_url : null) ||
+    submission.video_url ||
+    legacyVideoLink;
   const correctAction = submitCorrection.bind(null, submissionId);
   const addAnnotationAction = addAnnotation.bind(null, submissionId);
   const deleteAnnotationAction = deleteAnnotation.bind(null, submissionId);
@@ -48,32 +51,26 @@ export default async function AdminCorrectionDetailPage({
         {submission.content && !legacyVideoLink && (
           <p className="mt-3 text-sm text-brand-brown/80">{submission.content}</p>
         )}
-        {(submission.video_url || legacyVideoLink) && (
+        {videoUrl && (
           <div className="mt-4">
-            <VideoEmbed url={submission.video_url || legacyVideoLink!} />
+            <VideoAnnotator
+              url={videoUrl}
+              annotations={annotations}
+              canEdit
+              addAction={addAnnotationAction}
+              deleteAction={deleteAnnotationAction}
+            />
           </div>
         )}
-        {submission.file_url && (
-          isVideoUrl(submission.file_url) ? (
-            <div className="mt-4">
-              <VideoAnnotator
-                url={submission.file_url}
-                annotations={annotations}
-                canEdit
-                addAction={addAnnotationAction}
-                deleteAction={deleteAnnotationAction}
-              />
-            </div>
-          ) : (
-            <a
-              href={submission.file_url}
-              target="_blank"
-              rel="noreferrer"
-              className="mt-3 inline-block text-sm font-semibold text-brand-turquoise-dark hover:underline"
-            >
-              Voir le fichier envoyé par l&apos;élève
-            </a>
-          )
+        {submission.file_url && !isVideoUrl(submission.file_url) && (
+          <a
+            href={submission.file_url}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-3 inline-block text-sm font-semibold text-brand-turquoise-dark hover:underline"
+          >
+            Voir le fichier envoyé par l&apos;élève
+          </a>
         )}
       </div>
 
