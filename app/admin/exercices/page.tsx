@@ -1,12 +1,17 @@
 import Link from "next/link";
-import { getAllExercises, getAllCourses } from "@/lib/data/admin";
+import { getAllExercises, getAllCourses, getVideos } from "@/lib/data/admin";
 import { Button } from "@/components/button";
+import { VideoUrlField } from "@/components/video-url-field";
 import { createExercise } from "./actions";
 
 export const metadata = { title: "Admin — Exercices" };
 
 export default async function AdminExercicesPage() {
-  const [exercises, courses] = await Promise.all([getAllExercises(), getAllCourses()]);
+  const [exercises, courses, videos] = await Promise.all([
+    getAllExercises(),
+    getAllCourses(),
+    getVideos(),
+  ]);
 
   return (
     <div>
@@ -82,6 +87,23 @@ export default async function AdminExercicesPage() {
               type="date"
               className="mt-1 w-full rounded-lg border border-brand-brown/20 px-4 py-2.5 focus:border-brand-turquoise focus:outline-none"
             />
+          </div>
+          <div>
+            <label className="text-sm font-semibold text-brand-brown">
+              Vidéo de démonstration (facultatif)
+            </label>
+            <div className="mt-1">
+              <VideoUrlField
+                videos={videos.map((v) => ({ id: v.id, title: v.title, url: v.url }))}
+                name="demo_video_url"
+              />
+            </div>
+            <Link
+              href="/admin/videos"
+              className="mt-1 inline-block text-xs text-brand-turquoise-dark hover:underline"
+            >
+              + Envoyer une nouvelle vidéo dans la bibliothèque
+            </Link>
           </div>
           <Button type="submit">Créer l&apos;exercice</Button>
         </form>

@@ -10,12 +10,14 @@ export async function createExercise(formData: FormData) {
   const title = String(formData.get("title") ?? "").trim();
   const description = String(formData.get("description") ?? "").trim();
   const dueDate = String(formData.get("due_date") ?? "");
+  const demoVideoUrl = String(formData.get("demo_video_url") ?? "").trim();
 
   await supabase.from("exercises").insert({
     course_id: courseId,
     title,
     description,
     due_date: dueDate || null,
+    demo_video_url: demoVideoUrl || null,
   });
 
   revalidatePath("/admin/exercices");
@@ -27,10 +29,16 @@ export async function updateExercise(exerciseId: string, formData: FormData) {
   const title = String(formData.get("title") ?? "").trim();
   const description = String(formData.get("description") ?? "").trim();
   const dueDate = String(formData.get("due_date") ?? "");
+  const demoVideoUrl = String(formData.get("demo_video_url") ?? "").trim();
 
   await supabase
     .from("exercises")
-    .update({ title, description, due_date: dueDate || null })
+    .update({
+      title,
+      description,
+      due_date: dueDate || null,
+      demo_video_url: demoVideoUrl || null,
+    })
     .eq("id", exerciseId);
 
   revalidatePath(`/admin/exercices/${exerciseId}`);

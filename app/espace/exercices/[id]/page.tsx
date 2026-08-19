@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getExerciseForStudent } from "@/lib/data/student";
 import { Button } from "@/components/button";
+import { VideoEmbed } from "@/components/video-embed";
 import { submitExercise } from "./actions";
 
 const statusLabels: Record<string, string> = {
@@ -34,6 +35,15 @@ export default async function ExerciceDetailPage({
       <h1 className="mt-3 text-2xl font-extrabold text-brand-brown">{exercise.title}</h1>
       <p className="text-xs text-brand-brown/60">{exercise.course?.title}</p>
       <p className="mt-4 max-w-2xl text-sm text-brand-brown/70">{exercise.description}</p>
+
+      {exercise.demo_video_url && (
+        <div className="mt-6 max-w-2xl">
+          <p className="mb-2 text-sm font-semibold text-brand-brown">
+            Vidéo de démonstration
+          </p>
+          <VideoEmbed url={exercise.demo_video_url} />
+        </div>
+      )}
 
       <div className="mt-8 rounded-2xl bg-white p-6 shadow-sm ring-1 ring-brand-brown/5">
         <h2 className="text-base font-bold text-brand-brown">Envoyer mon travail</h2>

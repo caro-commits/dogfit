@@ -4,10 +4,16 @@ import { useState } from "react";
 
 export function VideoUrlField({
   videos,
+  name = "video_url",
+  defaultUrl = "",
+  placeholder = "https://vimeo.com/... (ou choisissez une vidéo ci-dessus)",
 }: {
   videos: { id: string; title: string; url: string }[];
+  name?: string;
+  defaultUrl?: string;
+  placeholder?: string;
 }) {
-  const [url, setUrl] = useState("");
+  const [url, setUrl] = useState(defaultUrl);
 
   return (
     <div className="space-y-2">
@@ -28,12 +34,12 @@ export function VideoUrlField({
         </select>
       )}
       <input
-        id="video_url"
-        name="video_url"
+        id={name}
+        name={name}
         type="url"
         value={url}
         onChange={(e) => setUrl(e.target.value)}
-        placeholder="https://vimeo.com/... (ou choisissez une vidéo ci-dessus)"
+        placeholder={placeholder}
         className="w-full rounded-lg border border-brand-brown/20 px-4 py-2.5 focus:border-brand-turquoise focus:outline-none"
       />
     </div>
