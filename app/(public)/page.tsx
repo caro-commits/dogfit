@@ -76,7 +76,7 @@ export default function HomePage() {
             <h2 className="text-2xl font-bold text-brand-brown sm:text-3xl">
               Les formules DOGFIT
             </h2>
-            <LinkButton href="/tarifs" variant="ghost" className="hidden sm:inline-flex">
+            <LinkButton href="/cours#formules" variant="ghost" className="hidden sm:inline-flex">
               Voir les tarifs
             </LinkButton>
           </div>
@@ -98,7 +98,7 @@ export default function HomePage() {
               </div>
             ))}
           </div>
-          <LinkButton href="/tarifs" variant="ghost" className="mt-8 sm:hidden">
+          <LinkButton href="/cours#formules" variant="ghost" className="mt-8 sm:hidden">
             Voir les tarifs
           </LinkButton>
         </Container>

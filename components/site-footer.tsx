@@ -37,7 +37,6 @@ export function SiteFooter() {
           <ul className="mt-3 space-y-2 text-sm text-brand-brown/70">
             <li><Link href="/presentation" className="hover:text-brand-turquoise-dark">Présentation</Link></li>
             <li><Link href="/cours" className="hover:text-brand-turquoise-dark">Prestations</Link></li>
-            <li><Link href="/tarifs" className="hover:text-brand-turquoise-dark">Tarifs</Link></li>
             <li><Link href="/blog" className="hover:text-brand-turquoise-dark">Blog</Link></li>
             <li><Link href="/evenements" className="hover:text-brand-turquoise-dark">Événements</Link></li>
           </ul>

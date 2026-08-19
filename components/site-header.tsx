@@ -6,7 +6,6 @@ const links = [
   { href: "/presentation", label: "Marie" },
   { href: "/fitness-canin", label: "Fitness canin" },
   { href: "/cours", label: "Prestations" },
-  { href: "/tarifs", label: "Tarifs" },
   { href: "/evenements", label: "Événements" },
   { href: "/blog", label: "Blog" },
   { href: "/temoignages", label: "Témoignages" },
