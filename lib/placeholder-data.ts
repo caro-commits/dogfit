@@ -159,7 +159,8 @@ export const dogfitPrestations = [
     name: "Cours de fitness en présentiel",
     description:
       "Retrouvez Marie chez elle pour un bilan et un plan d'entraînement adapté à votre chien.",
-    price: "25 € la séance",
+    href: "#presentiel",
+    hrefLabel: "Voir le tarif",
   },
   {
     id: "coaching-en-ligne",

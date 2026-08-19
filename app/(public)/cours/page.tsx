@@ -43,11 +43,6 @@ export default function CoursesPage() {
             <p className="mt-2 flex-1 text-sm text-brand-brown/70">
               {prestation.description}
             </p>
-            {"price" in prestation && (
-              <p className="mt-4 text-sm font-semibold text-brand-turquoise-dark">
-                {prestation.price}
-              </p>
-            )}
             {"href" in prestation && (
               <Link
                 href={prestation.href}
@@ -60,6 +55,28 @@ export default function CoursesPage() {
             )}
           </div>
         ))}
+      </div>
+
+      <div id="presentiel" className="mt-20 scroll-mt-24 border-t border-brand-brown/10 pt-16">
+        <p className="text-sm font-semibold uppercase tracking-wide text-brand-turquoise-dark">
+          En présentiel
+        </p>
+        <h2 className="mt-2 text-2xl font-extrabold text-brand-brown sm:text-3xl">
+          Cours de fitness en présentiel
+        </h2>
+        <p className="mt-4 max-w-2xl text-brand-brown/70">
+          Retrouvez Marie chez elle pour un bilan et un plan
+          d&apos;entraînement adapté à votre chien.
+        </p>
+        <p className="mt-6 text-3xl font-extrabold text-brand-turquoise-dark">
+          25 €{" "}
+          <span className="text-base font-semibold text-brand-brown/60">
+            la séance
+          </span>
+        </p>
+        <div className="mt-8">
+          <LinkButton href="/contact">Être recontacté·e</LinkButton>
+        </div>
       </div>
 
       <div id="formules" className="mt-20 scroll-mt-24 border-t border-brand-brown/10 pt-16">
