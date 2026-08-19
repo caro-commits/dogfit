@@ -7,6 +7,7 @@ import {
   dogfitFollowUpLevels,
   dogfitPricing,
   dogfitFollowUpDetails,
+  dogfitVideoAnalysis,
   dogfitJumpStage,
 } from "@/lib/placeholder-data";
 
@@ -32,31 +33,74 @@ export default function CoursesPage() {
         </Link>
       </div>
 
-      <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {dogfitPrestations.map((prestation) => (
-          <div
-            key={prestation.id}
-            className="flex flex-col rounded-2xl bg-white p-6 shadow-sm ring-1 ring-brand-brown/5"
-          >
-            <h2 className="text-lg font-bold text-brand-brown">
-              {prestation.name}
-            </h2>
-            <p className="mt-2 flex-1 text-sm text-brand-brown/70">
-              {prestation.description}
-            </p>
-            {"href" in prestation && (
-              <Link
-                href={prestation.href}
-                target={"external" in prestation && prestation.external ? "_blank" : undefined}
-                rel={"external" in prestation && prestation.external ? "noopener noreferrer" : undefined}
-                className="mt-4 text-sm font-semibold text-brand-turquoise-dark hover:underline"
-              >
-                {prestation.hrefLabel} →
-              </Link>
-            )}
-          </div>
-        ))}
+      {/* Classe en ligne : isolée, formule pré-enregistrée via Canissimo */}
+      <div className="mt-10">
+        {dogfitPrestations
+          .filter((prestation) => prestation.id === "classe-en-ligne")
+          .map((prestation) => (
+            <div
+              key={prestation.id}
+              className="flex flex-col items-start gap-4 rounded-2xl bg-white p-6 shadow-sm ring-1 ring-brand-brown/5 sm:flex-row sm:items-center sm:justify-between"
+            >
+              <div>
+                <h2 className="text-lg font-bold text-brand-brown">
+                  {prestation.name}
+                </h2>
+                <p className="mt-2 max-w-xl text-sm text-brand-brown/70">
+                  {prestation.description}
+                </p>
+              </div>
+              {"href" in prestation && (
+                <Link
+                  href={prestation.href}
+                  target={"external" in prestation && prestation.external ? "_blank" : undefined}
+                  rel={"external" in prestation && prestation.external ? "noopener noreferrer" : undefined}
+                  className="shrink-0 text-sm font-semibold text-brand-turquoise-dark hover:underline"
+                >
+                  {prestation.hrefLabel} →
+                </Link>
+              )}
+            </div>
+          ))}
       </div>
+
+      {/* Les 3 autres prestations, groupées : sur devis / contact requis */}
+      <div className="mt-6 grid gap-6 sm:grid-cols-3">
+        {dogfitPrestations
+          .filter((prestation) => prestation.id !== "classe-en-ligne")
+          .map((prestation) => (
+            <div
+              key={prestation.id}
+              className="flex flex-col rounded-2xl bg-white p-6 shadow-sm ring-1 ring-brand-brown/5"
+            >
+              <h2 className="text-lg font-bold text-brand-brown">
+                {prestation.name}
+              </h2>
+              <p className="mt-2 flex-1 text-sm text-brand-brown/70">
+                {prestation.description}
+              </p>
+              {"href" in prestation && (
+                <Link
+                  href={prestation.href}
+                  className="mt-4 text-sm font-semibold text-brand-turquoise-dark hover:underline"
+                >
+                  {prestation.hrefLabel} →
+                </Link>
+              )}
+            </div>
+          ))}
+      </div>
+      <p className="mt-4 max-w-2xl text-sm text-brand-brown/70">
+        Pour toute inscription à l&apos;un de ces programmes ou stages,
+        merci de{" "}
+        <Link
+          href="/contact"
+          className="font-semibold text-brand-turquoise-dark hover:underline"
+        >
+          prendre contact directement avec Marie
+        </Link>
+        .
+      </p>
 
       <div id="presentiel" className="mt-20 scroll-mt-24 border-t border-brand-brown/10 pt-16">
         <p className="text-sm font-semibold uppercase tracking-wide text-brand-turquoise-dark">
@@ -116,6 +160,11 @@ export default function CoursesPage() {
                   </li>
                 ))}
               </ul>
+              <div className="mt-6 space-y-3 border-t border-brand-brown/10 pt-6 text-sm text-brand-brown/70">
+                {formula.details.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </div>
             </div>
           ))}
         </div>
@@ -182,6 +231,19 @@ export default function CoursesPage() {
         </h3>
         <ul className="mt-6 space-y-3 text-sm text-brand-brown/70">
           {dogfitFollowUpDetails.map((detail) => (
+            <li key={detail} className="flex gap-3">
+              <span className="mt-1 h-1.5 w-1.5 flex-none rounded-full bg-brand-turquoise-dark" />
+              {detail}
+            </li>
+          ))}
+        </ul>
+
+        {/* Analyse de vos vidéos */}
+        <h3 className="mt-14 text-lg font-bold text-brand-brown">
+          Analyse de vos vidéos
+        </h3>
+        <ul className="mt-6 space-y-3 text-sm text-brand-brown/70">
+          {dogfitVideoAnalysis.map((detail) => (
             <li key={detail} className="flex gap-3">
               <span className="mt-1 h-1.5 w-1.5 flex-none rounded-full bg-brand-turquoise-dark" />
               {detail}

@@ -243,6 +243,12 @@ export const dogfitFormulas = [
       "Exercices adaptés et évolutifs",
       "Corrections détaillées de vidéos",
     ],
+    details: [
+      "Cette formule est adaptée pour les jeunes chiens ou les chiens débutants en fitness canin. Elle permet de développer la proprioception, c'est-à-dire la conscience du corps et des pattes, mais aussi de poser les bases du travail de postures (debout, assis, couché).",
+      "Ces fondations sont indispensables pour pouvoir ensuite passer sur une formule de préparation physique — elle est donc fortement recommandée avant d'envisager un programme de renforcement musculaire.",
+      "Un questionnaire vous sera envoyé afin de connaître ce que votre chien sait déjà faire, mais aussi vos attentes ou un objectif particulier s'il y en a (travail spécifique pour les zones d'agility, les postures en obé, etc.).",
+      "Pour commencer le suivi, vous trouverez dans le groupe Facebook, dans l'onglet « guide » : un guide avec les informations générales pour organiser vos séances, un guide avec une série d'exercices en vidéo démo, et un guide par semaine de suivi pour publier vos vidéos. Des exercices sont ajoutés au fur et à mesure de votre évolution.",
+    ],
   },
   {
     id: "fitness",
@@ -255,7 +261,20 @@ export const dogfitFormulas = [
       "Programme personnalisé envoyé en PDF",
       "Corrections détaillées de vidéos",
     ],
+    details: [
+      "Cette formule est adaptée pour les chiens ayant besoin d'un renforcement musculaire global, ou pour ceux qui ont un objectif précis (amélioration de la vitesse, des sauts, de la souplesse, de la mobilité...).",
+      "Chaque accompagnement débute par un bilan initial permettant d'évaluer la posture et les appuis du chien, sa locomotion, ses capacités physiques actuelles, son historique (blessure, douleur, sport, reprise d'activité...) ainsi que vos objectifs. Un questionnaire vous sera envoyé avec toutes les infos pour réaliser les vidéos nécessaires à cette évaluation.",
+      "Avant de débuter un programme de fitness, il est fortement recommandé que votre chien ait bénéficié récemment d'un suivi ostéopathique, idéalement dans le mois précédant le début du programme — cela permet de prendre en compte d'éventuelles restrictions ou déséquilibres locomoteurs avant d'augmenter les contraintes liées à l'entraînement.",
+      "Avec toutes ces informations, Marie crée votre programme de travail, envoyé au format PDF. Il contient la conclusion de l'analyse posturale et dynamique, un planning hebdomadaire, des informations générales à connaître, les exercices répartis en circuits, et le nombre de répétitions ou la durée recommandée pour chacun. Dans le groupe Facebook de suivi, vous trouverez aussi les vidéos démo des exercices et un guide par semaine pour publier vos vidéos.",
+    ],
   },
+] as const;
+
+export const dogfitVideoAnalysis = [
+  "Pour les deux niveaux, vous pouvez condenser la durée totale autorisée par semaine en une seule vidéo, ou la répartir sur plusieurs vidéos.",
+  "Si vous n'utilisez pas la totalité de la durée d'une semaine, il n'est pas possible de la reporter sur une autre semaine.",
+  "Les corrections écrites de Marie peuvent être accompagnées de schémas explicatifs, de vidéos démo supplémentaires, et/ou d'un changement de plan d'entraînement pour vous faire progresser au mieux.",
+  "Conseil : réalisez un montage de vos séances pour couper les temps morts — il existe de nombreuses applications gratuites de montage vidéo sur téléphone.",
 ] as const;
 
 export const dogfitFollowUpLevels = [
