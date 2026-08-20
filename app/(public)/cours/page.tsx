@@ -70,7 +70,7 @@ export default function CoursesPage() {
                   href={prestation.href}
                   target={"external" in prestation && prestation.external ? "_blank" : undefined}
                   rel={"external" in prestation && prestation.external ? "noopener noreferrer" : undefined}
-                  className="flex shrink-0 items-center gap-1.5 text-sm font-semibold text-brand-turquoise-dark hover:underline"
+                  className="flex shrink-0 items-center gap-1.5 text-sm font-semibold text-brand-orange hover:underline"
                 >
                   {prestation.hrefLabel}
                   <ArrowIcon className="h-4 w-4 text-brand-orange" />
@@ -98,7 +98,7 @@ export default function CoursesPage() {
               {"href" in prestation && (
                 <Link
                   href={prestation.href}
-                  className="mt-4 flex items-center gap-1.5 text-sm font-semibold text-brand-turquoise-dark hover:underline"
+                  className="mt-4 flex items-center gap-1.5 text-sm font-semibold text-brand-orange hover:underline"
                 >
                   {prestation.hrefLabel}
                   <ArrowIcon className="h-4 w-4 text-brand-orange" />
