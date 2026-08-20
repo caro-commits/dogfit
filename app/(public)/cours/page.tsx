@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "@/components/container";
 import { LinkButton } from "@/components/button";
 import { ArrowIcon } from "@/components/icons";
@@ -9,6 +10,9 @@ import {
   dogfitPricing,
   dogfitFollowUpDetails,
   dogfitVideoAnalysis,
+  dogfitRenewalExample,
+  dogfitMateriel,
+  dogfitMaterielImages,
   dogfitJumpStage,
 } from "@/lib/placeholder-data";
 
@@ -241,6 +245,16 @@ export default function CoursesPage() {
           ))}
         </ul>
 
+        {/* Détails du renouvellement */}
+        <h3 className="mt-14 text-lg font-bold text-brand-brown">
+          Détails du renouvellement
+        </h3>
+        <div className="mt-6 max-w-2xl space-y-3 text-sm text-brand-brown/70">
+          {dogfitRenewalExample.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+        </div>
+
         {/* Analyse de vos vidéos */}
         <h3 className="mt-14 text-lg font-bold text-brand-brown">
           Analyse de vos vidéos
@@ -253,6 +267,46 @@ export default function CoursesPage() {
             </li>
           ))}
         </ul>
+
+        {/* Matériel nécessaire minimum */}
+        <h3 className="mt-14 text-lg font-bold text-brand-brown">
+          Matériel nécessaire minimum
+        </h3>
+        <ul className="mt-6 max-w-2xl space-y-2 text-sm text-brand-brown/70">
+          {dogfitMateriel.minimum.map((item) => (
+            <li key={item} className="flex gap-2">
+              <span className="text-brand-turquoise-dark">•</span>
+              {item}
+            </li>
+          ))}
+        </ul>
+
+        <h4 className="mt-8 font-bold text-brand-brown">
+          Pour fabriquer votre plateforme
+        </h4>
+        <ul className="mt-4 max-w-2xl space-y-2 text-sm text-brand-brown/70">
+          {dogfitMateriel.dimensions.map((item) => (
+            <li key={item} className="flex gap-2">
+              <span className="text-brand-turquoise-dark">•</span>
+              {item}
+            </li>
+          ))}
+        </ul>
+        <p className="mt-3 max-w-2xl text-sm text-brand-brown/70">{dogfitMateriel.note}</p>
+
+        <div className="mt-6 grid gap-3 sm:grid-cols-2">
+          {dogfitMaterielImages.map((image) => (
+            <div key={image.src} className="overflow-hidden rounded-xl ring-1 ring-brand-brown/10">
+              <Image
+                src={image.src}
+                alt={image.alt}
+                width={image.width}
+                height={image.height}
+                className="h-auto w-full object-cover"
+              />
+            </div>
+          ))}
+        </div>
 
         <div className="mt-10">
           <LinkButton href="/contact">Être recontacté·e</LinkButton>

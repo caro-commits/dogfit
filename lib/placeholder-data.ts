@@ -44,18 +44,22 @@ export const placeholderTestimonials = [
   },
 ];
 
+// Photos du matériel (issues du PDF de Marie), réutilisées à la fois dans
+// la FAQ et dans le détail des formules DOGFIT.
+export const dogfitMaterielImages = [
+  { src: "/materiel/longueur-plateforme.jpg", alt: "Mesure de la longueur de plateforme sur un chien", width: 1200, height: 617 },
+  { src: "/materiel/largeur-plateforme.jpg", alt: "Mesure de la largeur de plateforme, chien debout et assis dessus", width: 1200, height: 598 },
+  { src: "/materiel/plateforme-deux-parties.jpg", alt: "Plateforme en deux parties utilisée avec un chien", width: 1200, height: 617 },
+  { src: "/materiel/revetement-antiderapant.jpg", alt: "Plateforme en bois brut puis recouverte d'un revêtement antidérapant", width: 1200, height: 598 },
+  { src: "/materiel/materiaux-antiderapants.jpg", alt: "Exemples de matériaux antidérapants : tapis, ruban adhésif, dalle caoutchouc", width: 1200, height: 598 },
+];
+
 export const placeholderFaqs = [
   {
     question: "Faut-il du matériel spécifique pour suivre les cours ?",
     answer:
       "La plupart des exercices se pratiquent avec un tapis d'équilibre ou des objets du quotidien. Le matériel recommandé est indiqué au début de chaque cours.\n\nMatériel nécessaire minimum :\n– Une plateforme adaptée à la taille de votre chien (facile à fabriquer soi-même, ou sur mesure via « Le Vince du Bois » sur Facebook)\n– Cavaletti : cônes à trous + barres (optionnel mais fortement recommandé)\n– Sol antidérapant : tapis de yoga, moquette, dalles en caoutchouc, etc.\n– Un appareil pour filmer + une application de montage (pour couper les temps morts)\n\nPour fabriquer votre plateforme :\n– Longueur : petit chien (ex. shetland) → longueur du chien + 20 cm ; moyen chien (ex. border, kelpie) → + 35 cm ; grand chien (ex. malinois, berger australien) → + 50 cm\n– Hauteur : entre 3 cm (petits chiens) et 8 cm (grands chiens)\n– Largeur : distance entre l'extérieur des pattes avant\n\nPossibilités simples : une planche surélevée de tasseaux ou des plaques isolantes, recouverte impérativement d'un revêtement antidérapant — idéalement en 2 parties pour plus de polyvalence.",
-    images: [
-      { src: "/materiel/longueur-plateforme.jpg", alt: "Mesure de la longueur de plateforme sur un chien", width: 1200, height: 617 },
-      { src: "/materiel/largeur-plateforme.jpg", alt: "Mesure de la largeur de plateforme, chien debout et assis dessus", width: 1200, height: 598 },
-      { src: "/materiel/plateforme-deux-parties.jpg", alt: "Plateforme en deux parties utilisée avec un chien", width: 1200, height: 617 },
-      { src: "/materiel/revetement-antiderapant.jpg", alt: "Plateforme en bois brut puis recouverte d'un revêtement antidérapant", width: 1200, height: 598 },
-      { src: "/materiel/materiaux-antiderapants.jpg", alt: "Exemples de matériaux antidérapants : tapis, ruban adhésif, dalle caoutchouc", width: 1200, height: 598 },
-    ],
+    images: dogfitMaterielImages,
   },
   {
     question: "Comment fonctionne la correction des exercices ?",
@@ -276,6 +280,29 @@ export const dogfitVideoAnalysis = [
   "Les corrections écrites de Marie peuvent être accompagnées de schémas explicatifs, de vidéos démo supplémentaires, et/ou d'un changement de plan d'entraînement pour vous faire progresser au mieux.",
   "Conseil : réalisez un montage de vos séances pour couper les temps morts — il existe de nombreuses applications gratuites de montage vidéo sur téléphone.",
 ] as const;
+
+// NB : l'exemple ci-dessous a été recalculé pour rester cohérent avec le
+// tableau de tarifs (le montant "110 €" du texte d'origine de Marie ne
+// correspondait à aucun tarif Fondations Intensif — probable coquille).
+export const dogfitRenewalExample = [
+  "Vous pouvez renouveler un suivi d'un mois sur l'autre : le tarif « Renouvellement » n'est valable que si l'interruption entre deux suivis est inférieure à un mois.",
+  "Exemple : vous commencez avec un suivi Fondations Intensif (100 €). Vous renouvelez dans le mois qui suit avec un suivi Fondations Light : il vous sera facturé au tarif renouvellement Light (60 €). Puis vous continuez avec un suivi Fitness Intensif : il vous sera facturé au tarif renouvellement Intensif (120 €).",
+] as const;
+
+export const dogfitMateriel = {
+  minimum: [
+    "Une plateforme adaptée à la taille de votre chien (facile à fabriquer soi-même, ou sur mesure via « Le Vince du Bois » sur Facebook)",
+    "Cavaletti : cônes à trous + barres (optionnel mais fortement recommandé)",
+    "Sol antidérapant : tapis de yoga, moquette, dalles en caoutchouc, etc.",
+    "Un appareil pour filmer + une application de montage (pour couper les temps morts)",
+  ],
+  dimensions: [
+    "Longueur : petit chien (ex. shetland) → longueur du chien + 20 cm ; moyen chien (ex. border, kelpie) → + 35 cm ; grand chien (ex. malinois, berger australien) → + 50 cm",
+    "Hauteur : entre 3 cm (petits chiens) et 8 cm (grands chiens)",
+    "Largeur : distance entre l'extérieur des pattes avant",
+  ],
+  note: "Possibilités simples : une planche surélevée de tasseaux ou des plaques isolantes, recouverte impérativement d'un revêtement antidérapant — idéalement en 2 parties pour plus de polyvalence.",
+} as const;
 
 export const dogfitFollowUpLevels = [
   {
