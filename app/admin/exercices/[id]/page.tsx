@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getExerciseWithCourse, getVideos } from "@/lib/data/admin";
 import { Button } from "@/components/button";
 import { VideoUrlField } from "@/components/video-url-field";
+import { VideoLibraryPanel } from "@/components/video-library-panel";
 import { updateExercise, deleteExercise } from "../actions";
 
 export default async function AdminExerciseDetailPage({
@@ -29,7 +30,8 @@ export default async function AdminExerciseDetailPage({
       <h1 className="mt-3 text-2xl font-extrabold text-brand-brown">{exercise.title}</h1>
       <p className="text-xs text-brand-brown/60">{exercise.course?.title}</p>
 
-      <div className="mt-8 max-w-xl rounded-2xl bg-white p-6 shadow-sm ring-1 ring-brand-brown/5">
+      <div className="mt-8 grid gap-6 lg:grid-cols-[2fr,1fr]">
+      <div className="max-w-xl rounded-2xl bg-white p-6 shadow-sm ring-1 ring-brand-brown/5">
         <form action={updateAction} className="space-y-4">
           <div>
             <label htmlFor="title" className="text-sm font-semibold text-brand-brown">
@@ -92,6 +94,11 @@ export default async function AdminExerciseDetailPage({
             Supprimer cet exercice
           </button>
         </form>
+      </div>
+
+      <VideoLibraryPanel
+        videos={videos.map((v) => ({ id: v.id, title: v.title, url: v.url }))}
+      />
       </div>
     </div>
   );

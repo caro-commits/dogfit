@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getCourseWithLessons, getVideos } from "@/lib/data/admin";
 import { Button } from "@/components/button";
 import { VideoUrlField } from "@/components/video-url-field";
+import { VideoLibraryPanel } from "@/components/video-library-panel";
 import { SuiviDateFields } from "@/components/suivi-date-fields";
 import { updateCourse, deleteCourse, createLesson, deleteLesson } from "./actions";
 
@@ -140,7 +141,8 @@ export default async function AdminCourseDetailPage({
           })}
         </div>
 
-        <div className="mt-6 max-w-xl rounded-2xl bg-white p-6 shadow-sm ring-1 ring-brand-brown/5">
+        <div className="mt-6 grid gap-6 lg:grid-cols-[2fr,1fr]">
+        <div className="max-w-xl rounded-2xl bg-white p-6 shadow-sm ring-1 ring-brand-brown/5">
           <h3 className="text-sm font-bold text-brand-brown">Ajouter une leçon</h3>
           <form action={createLessonAction} className="mt-4 space-y-4">
             <div className="grid grid-cols-[1fr,auto] gap-3">
@@ -203,6 +205,11 @@ export default async function AdminCourseDetailPage({
             </div>
             <Button type="submit">Ajouter la leçon</Button>
           </form>
+        </div>
+
+        <VideoLibraryPanel
+          videos={videos.map((v) => ({ id: v.id, title: v.title, url: v.url }))}
+        />
         </div>
       </div>
     </div>

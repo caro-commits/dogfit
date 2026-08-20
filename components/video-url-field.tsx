@@ -39,6 +39,12 @@ export function VideoUrlField({
         type="url"
         value={url}
         onChange={(e) => setUrl(e.target.value)}
+        onDragOver={(e) => e.preventDefault()}
+        onDrop={(e) => {
+          e.preventDefault();
+          const dropped = e.dataTransfer.getData("text/plain");
+          if (dropped) setUrl(dropped);
+        }}
         placeholder={placeholder}
         className="w-full rounded-lg border border-brand-brown/20 px-4 py-2.5 focus:border-brand-turquoise focus:outline-none"
       />
