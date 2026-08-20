@@ -166,16 +166,23 @@ export async function getVideos() {
 
 export async function getDashboardStats() {
   const supabase = await createClient();
-  const [{ count: coursesCount }, { count: studentsCount }, { count: pendingCount }, { count: messagesCount }] =
-    await Promise.all([
-      supabase.from("courses").select("*", { count: "exact", head: true }),
-      supabase.from("profiles").select("*", { count: "exact", head: true }).eq("role", "student"),
-      supabase.from("submissions").select("*", { count: "exact", head: true }).neq("status", "corrected"),
-      supabase.from("contact_messages").select("*", { count: "exact", head: true }),
-    ]);
+  const [
+    { count: fondationsCount },
+    { count: fitnessCount },
+    { count: studentsCount },
+    { count: pendingCount },
+    { count: messagesCount },
+  ] = await Promise.all([
+    supabase.from("courses").select("*", { count: "exact", head: true }).eq("formula", "fondations"),
+    supabase.from("courses").select("*", { count: "exact", head: true }).eq("formula", "fitness"),
+    supabase.from("profiles").select("*", { count: "exact", head: true }).eq("role", "student"),
+    supabase.from("submissions").select("*", { count: "exact", head: true }).neq("status", "corrected"),
+    supabase.from("contact_messages").select("*", { count: "exact", head: true }),
+  ]);
 
   return {
-    courses: coursesCount ?? 0,
+    fondations: fondationsCount ?? 0,
+    fitness: fitnessCount ?? 0,
     students: studentsCount ?? 0,
     pending: pendingCount ?? 0,
     messages: messagesCount ?? 0,
