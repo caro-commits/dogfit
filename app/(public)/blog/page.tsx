@@ -12,11 +12,8 @@ export default async function BlogPage() {
       <p className="text-sm font-semibold uppercase tracking-wide text-brand-turquoise-dark">
         Blog
       </p>
-      <h1 className="mt-2 text-3xl font-extrabold text-brand-brown sm:text-4xl">
-        Conseils fitness canin
-      </h1>
 
-      <div className="mt-10 grid gap-6 sm:grid-cols-2">
+      <div className="mt-6 grid gap-6 sm:grid-cols-2">
         {posts.map((post) => (
           <Link
             key={post.id}

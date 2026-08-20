@@ -48,15 +48,19 @@ export async function getPublishedTestimonials() {
   return data && data.length > 0 ? data : placeholderTestimonials;
 }
 
+function sortedByDateDesc<T extends { published_at: string }>(posts: T[]) {
+  return [...posts].sort((a, b) => b.published_at.localeCompare(a.published_at));
+}
+
 export async function getPublishedBlogPosts() {
-  if (!isSupabaseConfigured) return placeholderBlogPosts;
+  if (!isSupabaseConfigured) return sortedByDateDesc(placeholderBlogPosts);
   const supabase = await createClient();
   const { data } = await supabase
     .from("blog_posts")
     .select("*")
     .eq("published", true)
     .order("published_at", { ascending: false });
-  return data && data.length > 0 ? data : placeholderBlogPosts;
+  return data && data.length > 0 ? data : sortedByDateDesc(placeholderBlogPosts);
 }
 
 export async function getBlogPostBySlug(slug: string) {
