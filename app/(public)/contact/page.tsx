@@ -108,6 +108,16 @@ export default async function ContactPage({
                 {dogfitContact.phone}
               </a>
             </li>
+            <li>
+              <a
+                href={dogfitContact.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-brand-turquoise-dark"
+              >
+                Facebook
+              </a>
+            </li>
           </ul>
         </div>
       </div>

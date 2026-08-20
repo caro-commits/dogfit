@@ -346,6 +346,7 @@ export const dogfitContact = {
   siret: "830 970 638 00011",
   email: "dogfit.md@gmail.com",
   phone: "06 59 49 28 24",
+  facebook: "https://www.facebook.com/marie.demaris.3/?locale=fr_FR",
 } as const;
 
 // Pas d'événements d'exemple : à ajouter directement via /admin/evenements
