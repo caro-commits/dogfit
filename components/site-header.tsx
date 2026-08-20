@@ -3,7 +3,7 @@ import { Logo } from "./logo";
 import { LinkButton } from "./button";
 
 const links = [
-  { href: "/presentation", label: "Marie" },
+  { href: "/presentation", label: "Qui suis-je ?" },
   { href: "/fitness-canin", label: "Fitness canin" },
   { href: "/cours", label: "Prestations" },
   { href: "/evenements", label: "Événements" },

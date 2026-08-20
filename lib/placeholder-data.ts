@@ -160,7 +160,7 @@ export const dogfitPrestations = [
     description:
       "Retrouvez Marie chez elle pour un bilan et un plan d'entraînement adapté à votre chien.",
     href: "#presentiel",
-    hrefLabel: "Voir le tarif",
+    hrefLabel: "Voir les informations",
   },
   {
     id: "coaching-en-ligne",
