@@ -154,6 +154,10 @@ export const dogfitPrestations = [
     name: "Classe en ligne",
     description:
       "Retrouvez les formations en ligne de Marie sur la plateforme Canissimo, avec Yannick Toulon.",
+    topics: [
+      "Fitness canin, tout pour bien débuter",
+      "Échauffement et récupération, pour bien accompagner son chien",
+    ],
     href: "https://www.canissimoenligne.fr/nos-formations/",
     hrefLabel: "Voir les formations",
     external: true,

@@ -54,6 +54,16 @@ export default function CoursesPage() {
                 <p className="mt-2 max-w-xl text-sm text-brand-brown/70">
                   {prestation.description}
                 </p>
+                {"topics" in prestation && (
+                  <ul className="mt-3 space-y-1 text-sm text-brand-brown/70">
+                    {prestation.topics.map((topic) => (
+                      <li key={topic} className="flex gap-2">
+                        <span className="text-brand-orange">•</span>
+                        {topic}
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
               {"href" in prestation && (
                 <Link
