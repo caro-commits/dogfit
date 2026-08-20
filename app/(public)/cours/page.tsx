@@ -137,7 +137,7 @@ export default function CoursesPage() {
           </span>
         </p>
         <div className="mt-8">
-          <LinkButton href="/contact">Être recontacté·e</LinkButton>
+          <LinkButton href="/contact" variant="accent">Être recontacté·e</LinkButton>
         </div>
       </div>
 
@@ -319,7 +319,7 @@ export default function CoursesPage() {
         </div>
 
         <div className="mt-10">
-          <LinkButton href="/contact">Être recontacté·e</LinkButton>
+          <LinkButton href="/contact" variant="accent">Être recontacté·e</LinkButton>
         </div>
       </div>
 
