@@ -138,10 +138,10 @@ export default function HomePage() {
             Prêt·e à commencer avec votre chien ?
           </h2>
           <p className="max-w-xl text-brand-cream/80">
-            Créez votre espace élève gratuitement et accédez aux cours DOGFIT
-            en quelques minutes.
+            Contactez Marie pour démarrer un suivi : elle crée votre espace
+            élève et vous transmet vos accès personnellement.
           </p>
-          <LinkButton href="/inscription">Créer mon espace élève</LinkButton>
+          <LinkButton href="/inscription">Mon espace élève</LinkButton>
         </Container>
       </section>
     </>

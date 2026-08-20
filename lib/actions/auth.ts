@@ -23,29 +23,6 @@ export async function signIn(formData: FormData) {
   redirect(next.startsWith("/") ? next : "/espace");
 }
 
-export async function signUp(formData: FormData) {
-  const fullName = String(formData.get("full_name") ?? "").trim();
-  const email = String(formData.get("email") ?? "").trim();
-  const password = String(formData.get("password") ?? "");
-
-  if (!isSupabaseConfigured) {
-    redirect("/inscription?error=unavailable");
-  }
-
-  const supabase = await createClient();
-  const { error } = await supabase.auth.signUp({
-    email,
-    password,
-    options: { data: { full_name: fullName } },
-  });
-
-  if (error) {
-    redirect(`/inscription?error=${encodeURIComponent(error.message)}`);
-  }
-
-  redirect("/espace");
-}
-
 export async function signOut() {
   if (isSupabaseConfigured) {
     const supabase = await createClient();

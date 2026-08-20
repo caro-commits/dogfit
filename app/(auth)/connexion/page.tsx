@@ -53,7 +53,7 @@ export default async function ConnexionPage({
       <p className="mt-6 text-center text-sm text-brand-brown/70">
         Pas encore de compte ?{" "}
         <Link href="/inscription" className="font-semibold text-brand-turquoise-dark hover:underline">
-          Créer mon espace élève
+          Comment obtenir un accès ?
         </Link>
       </p>
     </>
