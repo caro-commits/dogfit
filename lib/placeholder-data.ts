@@ -237,7 +237,7 @@ export const dogfitFormulas = [
     name: "Fondations",
     tagline: "Pour chiens débutants, en construction",
     description:
-      "Construire des bases solides : proprioception (conscience du corps et des pattes) et bases posturales (debout, assis, couché). Fortement recommandé avant d'envisager un programme de renforcement musculaire.",
+      "Construire des bases solides : proprioception (conscience du corps et des pattes) et bases posturales (debout, assis, couché). Fortement recommandé avant d'envisager une formule fitness.",
     features: [
       "Questionnaire initial",
       "Exercices adaptés et évolutifs",
