@@ -19,6 +19,16 @@ export async function getCoursesByFormula(formula: "fondations" | "fitness") {
   return data ?? [];
 }
 
+export async function getCoursesWithDates() {
+  const supabase = await createClient();
+  const { data } = await supabase
+    .from("courses")
+    .select("id, title, formula, paid, start_date, end_date")
+    .not("start_date", "is", null)
+    .not("end_date", "is", null);
+  return data ?? [];
+}
+
 export async function getCourseWithLessons(courseId: string) {
   const supabase = await createClient();
   const { data: course } = await supabase

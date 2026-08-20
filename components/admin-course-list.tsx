@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/button";
+import { SuiviDateFields } from "@/components/suivi-date-fields";
 import { createCourse } from "@/app/admin/cours/actions";
 
 export function AdminCourseList({
@@ -9,7 +10,15 @@ export function AdminCourseList({
 }: {
   title: string;
   formula: "fondations" | "fitness";
-  courses: { id: string; title: string; price_cents: number; published: boolean }[];
+  courses: {
+    id: string;
+    title: string;
+    price_cents: number;
+    published: boolean;
+    paid: boolean;
+    start_date: string | null;
+    end_date: string | null;
+  }[];
 }) {
   return (
     <div>
@@ -29,17 +38,35 @@ export function AdminCourseList({
               <p className="font-semibold text-brand-brown">{course.title}</p>
               <p className="text-xs text-brand-brown/60">
                 {(course.price_cents / 100).toFixed(0)} €
+                {course.start_date && course.end_date && (
+                  <>
+                    {" · "}
+                    {new Date(course.start_date).toLocaleDateString("fr-FR")} →{" "}
+                    {new Date(course.end_date).toLocaleDateString("fr-FR")}
+                  </>
+                )}
               </p>
             </div>
-            <span
-              className={`shrink-0 rounded-full px-3 py-1 text-xs font-semibold ${
-                course.published
-                  ? "bg-brand-turquoise-light text-brand-turquoise-dark"
-                  : "bg-brand-cream-dark text-brand-brown/60"
-              }`}
-            >
-              {course.published ? "Publié" : "Brouillon"}
-            </span>
+            <div className="flex shrink-0 flex-col items-end gap-1">
+              <span
+                className={`rounded-full px-3 py-1 text-xs font-semibold ${
+                  course.published
+                    ? "bg-brand-turquoise-light text-brand-turquoise-dark"
+                    : "bg-brand-cream-dark text-brand-brown/60"
+                }`}
+              >
+                {course.published ? "Publié" : "Brouillon"}
+              </span>
+              <span
+                className={`rounded-full px-3 py-1 text-xs font-semibold ${
+                  course.paid
+                    ? "bg-brand-turquoise-light text-brand-turquoise-dark"
+                    : "bg-red-50 text-red-700"
+                }`}
+              >
+                {course.paid ? "Payé" : "Non réglé"}
+              </span>
+            </div>
           </Link>
         ))}
       </div>
@@ -88,6 +115,7 @@ export function AdminCourseList({
             <input type="checkbox" name="published" className="rounded" />
             Publier immédiatement
           </label>
+          <SuiviDateFields />
           <Button type="submit">Créer le cours</Button>
         </form>
       </div>

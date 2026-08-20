@@ -11,6 +11,9 @@ export async function updateCourse(courseId: string, formData: FormData) {
   const price = Number(formData.get("price") ?? 0);
   const published = formData.get("published") === "on";
   const formula = String(formData.get("formula") ?? "");
+  const paid = formData.get("paid") === "on";
+  const startDate = String(formData.get("start_date") ?? "").trim();
+  const endDate = String(formData.get("end_date") ?? "").trim();
 
   await supabase
     .from("courses")
@@ -20,6 +23,9 @@ export async function updateCourse(courseId: string, formData: FormData) {
       price_cents: Math.round(price * 100),
       published,
       formula: formula || null,
+      paid,
+      start_date: startDate || null,
+      end_date: endDate || null,
     })
     .eq("id", courseId);
 

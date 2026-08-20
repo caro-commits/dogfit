@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getCourseWithLessons, getVideos } from "@/lib/data/admin";
 import { Button } from "@/components/button";
 import { VideoUrlField } from "@/components/video-url-field";
+import { SuiviDateFields } from "@/components/suivi-date-fields";
 import { updateCourse, deleteCourse, createLesson, deleteLesson } from "./actions";
 
 export default async function AdminCourseDetailPage({
@@ -92,6 +93,11 @@ export default async function AdminCourseDetailPage({
             <input type="checkbox" name="published" defaultChecked={course.published} className="rounded" />
             Publié
           </label>
+          <SuiviDateFields
+            defaultStartDate={course.start_date ?? ""}
+            defaultEndDate={course.end_date ?? ""}
+            defaultPaid={course.paid ?? false}
+          />
           <div className="flex items-center gap-3">
             <Button type="submit">Enregistrer</Button>
           </div>

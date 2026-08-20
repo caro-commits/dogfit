@@ -8,6 +8,7 @@ const links = [
   { href: "/admin", label: "Tableau de bord" },
   { href: "/admin/fondations", label: "Fondations" },
   { href: "/admin/fitness", label: "Fitness" },
+  { href: "/admin/calendrier", label: "Calendrier" },
   { href: "/admin/videos", label: "Vidéothèque" },
   { href: "/admin/exercices", label: "Exercices" },
   { href: "/admin/corrections", label: "Corrections" },
