@@ -1,6 +1,9 @@
 import Image from "next/image";
+import { Caveat } from "next/font/google";
 import { Container } from "@/components/container";
 import { LinkButton } from "@/components/button";
+
+const caveat = Caveat({ subsets: ["latin"], weight: ["600"] });
 
 export const metadata = { title: "Présentation" };
 
@@ -87,14 +90,27 @@ export default function PresentationPage() {
             </LinkButton>
           </div>
         </div>
-        <div className="mx-auto aspect-square w-full max-w-xs">
-          <Image
-            src="/brand/logo.png"
-            alt="DOGFIT"
-            width={320}
-            height={320}
-            className="h-full w-full object-contain"
-          />
+        <div className="lg:sticky lg:top-24 lg:self-start">
+          <div className="overflow-hidden rounded-2xl shadow-lg">
+            <Image
+              src="/presentation/marie-et-son-chien.jpg"
+              alt="Marie Démaris et son chien"
+              width={720}
+              height={480}
+              className="h-full w-full object-cover"
+              priority
+            />
+          </div>
+          <p
+            className={`${caveat.className} mt-6 text-center text-3xl leading-snug text-brand-orange sm:text-4xl`}
+          >
+            Parce que chaque mouvement compte.
+            <br />
+            Parce que chaque chien est unique.
+          </p>
+          <p className="mt-2 text-center text-xs font-semibold uppercase tracking-wide text-brand-brown/50">
+            — Marie Démaris
+          </p>
         </div>
       </div>
     </Container>
