@@ -1,13 +1,17 @@
 import Image from "next/image";
 import { Container } from "@/components/container";
 import { LinkButton } from "@/components/button";
+import { PawPrint } from "@/components/icons";
 import { dogfitFormulas, placeholderTestimonials } from "@/lib/placeholder-data";
 
 export default function HomePage() {
   return (
     <>
-      <section className="overflow-hidden bg-gradient-to-b from-brand-turquoise-light to-brand-cream">
-        <Container className="grid items-center gap-12 py-20 lg:grid-cols-2 lg:py-28">
+      <section className="relative overflow-hidden bg-gradient-to-b from-brand-turquoise-light to-brand-cream">
+        <PawPrint className="pointer-events-none absolute -left-6 top-10 h-24 w-24 -rotate-12 text-brand-orange/10" />
+        <PawPrint className="pointer-events-none absolute right-10 top-1/2 h-16 w-16 rotate-45 text-brand-orange/10" />
+        <PawPrint className="pointer-events-none absolute bottom-4 left-1/3 h-20 w-20 rotate-12 text-brand-orange/10" />
+        <Container className="relative grid items-center gap-12 py-20 lg:grid-cols-2 lg:py-28">
           <div>
             <p className="mb-4 inline-block rounded-full bg-white px-4 py-1 text-xs font-semibold uppercase tracking-wide text-brand-turquoise-dark shadow-sm">
               Coaching fitness canin en ligne

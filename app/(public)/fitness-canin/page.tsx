@@ -1,5 +1,6 @@
 import { Container } from "@/components/container";
 import { LinkButton } from "@/components/button";
+import { PawPrint } from "@/components/icons";
 
 export const metadata = { title: "Le fitness canin, c'est quoi ?" };
 
@@ -64,7 +65,7 @@ export default function FitnessCaninPage() {
         <ul className="space-y-2">
           {piliers.map((pilier) => (
             <li key={pilier} className="flex gap-2">
-              <span className="text-brand-turquoise-dark">•</span>
+              <PawPrint className="mt-0.5 h-4 w-4 shrink-0 text-brand-orange" />
               {pilier}
             </li>
           ))}
