@@ -11,6 +11,7 @@ export async function createCourse(formData: FormData) {
   const description = String(formData.get("description") ?? "").trim();
   const price = Number(formData.get("price") ?? 0);
   const published = formData.get("published") === "on";
+  const formula = String(formData.get("formula") ?? "");
 
   await supabase.from("courses").insert({
     title,
@@ -18,8 +19,10 @@ export async function createCourse(formData: FormData) {
     description,
     price_cents: Math.round(price * 100),
     published,
+    formula: formula || null,
   });
 
-  revalidatePath("/admin/cours");
-  redirect("/admin/cours");
+  const path = formula === "fitness" ? "/admin/fitness" : "/admin/fondations";
+  revalidatePath(path);
+  redirect(path);
 }

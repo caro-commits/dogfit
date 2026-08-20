@@ -10,6 +10,7 @@ export async function updateCourse(courseId: string, formData: FormData) {
   const description = String(formData.get("description") ?? "").trim();
   const price = Number(formData.get("price") ?? 0);
   const published = formData.get("published") === "on";
+  const formula = String(formData.get("formula") ?? "");
 
   await supabase
     .from("courses")
@@ -18,18 +19,28 @@ export async function updateCourse(courseId: string, formData: FormData) {
       description,
       price_cents: Math.round(price * 100),
       published,
+      formula: formula || null,
     })
     .eq("id", courseId);
 
   revalidatePath(`/admin/cours/${courseId}`);
-  revalidatePath("/admin/cours");
+  revalidatePath("/admin/fondations");
+  revalidatePath("/admin/fitness");
 }
 
 export async function deleteCourse(courseId: string) {
   const supabase = await createClient();
+  const { data: course } = await supabase
+    .from("courses")
+    .select("formula")
+    .eq("id", courseId)
+    .single();
+
   await supabase.from("courses").delete().eq("id", courseId);
-  revalidatePath("/admin/cours");
-  redirect("/admin/cours");
+
+  const path = course?.formula === "fitness" ? "/admin/fitness" : "/admin/fondations";
+  revalidatePath(path);
+  redirect(path);
 }
 
 export async function createLesson(courseId: string, formData: FormData) {

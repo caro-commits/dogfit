@@ -14,7 +14,7 @@ export default async function AdminDashboardPage() {
       </p>
 
       <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        <DashboardCard title="Cours" count={stats.courses} href="/admin/cours" icon="📚" />
+        <DashboardCard title="Cours" count={stats.courses} href="/admin/fondations" icon="📚" />
         <DashboardCard title="Élèves" count={stats.students} href="/admin/eleves" icon="🧑‍🎓" />
         <DashboardCard
           title="Corrections en attente"

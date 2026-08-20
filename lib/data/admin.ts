@@ -9,6 +9,16 @@ export async function getAllCourses() {
   return data ?? [];
 }
 
+export async function getCoursesByFormula(formula: "fondations" | "fitness") {
+  const supabase = await createClient();
+  const { data } = await supabase
+    .from("courses")
+    .select("*")
+    .eq("formula", formula)
+    .order("created_at", { ascending: false });
+  return data ?? [];
+}
+
 export async function getCourseWithLessons(courseId: string) {
   const supabase = await createClient();
   const { data: course } = await supabase

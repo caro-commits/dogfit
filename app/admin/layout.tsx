@@ -6,7 +6,8 @@ import { Logo } from "@/components/logo";
 
 const links = [
   { href: "/admin", label: "Tableau de bord" },
-  { href: "/admin/cours", label: "Cours" },
+  { href: "/admin/fondations", label: "Fondations" },
+  { href: "/admin/fitness", label: "Fitness" },
   { href: "/admin/videos", label: "Vidéothèque" },
   { href: "/admin/exercices", label: "Exercices" },
   { href: "/admin/corrections", label: "Corrections" },

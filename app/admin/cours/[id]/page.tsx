@@ -24,8 +24,11 @@ export default async function AdminCourseDetailPage({
 
   return (
     <div>
-      <Link href="/admin/cours" className="text-sm font-medium text-brand-turquoise-dark hover:underline">
-        ← Cours
+      <Link
+        href={course.formula === "fitness" ? "/admin/fitness" : "/admin/fondations"}
+        className="text-sm font-medium text-brand-turquoise-dark hover:underline"
+      >
+        ← {course.formula === "fitness" ? "Fitness" : "Fondations"}
       </Link>
       <h1 className="mt-3 text-2xl font-extrabold text-brand-brown">{course.title}</h1>
 
@@ -69,6 +72,21 @@ export default async function AdminCourseDetailPage({
               defaultValue={course.price_cents / 100}
               className="mt-1 w-full rounded-lg border border-brand-brown/20 px-4 py-2.5 focus:border-brand-turquoise focus:outline-none"
             />
+          </div>
+          <div>
+            <label htmlFor="formula" className="text-sm font-semibold text-brand-brown">
+              Formule
+            </label>
+            <select
+              id="formula"
+              name="formula"
+              defaultValue={course.formula ?? ""}
+              className="mt-1 w-full rounded-lg border border-brand-brown/20 px-4 py-2.5 focus:border-brand-turquoise focus:outline-none"
+            >
+              <option value="">— Choisir —</option>
+              <option value="fondations">Fondations</option>
+              <option value="fitness">Fitness</option>
+            </select>
           </div>
           <label className="flex items-center gap-2 text-sm text-brand-brown">
             <input type="checkbox" name="published" defaultChecked={course.published} className="rounded" />
