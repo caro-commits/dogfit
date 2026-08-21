@@ -137,9 +137,9 @@ export default function HomePage() {
           src="/home/agility-jump.png"
           alt=""
           fill
-          className="object-cover opacity-20"
+          className="object-cover opacity-40"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-brown via-brand-brown/85 to-brand-brown/50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-brown via-brand-brown/20 to-brand-brown" />
         <Container className="relative flex flex-col items-center gap-6 text-center">
           <h2 className="text-2xl font-bold sm:text-3xl">
             Prêt·e à commencer avec votre chien ?
