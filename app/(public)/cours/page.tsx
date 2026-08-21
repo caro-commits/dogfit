@@ -16,7 +16,11 @@ import {
   dogfitJumpStage,
 } from "@/lib/placeholder-data";
 
-export const metadata = { title: "Prestations" };
+export const metadata = {
+  title: "Prestations",
+  description:
+    "Cours en ligne, coaching personnalisé, séances en présentiel et stages de fitness canin ou technique de saut : découvrez les formules DOGFIT et leurs tarifs.",
+};
 
 export default function CoursesPage() {
   return (

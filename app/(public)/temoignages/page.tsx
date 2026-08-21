@@ -4,7 +4,11 @@ import { getPublishedTestimonials } from "@/lib/data/public-content";
 import { dogfitContact } from "@/lib/placeholder-data";
 import { submitTestimonial } from "./actions";
 
-export const metadata = { title: "Témoignages" };
+export const metadata = {
+  title: "Témoignages",
+  description:
+    "Découvrez les retours des propriétaires de chiens accompagnés par Marie Démaris en fitness canin, à travers un suivi en ligne ou en présentiel.",
+};
 
 const statusMessages: Record<string, { text: string; tone: string }> = {
   success: {

@@ -2,7 +2,11 @@ import Image from "next/image";
 import { Container } from "@/components/container";
 import { placeholderFaqs } from "@/lib/placeholder-data";
 
-export const metadata = { title: "FAQ" };
+export const metadata = {
+  title: "FAQ",
+  description:
+    "Toutes les réponses à vos questions sur le coaching fitness canin DOGFIT : suivi, matériel nécessaire, tarifs et fonctionnement.",
+};
 
 export default function FaqPage() {
   return (

@@ -5,7 +5,11 @@ import { LinkButton } from "@/components/button";
 
 const caveat = Caveat({ subsets: ["latin"], weight: ["600"] });
 
-export const metadata = { title: "Présentation" };
+export const metadata = {
+  title: "Présentation",
+  description:
+    "Marie Démaris, Certified Canine Fitness Trainer (CCFT) et FitPAWS Master Trainer : découvrez son parcours, de cavalière professionnelle à coach fitness canin.",
+};
 
 export default function PresentationPage() {
   return (

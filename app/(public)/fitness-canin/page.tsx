@@ -3,7 +3,11 @@ import { Container } from "@/components/container";
 import { LinkButton } from "@/components/button";
 import { PawPrint } from "@/components/icons";
 
-export const metadata = { title: "Le fitness canin, c'est quoi ?" };
+export const metadata = {
+  title: "Le fitness canin, c'est quoi ?",
+  description:
+    "Mobilité, renforcement musculaire, proprioception : découvrez ce qu'est le fitness canin et à quels chiens il s'adresse, par Marie Démaris.",
+};
 
 const piliers = [
   "la mobilité articulaire",

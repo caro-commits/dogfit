@@ -2,11 +2,29 @@ import Image from "next/image";
 import { Container } from "@/components/container";
 import { LinkButton } from "@/components/button";
 import { PawPrint } from "@/components/icons";
-import { dogfitFormulas, placeholderTestimonials } from "@/lib/placeholder-data";
+import { dogfitFormulas, placeholderTestimonials, dogfitContact } from "@/lib/placeholder-data";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "DOGFIT — Marie Démaris",
+  description:
+    "Coaching fitness canin par Marie Démaris : cours en ligne, suivi personnalisé et corrections d'exercices pour progresser avec votre chien.",
+  url: "https://www.dogfit-mariedemaris.fr",
+  telephone: dogfitContact.phone,
+  email: dogfitContact.email,
+  image: "https://www.dogfit-mariedemaris.fr/brand/logo.png",
+  sameAs: [dogfitContact.facebook],
+  areaServed: "FR",
+};
 
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <section className="relative overflow-hidden bg-gradient-to-b from-brand-turquoise-light to-brand-cream">
         <PawPrint className="pointer-events-none absolute -left-6 top-10 h-24 w-24 -rotate-12 text-brand-orange" />
         <PawPrint className="pointer-events-none absolute right-10 top-1/2 h-16 w-16 rotate-45 text-brand-orange" />

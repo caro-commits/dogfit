@@ -2,6 +2,28 @@ import { notFound } from "next/navigation";
 import { Container } from "@/components/container";
 import { getBlogPostBySlug } from "@/lib/data/public-content";
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const post = await getBlogPostBySlug(slug);
+  if (!post) return {};
+
+  const description = (post.content as string)
+    .replace(/##?\s*/g, "")
+    .replace(/\s+/g, " ")
+    .trim()
+    .slice(0, 155);
+
+  return {
+    title: post.title,
+    description,
+    openGraph: { title: post.title, description, type: "article" },
+  };
+}
+
 export default async function BlogPostPage({
   params,
 }: {

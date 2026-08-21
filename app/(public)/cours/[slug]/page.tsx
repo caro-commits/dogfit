@@ -3,6 +3,22 @@ import { Container } from "@/components/container";
 import { LinkButton } from "@/components/button";
 import { getCourseBySlug } from "@/lib/data/public-content";
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const course = await getCourseBySlug(slug);
+  if (!course) return {};
+
+  return {
+    title: course.title,
+    description: course.description,
+    openGraph: { title: course.title, description: course.description },
+  };
+}
+
 export default async function CourseDetailPage({
   params,
 }: {

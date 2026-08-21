@@ -1,7 +1,11 @@
 import { Container } from "@/components/container";
 import { getEvents } from "@/lib/data/public-content";
 
-export const metadata = { title: "Événements" };
+export const metadata = {
+  title: "Événements",
+  description:
+    "Retrouvez les prochains stages et événements fitness canin organisés ou animés par Marie Démaris, DOGFIT.",
+};
 
 function formatDate(date: string) {
   return new Date(date).toLocaleDateString("fr-FR", {

@@ -3,7 +3,11 @@ import { Button } from "@/components/button";
 import { dogfitContact } from "@/lib/placeholder-data";
 import { submitContactMessage } from "./actions";
 
-export const metadata = { title: "Contact" };
+export const metadata = {
+  title: "Contact",
+  description:
+    "Une question sur le coaching fitness canin ? Contactez Marie Démaris, DOGFIT, pour démarrer un suivi personnalisé avec votre chien.",
+};
 
 const statusMessages: Record<string, { text: string; tone: string }> = {
   success: {
