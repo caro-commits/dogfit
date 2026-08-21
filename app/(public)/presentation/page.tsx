@@ -10,7 +10,7 @@ export const metadata = { title: "Présentation" };
 export default function PresentationPage() {
   return (
     <Container className="py-16">
-      <div className="grid gap-12 lg:grid-cols-[2fr,1fr]">
+      <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
         <div>
           <p className="text-sm font-semibold uppercase tracking-wide text-brand-turquoise-dark">
             Qui est Marie ?
@@ -18,79 +18,8 @@ export default function PresentationPage() {
           <h1 className="mt-2 text-3xl font-extrabold text-brand-brown sm:text-4xl">
             Marie Démaris, coach fitness canin
           </h1>
-          <div className="mt-6 space-y-4 text-brand-brown/80">
-            <p>
-              Je m&apos;appelle Marie Démaris et je souhaite partager avec vous
-              un aperçu de mon parcours professionnel.
-            </p>
-            <p>
-              Accompagnée de mes chiens depuis l&apos;enfance, j&apos;ai construit
-              mon parcours en tant que cavalière professionnelle à
-              l&apos;international, notamment aux États-Unis, en Italie et en
-              Allemagne. En parallèle de mon activité, je pratique le frisbee
-              avec mes chiens. Cette discipline m&apos;amène naturellement à
-              transposer les exigences du sport équin au sport canin,
-              notamment en termes de technique, de gestion de l&apos;effort, de
-              coordination et de prévention des blessures.
-            </p>
-            <p>
-              Je décide de me tourner vers le bien-être canin et la
-              préparation des chiens de sport, les considérant comme de
-              véritables athlètes. Je suis convaincue que le bien-être mental
-              des animaux est étroitement lié à leur bien-être physique.
-              C&apos;est pourquoi je me forme au fitness canin en tant que
-              Certified Canine Fitness Trainer (CCFT) via l&apos;Université du
-              Tennessee.
-            </p>
-            <p>
-              À mon retour en France en 2017, je crée l&apos;entreprise Dogfit
-              et j&apos;organise des stages de fitness canin à travers tout le
-              pays. Parallèlement, je pratique régulièrement avec mes chiens
-              l&apos;agility, le frisbee, le troupeau et les expositions
-              canines.
-            </p>
-            <p>
-              Je suis également en contact permanent avec des chiens engagés
-              dans d&apos;autres disciplines et je me tiens informée des
-              exigences physiques de chacune d&apos;elles. Cela me permet de
-              concevoir des programmes de fitness adaptés à chaque chien,
-              selon sa discipline sportive ou son mode de vie.
-            </p>
-            <p>
-              Accompagner les chiens en fitness canin était un premier pas,
-              mais rapidement, j&apos;ai ressenti le besoin d&apos;aller plus loin.
-              Je voulais mieux comprendre leur corps, et surtout, les aider
-              de façon plus complète et durable.
-            </p>
-            <p>
-              C&apos;est ce qui m&apos;a poussée à me former à l&apos;ostéopathie
-              animale. Et comme rien n&apos;est jamais tout à fait linéaire dans
-              mon parcours (ni dans la vie !), cette formation initialement
-              prévue sur 5 ans m&apos;a finalement demandé 8 années
-              d&apos;engagement, d&apos;apprentissage, et de résilience.
-            </p>
-            <p>
-              Huit années au cours desquelles j&apos;ai eu la chance de
-              découvrir différentes écoles, approches et techniques. Ce
-              chemin, parfois sinueux, m&apos;a permis de me construire une
-              vision plus riche, plus nuancée et profondément respectueuse
-              de l&apos;animal.
-            </p>
-            <p>
-              Aujourd&apos;hui, je suis sur le point de clore ce chapitre de
-              formation et d&apos;ouvrir un nouveau volet de mon activité, où le
-              fitness canin et l&apos;ostéopathie se répondront en parfaite
-              complémentarité.
-            </p>
-          </div>
-          <div className="mt-8 flex flex-wrap gap-4">
-            <LinkButton href="/cours">Découvrir les prestations</LinkButton>
-            <LinkButton href="/contact" variant="ghost">
-              Contact
-            </LinkButton>
-          </div>
         </div>
-        <div className="lg:sticky lg:top-24 lg:max-w-[280px] lg:self-start lg:justify-self-end">
+        <div className="shrink-0 self-center lg:max-w-[280px] lg:self-start">
           <div className="overflow-hidden rounded-2xl shadow-lg">
             <Image
               src="/presentation/marie-et-son-chien.jpg"
@@ -111,6 +40,80 @@ export default function PresentationPage() {
           <p className="mt-2 text-center text-xs font-semibold uppercase tracking-wide text-brand-brown/50">
             — Marie Démaris
           </p>
+        </div>
+      </div>
+
+      <div className="mt-10 max-w-2xl">
+        <div className="space-y-4 text-brand-brown/80">
+          <p>
+            Je m&apos;appelle Marie Démaris et je souhaite partager avec vous
+            un aperçu de mon parcours professionnel.
+          </p>
+          <p>
+            Accompagnée de mes chiens depuis l&apos;enfance, j&apos;ai construit
+            mon parcours en tant que cavalière professionnelle à
+            l&apos;international, notamment aux États-Unis, en Italie et en
+            Allemagne. En parallèle de mon activité, je pratique le frisbee
+            avec mes chiens. Cette discipline m&apos;amène naturellement à
+            transposer les exigences du sport équin au sport canin,
+            notamment en termes de technique, de gestion de l&apos;effort, de
+            coordination et de prévention des blessures.
+          </p>
+          <p>
+            Je décide de me tourner vers le bien-être canin et la
+            préparation des chiens de sport, les considérant comme de
+            véritables athlètes. Je suis convaincue que le bien-être mental
+            des animaux est étroitement lié à leur bien-être physique.
+            C&apos;est pourquoi je me forme au fitness canin en tant que
+            Certified Canine Fitness Trainer (CCFT) via l&apos;Université du
+            Tennessee.
+          </p>
+          <p>
+            À mon retour en France en 2017, je crée l&apos;entreprise Dogfit
+            et j&apos;organise des stages de fitness canin à travers tout le
+            pays. Parallèlement, je pratique régulièrement avec mes chiens
+            l&apos;agility, le frisbee, le troupeau et les expositions
+            canines.
+          </p>
+          <p>
+            Je suis également en contact permanent avec des chiens engagés
+            dans d&apos;autres disciplines et je me tiens informée des
+            exigences physiques de chacune d&apos;elles. Cela me permet de
+            concevoir des programmes de fitness adaptés à chaque chien,
+            selon sa discipline sportive ou son mode de vie.
+          </p>
+          <p>
+            Accompagner les chiens en fitness canin était un premier pas,
+            mais rapidement, j&apos;ai ressenti le besoin d&apos;aller plus loin.
+            Je voulais mieux comprendre leur corps, et surtout, les aider
+            de façon plus complète et durable.
+          </p>
+          <p>
+            C&apos;est ce qui m&apos;a poussée à me former à l&apos;ostéopathie
+            animale. Et comme rien n&apos;est jamais tout à fait linéaire dans
+            mon parcours (ni dans la vie !), cette formation initialement
+            prévue sur 5 ans m&apos;a finalement demandé 8 années
+            d&apos;engagement, d&apos;apprentissage, et de résilience.
+          </p>
+          <p>
+            Huit années au cours desquelles j&apos;ai eu la chance de
+            découvrir différentes écoles, approches et techniques. Ce
+            chemin, parfois sinueux, m&apos;a permis de me construire une
+            vision plus riche, plus nuancée et profondément respectueuse
+            de l&apos;animal.
+          </p>
+          <p>
+            Aujourd&apos;hui, je suis sur le point de clore ce chapitre de
+            formation et d&apos;ouvrir un nouveau volet de mon activité, où le
+            fitness canin et l&apos;ostéopathie se répondront en parfaite
+            complémentarité.
+          </p>
+        </div>
+        <div className="mt-8 flex flex-wrap gap-4">
+          <LinkButton href="/cours">Découvrir les prestations</LinkButton>
+          <LinkButton href="/contact" variant="ghost">
+            Contact
+          </LinkButton>
         </div>
       </div>
     </Container>
