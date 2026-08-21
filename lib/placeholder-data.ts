@@ -207,9 +207,9 @@ export const dogfitJumpStage = {
     "Exercices de fitness spécifiquement adaptés aux exigences du saut",
   ],
   formules: [
-    "Journée complète Technique de saut",
     "Journée complète Fitness adapté au saut",
-    "Formule mixte : ½ journée Technique de saut, ½ journée Fitness adapté au saut",
+    "Journée complète Technique de saut",
+    "Formule mixte : ½ journée Fitness adapté au saut, ½ journée Technique de saut",
   ],
   conditions: [
     "Seuls les chiens en bonne santé et aptes à la pratique d'une activité physique sont acceptés, quel que soit leur niveau",

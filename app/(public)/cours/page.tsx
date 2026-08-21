@@ -372,8 +372,8 @@ export default function CoursesPage() {
           ))}
         </ul>
         <p className="mt-3 max-w-2xl text-xs text-brand-brown/50">
-          En demi-journée, groupe de 4 binômes : matin technique de saut,
-          après-midi fitness spécial saut. Marie se déplace généralement dans
+          En demi-journée, groupe de 4 binômes : matin fitness spécial saut,
+          après-midi technique de saut. Marie se déplace généralement dans
           un rayon d&apos;environ 3h de route — pour une distance plus
           importante, contactez-la pour étudier la formule adaptée.
         </p>

@@ -74,7 +74,7 @@ export default function FitnessCaninPage() {
           </ul>
         </div>
 
-        <div className="grid grid-cols-2 gap-3 lg:grid-cols-1">
+        <div className="grid grid-cols-2 gap-3 lg:grid-cols-1 lg:max-w-[280px] lg:justify-self-end">
           <div className="overflow-hidden rounded-2xl shadow-sm">
             <Image
               src="/fitness-canin/exercice-plateforme-verte.jpg"

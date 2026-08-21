@@ -90,7 +90,7 @@ export default function PresentationPage() {
             </LinkButton>
           </div>
         </div>
-        <div className="lg:sticky lg:top-24 lg:self-start">
+        <div className="lg:sticky lg:top-24 lg:max-w-[280px] lg:self-start lg:justify-self-end">
           <div className="overflow-hidden rounded-2xl shadow-lg">
             <Image
               src="/presentation/marie-et-son-chien.jpg"

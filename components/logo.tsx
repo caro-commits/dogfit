@@ -9,7 +9,7 @@ export function Logo({ className = "" }: { className?: string }) {
         alt="DOGFIT — Coach Fitness Canin"
         width={160}
         height={160}
-        className="h-14 w-auto object-contain"
+        className="h-16 w-auto object-contain sm:h-[4.5rem]"
         priority
       />
     </Link>
