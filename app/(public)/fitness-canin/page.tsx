@@ -114,21 +114,30 @@ export default function FitnessCaninPage() {
         ))}
       </div>
 
-      <div className="mt-10 max-w-2xl space-y-4 text-brand-brown/80">
-        <p className="text-lg font-semibold text-brand-brown">
-          Et vous l&apos;aurez donc compris, c&apos;est pour tout le monde !
-        </p>
-        <p>
-          Le fitness canin, c&apos;est bien plus que « faire de l&apos;exercice » :
-          c&apos;est construire un corps fonctionnel et équilibré, de manière
-          progressive et ciblée, dans le respect du rythme du chien et à
-          n&apos;importe quel stade de vie.
-        </p>
-        <p>
-          Cela s&apos;adresse donc à tous les chiens, quels que soient leur
-          âge, leur taille ou leur niveau d&apos;activité. Voici quelques
-          exemples :
-        </p>
+      <div className="mt-10 grid gap-8 lg:grid-cols-[2fr_1fr] lg:items-center">
+        <div className="max-w-2xl space-y-4 text-brand-brown/80">
+          <p className="text-lg font-semibold text-brand-brown">
+            Et vous l&apos;aurez donc compris, c&apos;est pour tout le monde !
+          </p>
+          <p>
+            Le fitness canin, c&apos;est bien plus que « faire de l&apos;exercice » :
+            c&apos;est construire un corps fonctionnel et équilibré, de manière
+            progressive et ciblée, dans le respect du rythme du chien et à
+            n&apos;importe quel stade de vie.
+          </p>
+          <p>
+            Cela s&apos;adresse donc à tous les chiens, quels que soient leur
+            âge, leur taille ou leur niveau d&apos;activité. Voici quelques
+            exemples :
+          </p>
+        </div>
+        <Image
+          src="/fitness-canin/chien-cones-agility.png"
+          alt="Chien slalomant entre des plots d'agility"
+          width={600}
+          height={400}
+          className="h-40 w-auto justify-self-center object-contain sm:h-48"
+        />
       </div>
 
       <div className="mt-8 grid gap-6 sm:grid-cols-2">
@@ -145,17 +154,8 @@ export default function FitnessCaninPage() {
         ))}
       </div>
 
-      <div className="mt-4 flex flex-wrap items-center justify-between gap-6">
+      <div className="mt-12">
         <LinkButton href="/contact" variant="accent">Contact</LinkButton>
-        <div className="flex flex-1 justify-center">
-          <Image
-            src="/fitness-canin/chien-cones-agility.png"
-            alt="Chien slalomant entre des plots d'agility"
-            width={600}
-            height={400}
-            className="h-56 w-auto object-contain sm:h-64"
-          />
-        </div>
       </div>
     </Container>
   );
