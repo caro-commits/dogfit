@@ -1,6 +1,8 @@
 import { Container } from "@/components/container";
 import { Button } from "@/components/button";
 import { dogfitContact } from "@/lib/placeholder-data";
+import { getMapPins } from "@/lib/data/public-content";
+import { TravelMap } from "@/components/travel-map";
 import { submitContactMessage } from "./actions";
 
 export const metadata = {
@@ -31,6 +33,7 @@ export default async function ContactPage({
 }) {
   const { status } = await searchParams;
   const feedback = status ? statusMessages[status] : undefined;
+  const mapPins = await getMapPins();
 
   return (
     <Container className="py-16">
@@ -123,6 +126,9 @@ export default async function ContactPage({
               </a>
             </li>
           </ul>
+          <div className="mt-6">
+            <TravelMap pins={mapPins} />
+          </div>
         </div>
       </div>
     </Container>
