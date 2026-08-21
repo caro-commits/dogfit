@@ -23,7 +23,7 @@ export default async function AdminDashboardPage() {
           href="/admin/corrections"
           icon="✅"
         />
-        <DashboardCard title="Messages de contact" count={stats.messages} href="/admin" icon="✉️" />
+        <DashboardCard title="Messages de contact" count={stats.messages} href="/admin/messages" icon="✉️" />
       </div>
     </div>
   );

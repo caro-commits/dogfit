@@ -174,6 +174,15 @@ export async function getVideos() {
   return data ?? [];
 }
 
+export async function getContactMessages() {
+  const supabase = await createClient();
+  const { data } = await supabase
+    .from("contact_messages")
+    .select("*")
+    .order("created_at", { ascending: false });
+  return data ?? [];
+}
+
 export async function getDashboardStats() {
   const supabase = await createClient();
   const [
