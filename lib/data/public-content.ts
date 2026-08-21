@@ -34,7 +34,7 @@ export async function getCourseBySlug(slug: string) {
     .eq("slug", slug)
     .eq("published", true)
     .single();
-  return data ?? null;
+  return data ?? placeholderCourses.find((c) => c.slug === slug) ?? null;
 }
 
 export async function getPublishedTestimonials() {
@@ -74,7 +74,7 @@ export async function getBlogPostBySlug(slug: string) {
     .eq("slug", slug)
     .eq("published", true)
     .single();
-  return data ?? null;
+  return data ?? placeholderBlogPosts.find((p) => p.slug === slug) ?? null;
 }
 
 export async function getEvents() {
