@@ -145,15 +145,17 @@ export default function FitnessCaninPage() {
         ))}
       </div>
 
-      <div className="mt-12 flex flex-wrap items-end justify-between gap-6">
+      <div className="mt-12 flex flex-wrap items-center justify-between gap-6">
         <LinkButton href="/contact">Contact</LinkButton>
-        <Image
-          src="/fitness-canin/chien-cones-agility.png"
-          alt="Chien slalomant entre des plots d'agility"
-          width={600}
-          height={400}
-          className="h-32 w-auto object-contain sm:h-40"
-        />
+        <div className="flex flex-1 justify-center">
+          <Image
+            src="/fitness-canin/chien-cones-agility.png"
+            alt="Chien slalomant entre des plots d'agility"
+            width={600}
+            height={400}
+            className="h-56 w-auto object-contain sm:h-64"
+          />
+        </div>
       </div>
     </Container>
   );
