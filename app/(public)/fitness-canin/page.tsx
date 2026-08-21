@@ -83,13 +83,13 @@ export default function FitnessCaninPage() {
             className="h-full w-full object-cover"
           />
         </div>
-        <div className="aspect-square overflow-hidden rounded-2xl shadow-sm">
+        <div className="aspect-square overflow-hidden rounded-2xl bg-brand-cream-dark shadow-sm">
           <Image
             src="/fitness-canin/exercice-equilibre-plateformes.jpg"
             alt="Chien en extension entre deux plateformes d'équilibre en extérieur"
             width={810}
             height={379}
-            className="h-full w-full object-cover"
+            className="h-full w-full object-contain"
           />
         </div>
         <div className="aspect-square overflow-hidden rounded-2xl shadow-sm">
