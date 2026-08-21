@@ -111,6 +111,22 @@ export default function PresentationPage() {
           <p className="mt-2 text-center text-xs font-semibold uppercase tracking-wide text-brand-brown/50">
             — Marie Démaris
           </p>
+          <div className="mt-8 flex items-center justify-center gap-6">
+            <Image
+              src="/presentation/ccft-badge.png"
+              alt="Certified Canine Fitness Trainer — Université du Tennessee"
+              width={140}
+              height={140}
+              className="h-24 w-24 object-contain"
+            />
+            <Image
+              src="/presentation/fitpaws-master-trainer-badge.jpg"
+              alt="FitPAWS Master Trainer"
+              width={140}
+              height={140}
+              className="h-24 w-24 object-contain"
+            />
+          </div>
         </div>
       </div>
     </Container>
