@@ -124,7 +124,7 @@ export default function CoursesPage() {
           En présentiel
         </p>
         <h2 className="mt-2 text-2xl font-extrabold text-brand-brown sm:text-3xl">
-          Cours de fitness en présentiel
+          Cours en présentiel
         </h2>
         <p className="mt-4 max-w-2xl text-brand-brown/70">
           Retrouvez Marie chez elle pour un bilan et un plan

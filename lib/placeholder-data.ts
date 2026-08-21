@@ -164,7 +164,7 @@ export const dogfitPrestations = [
   },
   {
     id: "presentiel",
-    name: "Cours de fitness en présentiel",
+    name: "Cours en présentiel",
     description:
       "Retrouvez Marie chez elle pour un bilan et un plan d'entraînement adapté à votre chien.",
     href: "#presentiel",
