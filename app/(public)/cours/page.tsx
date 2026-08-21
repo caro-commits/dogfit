@@ -15,6 +15,8 @@ import {
   dogfitMaterielImages,
   dogfitJumpStage,
 } from "@/lib/placeholder-data";
+import { getMapPins } from "@/lib/data/public-content";
+import { TravelMap } from "@/components/travel-map";
 
 export const metadata = {
   title: "Prestations",
@@ -22,7 +24,9 @@ export const metadata = {
     "Cours en ligne, coaching personnalisé, séances en présentiel et stages de fitness canin ou technique de saut : découvrez les formules DOGFIT et leurs tarifs.",
 };
 
-export default function CoursesPage() {
+export default async function CoursesPage() {
+  const mapPins = await getMapPins();
+
   return (
     <Container className="py-16">
       <div className="flex flex-wrap items-start justify-between gap-4">
@@ -427,6 +431,9 @@ export default function CoursesPage() {
           un rayon d&apos;environ 3h de route — pour une distance plus
           importante, contactez-la pour étudier la formule adaptée.
         </p>
+        <div className="mt-6 max-w-2xl">
+          <TravelMap pins={mapPins} />
+        </div>
 
         <h3 className="mt-10 text-lg font-bold text-brand-brown">
           Horaires type
