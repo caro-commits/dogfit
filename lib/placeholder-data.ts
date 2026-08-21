@@ -180,9 +180,9 @@ export const dogfitPrestations = [
   },
   {
     id: "technique-saut",
-    name: "Technique de saut",
+    name: "Stage",
     description:
-      "Fort de son expérience, Marie vous accompagne sur la technique de saut pour améliorer et optimiser en sécurité les sauts de votre chien.",
+      "Marie encadre des stages de fitness canin, puis des stages de technique de saut, pour progresser en sécurité, en groupe.",
     href: "#technique-saut",
     hrefLabel: "Voir le programme",
   },
