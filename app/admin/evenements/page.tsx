@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getAllEvents } from "@/lib/data/admin";
 import { Button } from "@/components/button";
+import { AdminEventLocationPicker } from "@/components/admin-event-location-picker";
 import { createEvent } from "./actions";
 
 export const metadata = { title: "Admin — Événements" };
@@ -92,6 +93,7 @@ export default async function AdminEvenementsPage() {
             <input type="checkbox" name="is_past" className="rounded" />
             Événement déjà passé
           </label>
+          <AdminEventLocationPicker />
           <Button type="submit">Créer l&apos;événement</Button>
         </form>
       </div>

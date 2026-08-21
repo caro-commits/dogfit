@@ -11,6 +11,8 @@ export async function createEvent(formData: FormData) {
   const location = String(formData.get("location") ?? "").trim();
   const startsAt = String(formData.get("starts_at") ?? "");
   const isPast = formData.get("is_past") === "on";
+  const latitude = formData.get("latitude");
+  const longitude = formData.get("longitude");
 
   await supabase.from("events").insert({
     title,
@@ -18,6 +20,8 @@ export async function createEvent(formData: FormData) {
     location,
     starts_at: startsAt,
     is_past: isPast,
+    latitude: latitude ? Number(latitude) : null,
+    longitude: longitude ? Number(longitude) : null,
   });
 
   revalidatePath("/admin/evenements");

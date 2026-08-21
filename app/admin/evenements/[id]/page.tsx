@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getEventById } from "@/lib/data/admin";
 import { Button } from "@/components/button";
+import { AdminEventLocationPicker } from "@/components/admin-event-location-picker";
 import { updateEvent, deleteEvent } from "./actions";
 
 export default async function AdminEventDetailPage({
@@ -78,6 +79,10 @@ export default async function AdminEventDetailPage({
             <input type="checkbox" name="is_past" defaultChecked={event.is_past} className="rounded" />
             Événement déjà passé
           </label>
+          <AdminEventLocationPicker
+            defaultLatitude={event.latitude}
+            defaultLongitude={event.longitude}
+          />
           <Button type="submit">Enregistrer</Button>
         </form>
         <form action={deleteAction} className="mt-4 border-t border-brand-brown/10 pt-4">

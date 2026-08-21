@@ -8,7 +8,6 @@ const staticRoutes = [
   "/presentation",
   "/fitness-canin",
   "/cours",
-  "/evenements",
   "/blog",
   "/temoignages",
   "/faq",

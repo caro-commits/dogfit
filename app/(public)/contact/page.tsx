@@ -1,14 +1,14 @@
 import { Container } from "@/components/container";
 import { Button } from "@/components/button";
 import { dogfitContact } from "@/lib/placeholder-data";
-import { getMapPins } from "@/lib/data/public-content";
+import { getEvents } from "@/lib/data/public-content";
 import { TravelMap } from "@/components/travel-map";
 import { submitContactMessage } from "./actions";
 
 export const metadata = {
   title: "Contact",
   description:
-    "Une question sur le coaching fitness canin ? Contactez Marie Démaris, DOGFIT, pour démarrer un suivi personnalisé avec votre chien.",
+    "Une question sur le coaching fitness canin ? Contactez Marie Démaris, DOGFIT, pour démarrer un suivi personnalisé avec votre chien, ou retrouvez ses prochains événements.",
 };
 
 const statusMessages: Record<string, { text: string; tone: string }> = {
@@ -26,6 +26,14 @@ const statusMessages: Record<string, { text: string; tone: string }> = {
   },
 };
 
+function formatDate(date: string) {
+  return new Date(date).toLocaleDateString("fr-FR", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+}
+
 export default async function ContactPage({
   searchParams,
 }: {
@@ -33,7 +41,9 @@ export default async function ContactPage({
 }) {
   const { status } = await searchParams;
   const feedback = status ? statusMessages[status] : undefined;
-  const mapPins = await getMapPins();
+  const events = await getEvents();
+  const upcoming = events.filter((e) => !e.is_past);
+  const past = events.filter((e) => e.is_past);
 
   return (
     <Container className="py-16">
@@ -127,9 +137,69 @@ export default async function ContactPage({
             </li>
           </ul>
           <div className="mt-6">
-            <TravelMap pins={mapPins} />
+            <TravelMap events={events} />
           </div>
         </div>
+      </div>
+
+      <div className="mt-16 border-t border-brand-brown/10 pt-16">
+        <h2 className="text-2xl font-extrabold text-brand-brown sm:text-3xl">
+          Événements
+        </h2>
+
+        <section className="mt-8">
+          <h3 className="text-lg font-bold text-brand-brown">À venir</h3>
+          {upcoming.length === 0 ? (
+            <p className="mt-4 text-sm text-brand-brown/60">
+              Aucun événement prévu pour le moment — revenez bientôt !
+            </p>
+          ) : (
+            <div className="mt-4 grid gap-4 sm:grid-cols-2">
+              {upcoming.map((event) => (
+                <div
+                  key={event.id}
+                  className="rounded-2xl border border-brand-turquoise/30 bg-brand-turquoise-light p-6"
+                >
+                  <p className="text-xs font-semibold uppercase tracking-wide text-brand-turquoise-dark">
+                    {formatDate(event.starts_at)} · {event.location}
+                  </p>
+                  <h4 className="mt-2 text-base font-bold text-brand-brown">
+                    {event.title}
+                  </h4>
+                  <p className="mt-2 text-sm text-brand-brown/70">
+                    {event.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          )}
+        </section>
+
+        {past.length > 0 && (
+          <section className="mt-14">
+            <h3 className="text-lg font-bold text-brand-brown">
+              Événements passés
+            </h3>
+            <div className="mt-4 grid gap-4 sm:grid-cols-2">
+              {past.map((event) => (
+                <div
+                  key={event.id}
+                  className="rounded-2xl border border-brand-brown/10 bg-white p-6 opacity-80"
+                >
+                  <p className="text-xs font-semibold uppercase tracking-wide text-brand-brown/50">
+                    {formatDate(event.starts_at)} · {event.location}
+                  </p>
+                  <h4 className="mt-2 text-base font-bold text-brand-brown">
+                    {event.title}
+                  </h4>
+                  <p className="mt-2 text-sm text-brand-brown/70">
+                    {event.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
       </div>
     </Container>
   );

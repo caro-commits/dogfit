@@ -77,16 +77,6 @@ export async function getBlogPostBySlug(slug: string) {
   return data ?? placeholderBlogPosts.find((p) => p.slug === slug) ?? null;
 }
 
-export async function getMapPins() {
-  if (!isSupabaseConfigured) return [];
-  const supabase = await createClient();
-  const { data } = await supabase
-    .from("map_pins")
-    .select("*")
-    .order("created_at", { ascending: true });
-  return data ?? [];
-}
-
 export async function getEvents() {
   if (!isSupabaseConfigured) return placeholderEvents;
   const supabase = await createClient();

@@ -14,8 +14,10 @@ const MARKER_ICON_OPTIONS = {
 
 export function AdminMapPicker({
   onPick,
+  initialPosition,
 }: {
   onPick: (lat: number, lng: number) => void;
+  initialPosition?: [number, number];
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<LeafletMap | null>(null);
@@ -33,12 +35,19 @@ export function AdminMapPicker({
         ._getIconUrl;
       L.Icon.Default.mergeOptions(MARKER_ICON_OPTIONS);
 
-      const map = L.map(containerRef.current).setView(NOTRE_DAME_DE_COURSON, 7);
+      const map = L.map(containerRef.current).setView(
+        initialPosition ?? NOTRE_DAME_DE_COURSON,
+        initialPosition ? 10 : 7,
+      );
       mapRef.current = map;
 
       L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
         attribution: "© OpenStreetMap contributors",
       }).addTo(map);
+
+      if (initialPosition) {
+        markerRef.current = L.marker(initialPosition).addTo(map);
+      }
 
       map.on("click", (e: { latlng: { lat: number; lng: number } }) => {
         const { lat, lng } = e.latlng;

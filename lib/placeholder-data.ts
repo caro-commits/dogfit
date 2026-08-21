@@ -362,4 +362,6 @@ export const placeholderEvents: {
   starts_at: string;
   is_past: boolean;
   description: string;
+  latitude: number | null;
+  longitude: number | null;
 }[] = [];

@@ -11,10 +11,20 @@ export async function updateEvent(eventId: string, formData: FormData) {
   const location = String(formData.get("location") ?? "").trim();
   const startsAt = String(formData.get("starts_at") ?? "");
   const isPast = formData.get("is_past") === "on";
+  const latitude = formData.get("latitude");
+  const longitude = formData.get("longitude");
 
   await supabase
     .from("events")
-    .update({ title, description, location, starts_at: startsAt, is_past: isPast })
+    .update({
+      title,
+      description,
+      location,
+      starts_at: startsAt,
+      is_past: isPast,
+      latitude: latitude ? Number(latitude) : null,
+      longitude: longitude ? Number(longitude) : null,
+    })
     .eq("id", eventId);
 
   revalidatePath(`/admin/evenements/${eventId}`);

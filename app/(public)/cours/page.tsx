@@ -15,7 +15,7 @@ import {
   dogfitMaterielImages,
   dogfitJumpStage,
 } from "@/lib/placeholder-data";
-import { getMapPins } from "@/lib/data/public-content";
+import { getEvents } from "@/lib/data/public-content";
 import { TravelMap } from "@/components/travel-map";
 
 export const metadata = {
@@ -25,7 +25,7 @@ export const metadata = {
 };
 
 export default async function CoursesPage() {
-  const mapPins = await getMapPins();
+  const events = await getEvents();
 
   return (
     <Container className="py-16">
@@ -432,7 +432,7 @@ export default async function CoursesPage() {
           importante, contactez-la pour étudier la formule adaptée.
         </p>
         <div className="mt-6 max-w-2xl">
-          <TravelMap pins={mapPins} />
+          <TravelMap events={events} />
         </div>
 
         <h3 className="mt-10 text-lg font-bold text-brand-brown">

@@ -13,11 +13,31 @@ const MARKER_ICON_OPTIONS = {
   shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
 };
 
-type Pin = { id: string; label: string; latitude: number; longitude: number };
+type MapEvent = {
+  id: string;
+  title: string;
+  location: string;
+  starts_at: string;
+  latitude: number | null;
+  longitude: number | null;
+};
 
-export function TravelMap({ pins }: { pins: Pin[] }) {
+function formatDate(date: string) {
+  return new Date(date).toLocaleDateString("fr-FR", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+}
+
+export function TravelMap({ events }: { events: MapEvent[] }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<LeafletMap | null>(null);
+
+  const located = events.filter(
+    (e): e is MapEvent & { latitude: number; longitude: number } =>
+      e.latitude != null && e.longitude != null,
+  );
 
   useEffect(() => {
     if (!containerRef.current || mapRef.current) return;
@@ -53,8 +73,14 @@ export function TravelMap({ pins }: { pins: Pin[] }) {
         .addTo(map)
         .bindPopup("Marie — Notre-Dame-de-Courson (base)");
 
-      pins.forEach((pin) => {
-        L.marker([pin.latitude, pin.longitude]).addTo(map).bindPopup(pin.label);
+      located.forEach((event) => {
+        L.marker([event.latitude, event.longitude])
+          .addTo(map)
+          .bindPopup(
+            `<strong>${event.title}</strong><br />${formatDate(event.starts_at)}${
+              event.location ? ` · ${event.location}` : ""
+            }`,
+          );
       });
     });
 
@@ -64,7 +90,7 @@ export function TravelMap({ pins }: { pins: Pin[] }) {
       mapRef.current = null;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [pins]);
+  }, [located]);
 
   return (
     <div
