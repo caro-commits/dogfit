@@ -47,7 +47,7 @@ export default async function ContactPage({
         </div>
       )}
 
-      <div className="mt-10 grid gap-10 lg:grid-cols-[2fr,1fr]">
+      <div className="mt-10 grid gap-10 lg:grid-cols-[2fr_1fr]">
         <form action={submitContactMessage} className="max-w-xl space-y-5">
           <div>
             <label htmlFor="name" className="text-sm font-semibold text-brand-brown">

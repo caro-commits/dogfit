@@ -141,11 +141,11 @@ export default async function AdminCourseDetailPage({
           })}
         </div>
 
-        <div className="mt-6 grid gap-6 lg:grid-cols-[2fr,1fr]">
+        <div className="mt-6 grid gap-6 lg:grid-cols-[2fr_1fr]">
         <div className="max-w-xl rounded-2xl bg-white p-6 shadow-sm ring-1 ring-brand-brown/5">
           <h3 className="text-sm font-bold text-brand-brown">Ajouter une leçon</h3>
           <form action={createLessonAction} className="mt-4 space-y-4">
-            <div className="grid grid-cols-[1fr,auto] gap-3">
+            <div className="grid grid-cols-[1fr_auto] gap-3">
               <div>
                 <label htmlFor="lesson-title" className="text-sm font-semibold text-brand-brown">
                   Titre

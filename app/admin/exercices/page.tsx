@@ -36,7 +36,7 @@ export default async function AdminExercicesPage() {
         ))}
       </div>
 
-      <div className="mt-10 grid gap-6 lg:grid-cols-[2fr,1fr]">
+      <div className="mt-10 grid gap-6 lg:grid-cols-[2fr_1fr]">
         <div className="max-w-xl rounded-2xl bg-white p-6 shadow-sm ring-1 ring-brand-brown/5">
           <h2 className="text-base font-bold text-brand-brown">Créer un exercice</h2>
           <form action={createExercise} className="mt-4 space-y-4">

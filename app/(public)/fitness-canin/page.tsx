@@ -57,7 +57,7 @@ export default function FitnessCaninPage() {
         Le fitness canin, c&apos;est quoi ?
       </h1>
 
-      <div className="mt-6 grid gap-10 lg:grid-cols-[3fr,2fr]">
+      <div className="mt-6 grid gap-10 lg:grid-cols-[3fr_2fr]">
         <div className="space-y-4 text-brand-brown/80">
           <p>
             Le fitness canin est une pratique douce et progressive qui vise à
