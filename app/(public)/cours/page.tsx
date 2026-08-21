@@ -132,7 +132,15 @@ export default function CoursesPage() {
         </p>
         <ul className="mt-4 space-y-1 text-brand-brown">
           <li>• Fitness</li>
-          <li>• Technique de saut</li>
+          <li>
+            •{" "}
+            <Link
+              href="#technique-saut"
+              className="font-semibold text-brand-orange hover:underline"
+            >
+              Technique de saut
+            </Link>
+          </li>
         </ul>
         <p className="mt-6 text-3xl font-extrabold text-brand-turquoise-dark">
           25 €{" "}
