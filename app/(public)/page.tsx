@@ -132,8 +132,15 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="bg-brand-brown py-16 text-white">
-        <Container className="flex flex-col items-center gap-6 text-center">
+      <section className="relative overflow-hidden bg-brand-brown py-16 text-white">
+        <Image
+          src="/home/agility-jump.png"
+          alt=""
+          fill
+          className="object-cover opacity-20"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-brand-brown via-brand-brown/85 to-brand-brown/50" />
+        <Container className="relative flex flex-col items-center gap-6 text-center">
           <h2 className="text-2xl font-bold sm:text-3xl">
             Prêt·e à commencer avec votre chien ?
           </h2>
