@@ -145,8 +145,8 @@ export default function FitnessCaninPage() {
         ))}
       </div>
 
-      <div className="mt-12 flex flex-wrap items-center justify-between gap-6">
-        <LinkButton href="/contact">Contact</LinkButton>
+      <div className="mt-4 flex flex-wrap items-center justify-between gap-6">
+        <LinkButton href="/contact" variant="accent">Contact</LinkButton>
         <div className="flex flex-1 justify-center">
           <Image
             src="/fitness-canin/chien-cones-agility.png"
