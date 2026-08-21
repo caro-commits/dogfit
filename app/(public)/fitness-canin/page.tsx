@@ -57,51 +57,49 @@ export default function FitnessCaninPage() {
         Le fitness canin, c&apos;est quoi ?
       </h1>
 
-      <div className="mt-6 grid gap-10 lg:grid-cols-[3fr_2fr]">
-        <div className="space-y-4 text-brand-brown/80">
-          <p>
-            Le fitness canin est une pratique douce et progressive qui vise à
-            améliorer ou entretenir la forme physique du chien.
-          </p>
-          <p>À travers des exercices adaptés, on agit sur :</p>
-          <ul className="space-y-2">
-            {piliers.map((pilier) => (
-              <li key={pilier} className="flex gap-2">
-                <PawPrint className="mt-0.5 h-4 w-4 shrink-0 text-brand-orange" />
-                {pilier}
-              </li>
-            ))}
-          </ul>
-          <div className="max-w-sm overflow-hidden rounded-2xl shadow-sm">
-            <Image
-              src="/fitness-canin/exercice-parcours-obstacles.jpg"
-              alt="Chien sur un parcours d'obstacles et d'équilibre en intérieur"
-              width={1780}
-              height={1500}
-              className="h-full w-full object-cover"
-            />
-          </div>
-        </div>
+      <div className="mt-6 max-w-2xl space-y-4 text-brand-brown/80">
+        <p>
+          Le fitness canin est une pratique douce et progressive qui vise à
+          améliorer ou entretenir la forme physique du chien.
+        </p>
+        <p>À travers des exercices adaptés, on agit sur :</p>
+        <ul className="space-y-2">
+          {piliers.map((pilier) => (
+            <li key={pilier} className="flex gap-2">
+              <PawPrint className="mt-0.5 h-4 w-4 shrink-0 text-brand-orange" />
+              {pilier}
+            </li>
+          ))}
+        </ul>
+      </div>
 
-        <div className="grid grid-cols-2 gap-3 lg:grid-cols-1 lg:max-w-[280px] lg:justify-self-end">
-          <div className="overflow-hidden rounded-2xl shadow-sm">
-            <Image
-              src="/fitness-canin/exercice-plateforme-verte.jpg"
-              alt="Chien travaillant l'équilibre sur une plateforme de proprioception"
-              width={638}
-              height={638}
-              className="h-full w-full object-cover"
-            />
-          </div>
-          <div className="overflow-hidden rounded-2xl shadow-sm">
-            <Image
-              src="/fitness-canin/exercice-equilibre-plateformes.jpg"
-              alt="Chien en extension entre deux plateformes d'équilibre en extérieur"
-              width={810}
-              height={379}
-              className="h-full w-full object-cover"
-            />
-          </div>
+      <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-3">
+        <div className="aspect-square overflow-hidden rounded-2xl shadow-sm">
+          <Image
+            src="/fitness-canin/exercice-parcours-obstacles.jpg"
+            alt="Chien sur un parcours d'obstacles et d'équilibre en intérieur"
+            width={1780}
+            height={1500}
+            className="h-full w-full object-cover"
+          />
+        </div>
+        <div className="aspect-square overflow-hidden rounded-2xl shadow-sm">
+          <Image
+            src="/fitness-canin/exercice-equilibre-plateformes.jpg"
+            alt="Chien en extension entre deux plateformes d'équilibre en extérieur"
+            width={810}
+            height={379}
+            className="h-full w-full object-cover"
+          />
+        </div>
+        <div className="aspect-square overflow-hidden rounded-2xl shadow-sm">
+          <Image
+            src="/fitness-canin/exercice-plateforme-verte.jpg"
+            alt="Chien travaillant l'équilibre sur une plateforme de proprioception"
+            width={638}
+            height={638}
+            className="h-full w-full object-cover"
+          />
         </div>
       </div>
 
