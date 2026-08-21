@@ -2,6 +2,19 @@ import { getContactMessages } from "@/lib/data/admin";
 
 export const metadata = { title: "Admin — Messages" };
 
+function gmailReplyUrl(email: string, name: string, originalMessage: string) {
+  const subject = "Re: votre message — DOGFIT";
+  const body = `Bonjour ${name},\n\n\n\n---\nVotre message :\n${originalMessage}`;
+  const params = new URLSearchParams({
+    view: "cm",
+    fs: "1",
+    to: email,
+    su: subject,
+    body,
+  });
+  return `https://mail.google.com/mail/?${params.toString()}`;
+}
+
 export default async function AdminMessagesPage() {
   const messages = await getContactMessages();
 
@@ -37,6 +50,14 @@ export default async function AdminMessagesPage() {
             <p className="mt-3 whitespace-pre-wrap text-sm text-brand-brown/80">
               {message.message}
             </p>
+            <a
+              href={gmailReplyUrl(message.email, message.name, message.message)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex items-center gap-1.5 rounded-full bg-brand-orange px-4 py-2 text-xs font-semibold text-white hover:bg-brand-orange/90"
+            >
+              Répondre par Gmail
+            </a>
           </div>
         ))}
       </div>
