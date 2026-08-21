@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/button";
-import { PasswordInput } from "@/components/password-input";
 import { RememberedEmailInput } from "@/components/remembered-email-input";
+import { RememberedPasswordInput } from "@/components/remembered-password-input";
 import { signIn } from "@/lib/actions/auth";
 
 export const metadata = { title: "Connexion" };
@@ -38,12 +38,7 @@ export default async function ConnexionPage({
           <label htmlFor="password" className="text-sm font-semibold text-brand-brown">
             Mot de passe
           </label>
-          <PasswordInput
-            id="password"
-            name="password"
-            required
-            autoComplete="current-password"
-          />
+          <RememberedPasswordInput id="password" name="password" required />
         </div>
         <Button type="submit" className="w-full">
           Se connecter
