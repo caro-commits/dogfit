@@ -74,8 +74,8 @@ export default function FitnessCaninPage() {
           </ul>
         </div>
 
-        <div className="grid grid-cols-2 gap-3 lg:grid-cols-1 lg:max-w-[280px] lg:justify-self-end">
-          <div className="overflow-hidden rounded-2xl shadow-sm">
+        <div className="grid grid-cols-2 grid-rows-2 gap-3 lg:grid-cols-1 lg:grid-rows-none lg:max-w-[280px] lg:justify-self-end">
+          <div className="row-span-2 overflow-hidden rounded-2xl shadow-sm lg:row-span-1">
             <Image
               src="/fitness-canin/exercice-plateforme-verte.jpg"
               alt="Chien travaillant l'équilibre sur une plateforme de proprioception"
@@ -90,6 +90,15 @@ export default function FitnessCaninPage() {
               alt="Chien en extension entre deux plateformes d'équilibre en extérieur"
               width={810}
               height={379}
+              className="h-full w-full object-cover"
+            />
+          </div>
+          <div className="overflow-hidden rounded-2xl shadow-sm">
+            <Image
+              src="/fitness-canin/exercice-parcours-obstacles.jpg"
+              alt="Chien sur un parcours d'obstacles et d'équilibre en intérieur"
+              width={1780}
+              height={1500}
               className="h-full w-full object-cover"
             />
           </div>
