@@ -1,4 +1,5 @@
 import { getContactMessages } from "@/lib/data/admin";
+import { dogfitContact } from "@/lib/placeholder-data";
 
 export const metadata = { title: "Admin — Messages" };
 
@@ -6,6 +7,7 @@ function gmailReplyUrl(email: string, name: string, originalMessage: string) {
   const subject = "Re: votre message — DOGFIT";
   const body = `Bonjour ${name},\n\n\n\n---\nVotre message :\n${originalMessage}`;
   const params = new URLSearchParams({
+    authuser: dogfitContact.email,
     view: "cm",
     fs: "1",
     to: email,
