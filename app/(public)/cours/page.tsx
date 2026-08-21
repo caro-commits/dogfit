@@ -340,10 +340,17 @@ export default function CoursesPage() {
           En stage
         </p>
         <h2 className="mt-2 text-2xl font-extrabold text-brand-brown sm:text-3xl">
-          Technique de saut et fitness adapté aux sauts
+          Stages
         </h2>
+        <ul className="mt-4 space-y-1 text-brand-brown">
+          <li>• Fitness</li>
+          <li>• Technique de saut</li>
+        </ul>
 
-        <p className="mt-6 max-w-2xl font-semibold text-brand-brown">
+        <h3 className="mt-10 text-lg font-bold text-brand-turquoise-dark">
+          Technique de saut
+        </h3>
+        <p className="mt-4 max-w-2xl font-semibold text-brand-brown">
           Votre chien...
         </p>
         <ul className="mt-3 max-w-2xl space-y-2 text-sm text-brand-brown/70">
@@ -360,9 +367,9 @@ export default function CoursesPage() {
           développement ?
         </p>
 
-        <h3 className="mt-10 text-lg font-bold text-brand-brown">
+        <h4 className="mt-10 font-bold text-brand-brown">
           Au programme
-        </h3>
+        </h4>
         <ul className="mt-4 max-w-2xl space-y-2 text-sm text-brand-brown/70">
           {dogfitJumpStage.programme.map((item) => (
             <li key={item} className="flex gap-2">
@@ -372,7 +379,34 @@ export default function CoursesPage() {
           ))}
         </ul>
 
-        <h3 className="mt-10 text-lg font-bold text-brand-brown">
+        <div className="mt-10 grid gap-6 sm:grid-cols-2">
+          <div className="rounded-2xl bg-brand-cream-dark p-6">
+            <h4 className="font-bold text-brand-brown">Conditions</h4>
+            <ul className="mt-3 space-y-2 text-sm text-brand-brown/70">
+              {dogfitJumpStage.conditions.map((item) => (
+                <li key={item} className="flex gap-2">
+                  <span className="text-brand-turquoise-dark">•</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="rounded-2xl bg-brand-cream-dark p-6">
+            <h4 className="font-bold text-brand-brown">
+              Infrastructures à prévoir (organisateur)
+            </h4>
+            <ul className="mt-3 space-y-2 text-sm text-brand-brown/70">
+              {dogfitJumpStage.infrastructures.map((item) => (
+                <li key={item} className="flex gap-2">
+                  <span className="text-brand-turquoise-dark">•</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <h3 className="mt-14 text-lg font-bold text-brand-brown">
           Formules possibles
         </h3>
         <ul className="mt-4 max-w-2xl space-y-2 text-sm text-brand-brown/70">
@@ -389,33 +423,6 @@ export default function CoursesPage() {
           un rayon d&apos;environ 3h de route — pour une distance plus
           importante, contactez-la pour étudier la formule adaptée.
         </p>
-
-        <div className="mt-10 grid gap-6 sm:grid-cols-2">
-          <div className="rounded-2xl bg-brand-cream-dark p-6">
-            <h3 className="font-bold text-brand-brown">Conditions</h3>
-            <ul className="mt-3 space-y-2 text-sm text-brand-brown/70">
-              {dogfitJumpStage.conditions.map((item) => (
-                <li key={item} className="flex gap-2">
-                  <span className="text-brand-turquoise-dark">•</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="rounded-2xl bg-brand-cream-dark p-6">
-            <h3 className="font-bold text-brand-brown">
-              Infrastructures à prévoir (organisateur)
-            </h3>
-            <ul className="mt-3 space-y-2 text-sm text-brand-brown/70">
-              {dogfitJumpStage.infrastructures.map((item) => (
-                <li key={item} className="flex gap-2">
-                  <span className="text-brand-turquoise-dark">•</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
 
         <h3 className="mt-10 text-lg font-bold text-brand-brown">
           Horaires type
