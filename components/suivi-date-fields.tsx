@@ -12,14 +12,18 @@ export function SuiviDateFields({
   defaultStartDate = "",
   defaultEndDate = "",
   defaultPaid = false,
+  idPrefix = "",
 }: {
   defaultStartDate?: string;
   defaultEndDate?: string;
   defaultPaid?: boolean;
+  idPrefix?: string;
 }) {
   const [startDate, setStartDate] = useState(defaultStartDate);
   const [endDate, setEndDate] = useState(defaultEndDate);
   const [endTouched, setEndTouched] = useState(Boolean(defaultEndDate));
+  const startId = `${idPrefix}start_date`;
+  const endId = `${idPrefix}end_date`;
 
   function handleStartChange(value: string) {
     setStartDate(value);
@@ -31,11 +35,11 @@ export function SuiviDateFields({
   return (
     <div className="grid gap-4 sm:grid-cols-2">
       <div>
-        <label htmlFor="start_date" className="text-sm font-semibold text-brand-brown">
+        <label htmlFor={startId} className="text-sm font-semibold text-brand-brown">
           Début du suivi
         </label>
         <input
-          id="start_date"
+          id={startId}
           name="start_date"
           type="date"
           value={startDate}
@@ -44,12 +48,12 @@ export function SuiviDateFields({
         />
       </div>
       <div>
-        <label htmlFor="end_date" className="text-sm font-semibold text-brand-brown">
+        <label htmlFor={endId} className="text-sm font-semibold text-brand-brown">
           Fin du suivi{" "}
           <span className="font-normal text-brand-brown/50">(31 jours, ajustable)</span>
         </label>
         <input
-          id="end_date"
+          id={endId}
           name="end_date"
           type="date"
           value={endDate}

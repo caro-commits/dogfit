@@ -106,7 +106,13 @@ export async function getSubmissionDetail(submissionId: string) {
   return { submission, correction, annotations: annotations ?? [] };
 }
 
-type EnrollmentCourse = { id: string; title: string };
+type EnrollmentCourse = {
+  id: string;
+  title: string;
+  start_date: string | null;
+  end_date: string | null;
+  paid: boolean;
+};
 
 export async function getStudents() {
   const supabase = await createClient();
@@ -118,7 +124,7 @@ export async function getStudents() {
 
   const { data: enrollments } = await supabase
     .from("enrollments")
-    .select("id, user_id, course:courses(id, title)");
+    .select("id, user_id, course:courses(id, title, start_date, end_date, paid)");
 
   const normalizedEnrollments = (enrollments ?? []).map((enrollment) => {
     const course = enrollment.course as unknown as EnrollmentCourse | EnrollmentCourse[] | null;

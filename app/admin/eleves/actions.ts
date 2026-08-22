@@ -74,3 +74,22 @@ export async function revokeAccess(enrollmentId: string) {
   await supabase.from("enrollments").delete().eq("id", enrollmentId);
   revalidatePath("/admin/eleves");
 }
+
+export async function updateSuiviDates(courseId: string, formData: FormData) {
+  const supabase = await createClient();
+  const startDate = String(formData.get("start_date") ?? "").trim();
+  const endDate = String(formData.get("end_date") ?? "").trim();
+  const paid = formData.get("paid") === "on";
+
+  await supabase
+    .from("courses")
+    .update({
+      start_date: startDate || null,
+      end_date: endDate || null,
+      paid,
+    })
+    .eq("id", courseId);
+
+  revalidatePath("/admin/eleves");
+  revalidatePath("/admin/calendrier");
+}

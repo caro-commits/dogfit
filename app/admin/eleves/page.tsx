@@ -1,7 +1,8 @@
 import { cookies } from "next/headers";
 import { getStudents, getAllCourses } from "@/lib/data/admin";
 import { Button } from "@/components/button";
-import { grantAccess, revokeAccess, createStudent } from "./actions";
+import { SuiviDateFields } from "@/components/suivi-date-fields";
+import { grantAccess, revokeAccess, createStudent, updateSuiviDates } from "./actions";
 
 export const metadata = { title: "Admin — Élèves" };
 
@@ -102,21 +103,48 @@ export default async function AdminElevesPage({
                 {student.enrollments.length === 0 && (
                   <span className="text-xs text-brand-brown/50">Aucun accès pour l&apos;instant</span>
                 )}
-                {student.enrollments.map((enrollment: { id: string; course: { title: string } | null }) => {
+                {student.enrollments.map((enrollment: {
+                  id: string;
+                  course: {
+                    id: string;
+                    title: string;
+                    start_date: string | null;
+                    end_date: string | null;
+                    paid: boolean;
+                  } | null;
+                }) => {
                   const revokeAction = revokeAccess.bind(null, enrollment.id);
+                  const updateAction = enrollment.course
+                    ? updateSuiviDates.bind(null, enrollment.course.id)
+                    : null;
                   return (
                     <div
                       key={enrollment.id}
-                      className="flex items-center justify-between gap-3 rounded-lg bg-brand-turquoise-light px-3 py-2"
+                      className="rounded-lg bg-brand-turquoise-light px-3 py-2"
                     >
-                      <span className="text-xs font-semibold text-brand-turquoise-dark">
-                        {enrollment.course?.title}
-                      </span>
-                      <form action={revokeAction}>
-                        <button className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-red-600 shadow-sm hover:bg-red-50">
-                          Retirer l&apos;accès
-                        </button>
-                      </form>
+                      <div className="flex items-center justify-between gap-3">
+                        <span className="text-xs font-semibold text-brand-turquoise-dark">
+                          {enrollment.course?.title}
+                        </span>
+                        <form action={revokeAction}>
+                          <button className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-red-600 shadow-sm hover:bg-red-50">
+                            Retirer l&apos;accès
+                          </button>
+                        </form>
+                      </div>
+                      {updateAction && (
+                        <form action={updateAction} className="mt-3 space-y-2">
+                          <SuiviDateFields
+                            idPrefix={`enrollment-${enrollment.id}-`}
+                            defaultStartDate={enrollment.course!.start_date ?? ""}
+                            defaultEndDate={enrollment.course!.end_date ?? ""}
+                            defaultPaid={enrollment.course!.paid}
+                          />
+                          <Button type="submit" variant="ghost" className="py-1.5 text-xs">
+                            Enregistrer les dates
+                          </Button>
+                        </form>
+                      )}
                     </div>
                   );
                 })}
