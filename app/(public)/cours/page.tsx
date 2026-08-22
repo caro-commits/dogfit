@@ -154,10 +154,17 @@ export default async function CoursesPage() {
         <h2 className="mt-2 text-2xl font-extrabold text-brand-brown sm:text-3xl">
           Cours en présentiel
         </h2>
-        <p className="mt-4 max-w-2xl text-brand-brown/70">
-          Retrouvez Marie chez elle pour un bilan et un plan
-          d&apos;entraînement adapté à votre chien.
-        </p>
+        <div className="mt-4 max-w-2xl space-y-4 text-brand-brown/70">
+          <p>
+            Je propose des séances en présentiel adaptées aux besoins et au
+            niveau de chaque chien.
+          </p>
+          <p>
+            Le premier rendez-vous permet de faire un bilan complet afin de
+            définir les objectifs et de mettre en place un programme
+            personnalisé.
+          </p>
+        </div>
         <ul className="mt-4 space-y-1 text-brand-brown">
           <li>• Fitness</li>
           <li>
@@ -170,12 +177,41 @@ export default async function CoursesPage() {
             </Link>
           </li>
         </ul>
-        <p className="mt-6 text-3xl font-extrabold text-brand-turquoise-dark">
-          25 €{" "}
-          <span className="text-base font-semibold text-brand-brown/60">
-            la séance
-          </span>
+
+        <h3 className="mt-8 text-lg font-bold text-brand-brown">Tarifs</h3>
+        <div className="mt-4 max-w-md space-y-3">
+          {[
+            { label: "1er rendez-vous bilan", price: "70 €" },
+            { label: "Création de chaque programme (3 à 4 exercices)", price: "35 €" },
+            { label: "Séance présentielle de 30 minutes", price: "25 €" },
+          ].map((item) => (
+            <div
+              key={item.label}
+              className="flex items-center justify-between gap-4 rounded-xl bg-brand-cream-dark px-4 py-3"
+            >
+              <span className="text-sm text-brand-brown">{item.label}</span>
+              <span className="font-bold text-brand-turquoise-dark">{item.price}</span>
+            </div>
+          ))}
+        </div>
+
+        <p className="mt-6 max-w-2xl text-sm text-brand-brown/70">
+          Un PDF récapitulatif est fourni pour chaque circuit afin de
+          pouvoir refaire les exercices facilement à la maison entre les
+          séances.
         </p>
+        <p className="mt-3 max-w-2xl text-sm text-brand-brown/70">
+          Il existe également des{" "}
+          <Link
+            href="#formules"
+            className="font-semibold text-brand-orange hover:underline"
+          >
+            classes et accompagnements en ligne
+          </Link>{" "}
+          si vous préférez travailler à distance ou avec plus de flexibilité
+          dans l&apos;organisation.
+        </p>
+
         <div className="mt-8">
           <LinkButton href="/contact" variant="accent">Être recontacté·e</LinkButton>
         </div>
