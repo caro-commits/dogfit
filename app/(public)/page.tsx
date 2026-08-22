@@ -38,15 +38,16 @@ export default function HomePage() {
               Faites progresser votre chien, exercice après exercice.
             </h1>
             <p className="mt-6 max-w-lg text-lg text-brand-brown/80">
-              Marie Démaris, coach fitness canin, vous accompagne avec des
-              cours en ligne, des exercices personnalisés et des corrections
+              Je suis Marie Démaris, coach fitness canin, et je vous
+              accompagne avec des cours en ligne, des exercices
+              personnalisés et des corrections
               vidéo — pour renforcer votre chien en toute sécurité, où que
               vous soyez.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <LinkButton href="/cours">Découvrir les prestations</LinkButton>
               <LinkButton href="/presentation" variant="ghost">
-                Qui est Marie ?
+                Qui suis-je ?
               </LinkButton>
             </div>
           </div>
@@ -74,7 +75,7 @@ export default function HomePage() {
               },
               {
                 title: "Des corrections personnalisées",
-                text: "Envoyez vos exercices, Marie les corrige avec note, commentaires et conseils.",
+                text: "Envoyez vos exercices, je les corrige avec note, commentaires et conseils.",
                 color: "bg-brand-orange",
               },
               {
@@ -163,8 +164,8 @@ export default function HomePage() {
             Prêt·e à commencer avec votre chien ?
           </h2>
           <p className="max-w-xl text-brand-cream/80">
-            Contactez Marie pour démarrer un suivi : elle crée votre espace
-            élève et vous transmet vos accès personnellement.
+            Contactez-moi pour démarrer un suivi : je crée votre espace
+            élève et vous transmets vos accès personnellement.
           </p>
           <LinkButton href="/inscription">Mon espace élève</LinkButton>
         </Container>

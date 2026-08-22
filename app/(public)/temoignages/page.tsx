@@ -7,12 +7,12 @@ import { submitTestimonial } from "./actions";
 export const metadata = {
   title: "Témoignages",
   description:
-    "Découvrez les retours des propriétaires de chiens accompagnés par Marie Démaris en fitness canin, à travers un suivi en ligne ou en présentiel.",
+    "Découvrez les retours des propriétaires de chiens que j'accompagne en fitness canin, à travers un suivi en ligne ou en présentiel.",
 };
 
 const statusMessages: Record<string, { text: string; tone: string }> = {
   success: {
-    text: "Merci pour votre avis ! Il sera publié après validation par Marie.",
+    text: "Merci pour votre avis ! Il sera publié après ma validation.",
     tone: "bg-brand-turquoise-light text-brand-turquoise-dark",
   },
   error: {
@@ -86,7 +86,7 @@ export default async function TemoignagesPage({
         <p className="mt-2 text-sm text-brand-brown/70">
           Racontez votre expérience ici, cela pourrait aider d&apos;autres
           humains à faire le premier pas avec leur compagnon 💛 Votre avis
-          sera publié ici après validation par Marie.
+          sera publié ici après ma validation.
         </p>
 
         {feedback && (

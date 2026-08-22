@@ -8,12 +8,12 @@ import { submitContactMessage } from "./actions";
 export const metadata = {
   title: "Contact",
   description:
-    "Une question sur le coaching fitness canin ? Contactez Marie Démaris, DOGFIT, pour démarrer un suivi personnalisé avec votre chien, ou retrouvez ses prochains événements.",
+    "Une question sur le coaching fitness canin ? Contactez-moi pour démarrer un suivi personnalisé avec votre chien, ou retrouvez mes prochains événements.",
 };
 
 const statusMessages: Record<string, { text: string; tone: string }> = {
   success: {
-    text: "Merci, votre message a bien été envoyé ! Marie vous répondra rapidement.",
+    text: "Merci, votre message a bien été envoyé ! Je vous répondrai rapidement.",
     tone: "bg-brand-turquoise-light text-brand-turquoise-dark",
   },
   error: {
@@ -53,7 +53,7 @@ export default async function ContactPage({
             Contact
           </p>
           <h1 className="mt-2 text-3xl font-extrabold text-brand-brown sm:text-4xl">
-            Une question ? Écrivez à Marie
+            Une question ? Écrivez-moi
           </h1>
           <p className="mt-4 max-w-xl text-brand-brown/70">
             Que ce soit pour choisir le bon programme ou pour toute question

@@ -8,7 +8,7 @@ const caveat = Caveat({ subsets: ["latin"], weight: ["600"] });
 export const metadata = {
   title: "Présentation",
   description:
-    "Marie Démaris, Certified Canine Fitness Trainer (CCFT) et FitPAWS Master Trainer : découvrez son parcours, de cavalière professionnelle à coach fitness canin.",
+    "Je suis Marie Démaris, Certified Canine Fitness Trainer (CCFT) et FitPAWS Master Trainer : découvrez mon parcours, de cavalière professionnelle à coach fitness canin.",
 };
 
 export default function PresentationPage() {
@@ -17,7 +17,7 @@ export default function PresentationPage() {
       <div className="grid gap-12 lg:grid-cols-[2fr_1fr]">
         <div>
           <p className="text-sm font-semibold uppercase tracking-wide text-brand-turquoise-dark">
-            Qui est Marie ?
+            Qui suis-je ?
           </p>
           <h1 className="mt-2 text-3xl font-extrabold text-brand-brown sm:text-4xl">
             Marie Démaris, coach fitness canin

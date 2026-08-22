@@ -5,7 +5,7 @@ import { getPublishedBlogPosts } from "@/lib/data/public-content";
 export const metadata = {
   title: "Blog",
   description:
-    "Articles et conseils de Marie Démaris sur le fitness canin, la préparation physique et le bien-être des chiens sportifs.",
+    "Mes articles et conseils sur le fitness canin, la préparation physique et le bien-être des chiens sportifs.",
 };
 
 export default async function BlogPage() {

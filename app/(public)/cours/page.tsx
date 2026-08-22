@@ -142,7 +142,7 @@ export default async function CoursesPage() {
           href="/contact"
           className="font-semibold text-brand-turquoise-dark hover:underline"
         >
-          prendre contact directement avec Marie
+          me contacter directement
         </Link>
         .
       </p>
@@ -483,9 +483,9 @@ export default async function CoursesPage() {
         </ul>
         <p className="mt-3 max-w-2xl text-xs text-brand-brown/50">
           En demi-journée, groupe de 4 binômes : matin fitness spécial saut,
-          après-midi technique de saut. Marie se déplace généralement dans
+          après-midi technique de saut. Je me déplace généralement dans
           un rayon d&apos;environ 3h de route — pour une distance plus
-          importante, contactez-la pour étudier la formule adaptée.
+          importante, contactez-moi pour étudier la formule adaptée.
         </p>
         <div className="mt-6 max-w-2xl">
           <TravelMap events={events} />

@@ -64,12 +64,12 @@ export const placeholderFaqs = [
   {
     question: "Comment fonctionne la correction des exercices ?",
     answer:
-      "Vous envoyez une vidéo ou une description de votre séance depuis votre espace élève. Marie la visionne et vous renvoie une correction avec note, commentaires écrits et parfois une vidéo annotée.",
+      "Vous envoyez une vidéo ou une description de votre séance depuis votre espace élève. Je la visionne et vous renvoie une correction avec note, commentaires écrits et parfois une vidéo annotée.",
   },
   {
     question: "Puis-je suivre un cours si mon chien a une pathologie ?",
     answer:
-      "Certains programmes conviennent en complément d'un suivi vétérinaire ou en rééducation, mais un avis vétérinaire préalable est recommandé. Contactez Marie pour être orienté·e vers le bon programme.",
+      "Certains programmes conviennent en complément d'un suivi vétérinaire ou en rééducation, mais un avis vétérinaire préalable est recommandé. Contactez-moi pour être orienté·e vers le bon programme.",
   },
   {
     question: "Combien de temps ai-je accès à un cours ?",
@@ -153,7 +153,7 @@ export const dogfitPrestations = [
     id: "classe-en-ligne",
     name: "Classe en ligne",
     description:
-      "Retrouvez les formations en ligne de Marie sur la plateforme Canissimo, avec Yannick Toulon.",
+      "Retrouvez mes formations en ligne sur la plateforme Canissimo, avec Yannick Toulon.",
     topics: [
       "Fitness canin, tout pour bien débuter",
       "Échauffement et récupération, pour bien accompagner son chien",
@@ -166,7 +166,7 @@ export const dogfitPrestations = [
     id: "presentiel",
     name: "Cours en présentiel",
     description:
-      "Retrouvez Marie chez elle pour un bilan et un plan d'entraînement adapté à votre chien.",
+      "Retrouvez-moi chez moi pour un bilan et un plan d'entraînement adapté à votre chien.",
     href: "#presentiel",
     hrefLabel: "Voir les informations",
   },
@@ -174,7 +174,7 @@ export const dogfitPrestations = [
     id: "coaching-en-ligne",
     name: "Coaching personnalisé en ligne",
     description:
-      "Vous ne pouvez pas vous déplacer, ou préférez organiser vos séances selon votre emploi du temps ? Marie vous crée un suivi sur un groupe Facebook privé.",
+      "Vous ne pouvez pas vous déplacer, ou préférez organiser vos séances selon votre emploi du temps ? Je vous crée un suivi sur un groupe Facebook privé.",
     href: "#formules",
     hrefLabel: "Voir les formules",
   },
@@ -182,7 +182,7 @@ export const dogfitPrestations = [
     id: "technique-saut",
     name: "Stage",
     description:
-      "Marie encadre des stages de fitness canin, puis des stages de technique de saut, pour progresser en sécurité, en groupe.",
+      "J'encadre des stages de fitness canin, puis des stages de technique de saut, pour progresser en sécurité, en groupe.",
     href: "#technique-saut",
     hrefLabel: "Voir le programme",
   },
@@ -220,7 +220,7 @@ export const dogfitJumpStage = {
   infrastructures: [
     "Technique de saut : un terrain plat (herbe, synthétique ou sable) d'au moins 20 m × 20 m, et 3 haies d'agility",
     "Fitness adapté au saut : un espace abrité (barnum, salle, auvent...) d'environ 5 m × 5 m",
-    "Marie apporte l'ensemble du matériel spécifique nécessaire au déroulement du stage",
+    "J'apporte l'ensemble du matériel spécifique nécessaire au déroulement du stage",
   ],
   horaires: [
     "Arrivée : 8h30 pour sortir les chiens et prendre un café",
@@ -273,7 +273,7 @@ export const dogfitFormulas = [
       "Cette formule est adaptée pour les chiens ayant besoin d'un renforcement musculaire global, ou pour ceux qui ont un objectif précis (amélioration de la vitesse, des sauts, de la souplesse, de la mobilité...).",
       "Chaque accompagnement débute par un bilan initial permettant d'évaluer la posture et les appuis du chien, sa locomotion, ses capacités physiques actuelles, son historique (blessure, douleur, sport, reprise d'activité...) ainsi que vos objectifs. Un questionnaire vous sera envoyé avec toutes les infos pour réaliser les vidéos nécessaires à cette évaluation.",
       "Avant de débuter un programme de fitness, il est fortement recommandé que votre chien ait bénéficié récemment d'un suivi ostéopathique, idéalement dans le mois précédant le début du programme — cela permet de prendre en compte d'éventuelles restrictions ou déséquilibres locomoteurs avant d'augmenter les contraintes liées à l'entraînement.",
-      "Avec toutes ces informations, Marie crée votre programme de travail, envoyé au format PDF. Il contient la conclusion de l'analyse posturale et dynamique, un planning hebdomadaire, des informations générales à connaître, les exercices répartis en circuits, et le nombre de répétitions ou la durée recommandée pour chacun. Dans le groupe Facebook de suivi, vous trouverez aussi les vidéos démo des exercices et un guide par semaine pour publier vos vidéos.",
+      "Avec toutes ces informations, je crée votre programme de travail, envoyé au format PDF. Il contient la conclusion de l'analyse posturale et dynamique, un planning hebdomadaire, des informations générales à connaître, les exercices répartis en circuits, et le nombre de répétitions ou la durée recommandée pour chacun. Dans le groupe Facebook de suivi, vous trouverez aussi les vidéos démo des exercices et un guide par semaine pour publier vos vidéos.",
     ],
   },
 ] as const;
@@ -281,7 +281,7 @@ export const dogfitFormulas = [
 export const dogfitVideoAnalysis = [
   "Pour les deux niveaux, vous pouvez condenser la durée totale autorisée par semaine en une seule vidéo, ou la répartir sur plusieurs vidéos.",
   "Si vous n'utilisez pas la totalité de la durée d'une semaine, il n'est pas possible de la reporter sur une autre semaine.",
-  "Les corrections écrites de Marie peuvent être accompagnées de schémas explicatifs, de vidéos démo supplémentaires, et/ou d'un changement de plan d'entraînement pour vous faire progresser au mieux.",
+  "Mes corrections écrites peuvent être accompagnées de schémas explicatifs, de vidéos démo supplémentaires, et/ou d'un changement de plan d'entraînement pour vous faire progresser au mieux.",
   "Conseil : réalisez un montage de vos séances pour couper les temps morts — il existe de nombreuses applications gratuites de montage vidéo sur téléphone.",
 ] as const;
 
@@ -338,11 +338,11 @@ export const dogfitPricing = [
 ] as const;
 
 export const dogfitFollowUpDetails = [
-  "Le suivi en ligne se fait via un groupe Facebook privé et secret, uniquement entre vous et Marie.",
+  "Le suivi en ligne se fait via un groupe Facebook privé et secret, uniquement entre vous et moi.",
   "Réponses sous 24 à 48h. En cas d'absence de plus de 72h (raisons professionnelles ou autres), le suivi est prolongé d'autant de temps.",
   "En cas de blessure du chien, le suivi est prolongé d'autant.",
   "Le mois de suivi débute à la date d'envoi du programme (formule Fitness), ou des premiers exercices publiés (formule Fondations).",
-  "Marie se réserve le droit de refuser un suivi si elle juge le chien inapte.",
+  "Je me réserve le droit de refuser un suivi si je juge le chien inapte.",
 ] as const;
 
 export const dogfitContact = {
