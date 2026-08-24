@@ -42,11 +42,13 @@ export default function HomePage() {
               Coach en fitness canin. Préparation physique du chien de sport.
             </h1>
             <p className="mt-6 max-w-lg text-lg text-white/85">
-              Je suis Marie Démaris, coach fitness canin. Cours en ligne,
-              stages en groupe, préparation aux sports canins : je vous
-              accompagne avec des exercices de proprioception et des
-              corrections vidéo personnalisées, pour renforcer votre chien
-              en toute sécurité, où que vous soyez.
+              Je suis Marie Démaris, coach fitness canin. Cours en ligne, en
+              stage ou en présentiel, du chiot au chien sénior, préparation
+              aux sports canins ou non : je vous accompagne avec des
+              exercices de proprioception et des corrections vidéo
+              personnalisées, pour renforcer votre chien en toute sécurité,
+              où que vous soyez. Vous l&apos;avez compris, pour moi
+              adaptation est le maître mot !
             </p>
             <div className="mt-8 flex flex-wrap justify-end gap-4">
               <LinkButton href="/cours" variant="accent">Découvrir les prestations</LinkButton>
