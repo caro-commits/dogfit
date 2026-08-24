@@ -45,12 +45,6 @@ export function SiteHeader() {
             ))}
           </nav>
           <div className="flex items-center gap-3">
-            <Link
-              href="/connexion"
-              className="hidden text-sm font-semibold text-brand-brown hover:text-brand-turquoise-dark sm:block"
-            >
-              Connexion
-            </Link>
             <LinkButton href="/inscription" className="text-xs sm:text-sm">
               Mon espace élève
             </LinkButton>
