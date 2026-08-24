@@ -36,7 +36,7 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <Logo imgClassName="h-16 w-auto object-contain sm:h-20" />
+        <Logo imgClassName="h-20 w-auto object-contain sm:h-28" />
 
         <div className="flex items-center justify-end gap-6">
           <nav className="hidden items-center gap-6 lg:flex">
