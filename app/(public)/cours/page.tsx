@@ -100,9 +100,20 @@ export default async function CoursesPage() {
               <h2 className="text-lg font-bold text-brand-brown">
                 {prestation.name}
               </h2>
-              <p className="mt-2 flex-1 text-sm text-brand-brown/70">
+              <p className="mt-2 text-sm text-brand-brown/70">
                 {prestation.description}
               </p>
+              {"topics" in prestation && (
+                <ul className="mt-3 space-y-1 text-sm text-brand-brown/70">
+                  {prestation.topics.map((topic) => (
+                    <li key={topic} className="flex gap-2">
+                      <span className="text-brand-orange">•</span>
+                      {topic}
+                    </li>
+                  ))}
+                </ul>
+              )}
+              <div className="flex-1" />
               {"href" in prestation && (
                 <Link
                   href={prestation.href}

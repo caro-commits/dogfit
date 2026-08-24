@@ -167,6 +167,7 @@ export const dogfitPrestations = [
     name: "Cours en présentiel",
     description:
       "Retrouvez-moi chez moi pour un bilan et un plan d'entraînement adapté à votre chien.",
+    topics: ["Fitness", "Technique de saut"],
     href: "#presentiel",
     hrefLabel: "Voir les informations",
   },
