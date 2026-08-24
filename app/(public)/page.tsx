@@ -30,25 +30,25 @@ export default function HomePage() {
           alt="Marie Démaris et son chien"
           fill
           priority
-          className="object-cover object-[75%_center] contrast-110"
+          className="object-cover object-[30%_center] contrast-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-brown/70 via-brand-brown/25 to-transparent" />
-        <Container className="relative py-24 lg:py-36">
-          <div className="max-w-xl">
+        <div className="absolute inset-0 bg-gradient-to-l from-brand-brown/70 via-brand-brown/25 to-transparent" />
+        <Container className="relative flex justify-end py-24 lg:py-36">
+          <div className="max-w-xl text-right">
             <p className="mb-4 inline-block rounded-full bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-wide text-white backdrop-blur-sm">
               Coaching fitness canin en ligne
             </p>
             <h1 className="text-4xl font-extrabold leading-tight text-white sm:text-5xl">
-              Faites progresser votre chien, exercice après exercice.
+              Coach en fitness canin. Préparation physique du chien de sport.
             </h1>
             <p className="mt-6 max-w-lg text-lg text-white/85">
-              Je suis Marie Démaris, coach fitness canin, et je vous
-              accompagne avec des cours en ligne, des exercices
-              personnalisés et des corrections
-              vidéo — pour renforcer votre chien en toute sécurité, où que
-              vous soyez.
+              Je suis Marie Démaris, coach fitness canin. Cours en ligne,
+              stages en groupe, préparation aux sports canins : je vous
+              accompagne avec des exercices de proprioception et des
+              corrections vidéo personnalisées, pour renforcer votre chien
+              en toute sécurité, où que vous soyez.
             </p>
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-8 flex flex-wrap justify-end gap-4">
               <LinkButton href="/cours" variant="accent">Découvrir les prestations</LinkButton>
               <LinkButton href="/presentation" variant="ghost-light">
                 Qui suis-je ?
