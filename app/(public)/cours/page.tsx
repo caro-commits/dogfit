@@ -46,26 +46,6 @@ export default async function CoursesPage() {
         </Link>
       </div>
 
-      <div className="mt-6 flex flex-col items-start gap-4 rounded-2xl bg-brand-orange/10 p-6 sm:flex-row sm:items-center sm:justify-between">
-        <div>
-          <p className="text-sm font-semibold uppercase tracking-wide text-brand-orange">
-            Présentation complète
-          </p>
-          <p className="mt-1 text-brand-brown">
-            Retrouvez tous les services DOGFIT en un coup d&apos;œil dans
-            cette présentation.
-          </p>
-        </div>
-        <a
-          href="https://prezi.com/p/ufipydvdofmc/services-de-dogfit-par-marie-demaris/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-brand-orange px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-orange/90"
-        >
-          Voir la présentation
-        </a>
-      </div>
-
       {/* Classe en ligne : isolée, formule pré-enregistrée via Canissimo */}
       <div className="mt-10">
         {dogfitPrestations
