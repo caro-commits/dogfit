@@ -48,12 +48,11 @@ export default function HomePage() {
             </div>
           </div>
           <div className="relative mx-auto aspect-square w-full max-w-sm">
-            <div className="absolute inset-0 rounded-full bg-white shadow-xl" />
             <Image
               src="/brand/logo.png"
               alt="DOGFIT — Coach Fitness Canin"
               fill
-              className="relative object-contain p-8"
+              className="object-contain"
               priority
             />
           </div>
