@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Container } from "@/components/container";
 import { LinkButton } from "@/components/button";
-import { dogfitFormulas, placeholderTestimonials, dogfitContact } from "@/lib/placeholder-data";
+import { placeholderTestimonials, dogfitContact } from "@/lib/placeholder-data";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -91,40 +91,6 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="bg-brand-cream-dark py-20">
-        <Container>
-          <div className="mb-10 flex items-end justify-between">
-            <h2 className="text-2xl font-bold text-brand-brown sm:text-3xl">
-              Les formules DOGFIT
-            </h2>
-            <LinkButton href="/cours#formules" variant="ghost" className="hidden sm:inline-flex">
-              Voir les tarifs
-            </LinkButton>
-          </div>
-          <div className="grid gap-6 sm:grid-cols-2">
-            {dogfitFormulas.map((formula) => (
-              <div
-                key={formula.id}
-                className="flex flex-col rounded-2xl bg-white p-6 shadow-sm ring-1 ring-brand-brown/5"
-              >
-                <h3 className="text-lg font-bold text-brand-brown">
-                  {formula.name}
-                </h3>
-                <p className="mt-1 text-sm font-semibold text-brand-turquoise-dark">
-                  {formula.tagline}
-                </p>
-                <p className="mt-2 flex-1 text-sm text-brand-brown/70">
-                  {formula.description}
-                </p>
-              </div>
-            ))}
-          </div>
-          <LinkButton href="/cours#formules" variant="ghost" className="mt-8 sm:hidden">
-            Voir les tarifs
-          </LinkButton>
-        </Container>
-      </section>
-
       <section className="py-20">
         <Container>
           <h2 className="mb-10 text-center text-2xl font-bold text-brand-brown sm:text-3xl">
@@ -151,9 +117,9 @@ export default function HomePage() {
           src="/home/agility-jump.png"
           alt=""
           fill
-          className="object-cover opacity-40"
+          className="object-cover opacity-70 contrast-125 saturate-125"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-brown via-brand-brown/20 to-brand-brown" />
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-brown/80 via-brand-brown/10 to-brand-brown/80" />
         <Container className="relative flex flex-col items-center gap-6 text-center">
           <h2 className="text-2xl font-bold sm:text-3xl">
             Prêt·e à commencer avec votre chien ?
