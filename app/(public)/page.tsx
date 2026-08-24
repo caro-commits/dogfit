@@ -32,8 +32,7 @@ export default function HomePage() {
           priority
           className="object-cover object-[75%_center] contrast-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-brown via-brand-brown/85 to-brand-brown/20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-brown/60 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-brown/70 via-brand-brown/25 to-transparent" />
         <Container className="relative py-24 lg:py-36">
           <div className="max-w-xl">
             <p className="mb-4 inline-block rounded-full bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-wide text-white backdrop-blur-sm">
