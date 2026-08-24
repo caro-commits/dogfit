@@ -24,16 +24,25 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <section className="relative overflow-hidden bg-gradient-to-b from-brand-turquoise-light to-brand-cream">
-        <Container className="relative grid items-center gap-12 py-20 lg:grid-cols-2 lg:py-28">
-          <div>
-            <p className="mb-4 inline-block rounded-full bg-white px-4 py-1 text-xs font-semibold uppercase tracking-wide text-brand-turquoise-dark shadow-sm">
+      <section className="relative overflow-hidden bg-brand-brown">
+        <Image
+          src="/presentation/marie-et-son-chien.jpg"
+          alt="Marie Démaris et son chien"
+          fill
+          priority
+          className="object-cover object-[75%_center] contrast-110"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-brown via-brand-brown/85 to-brand-brown/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-brand-brown/60 via-transparent to-transparent" />
+        <Container className="relative py-24 lg:py-36">
+          <div className="max-w-xl">
+            <p className="mb-4 inline-block rounded-full bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-wide text-white backdrop-blur-sm">
               Coaching fitness canin en ligne
             </p>
-            <h1 className="text-4xl font-extrabold leading-tight text-brand-brown sm:text-5xl">
+            <h1 className="text-4xl font-extrabold leading-tight text-white sm:text-5xl">
               Faites progresser votre chien, exercice après exercice.
             </h1>
-            <p className="mt-6 max-w-lg text-lg text-brand-brown/80">
+            <p className="mt-6 max-w-lg text-lg text-white/85">
               Je suis Marie Démaris, coach fitness canin, et je vous
               accompagne avec des cours en ligne, des exercices
               personnalisés et des corrections
@@ -41,20 +50,11 @@ export default function HomePage() {
               vous soyez.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
-              <LinkButton href="/cours">Découvrir les prestations</LinkButton>
-              <LinkButton href="/presentation" variant="ghost">
+              <LinkButton href="/cours" variant="accent">Découvrir les prestations</LinkButton>
+              <LinkButton href="/presentation" variant="ghost-light">
                 Qui suis-je ?
               </LinkButton>
             </div>
-          </div>
-          <div className="relative mx-auto aspect-square w-full max-w-sm">
-            <Image
-              src="/brand/logo.png"
-              alt="DOGFIT — Coach Fitness Canin"
-              fill
-              className="object-contain"
-              priority
-            />
           </div>
         </Container>
       </section>

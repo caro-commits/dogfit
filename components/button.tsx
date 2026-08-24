@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { ButtonHTMLAttributes } from "react";
 
-type Variant = "primary" | "secondary" | "accent" | "ghost";
+type Variant = "primary" | "secondary" | "accent" | "ghost" | "ghost-light";
 
 const variantClasses: Record<Variant, string> = {
   primary:
@@ -12,6 +12,8 @@ const variantClasses: Record<Variant, string> = {
     "bg-brand-orange text-white hover:bg-brand-orange/90",
   ghost:
     "bg-transparent text-brand-brown border border-brand-brown/30 hover:border-brand-brown",
+  "ghost-light":
+    "bg-white/10 text-white border border-white/50 backdrop-blur-sm hover:bg-white/20",
 };
 
 const base =
