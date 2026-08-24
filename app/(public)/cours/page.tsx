@@ -47,7 +47,7 @@ export default async function CoursesPage() {
       </div>
 
       {/* Classe en ligne : isolée, formule pré-enregistrée via Canissimo */}
-      <div className="mt-10">
+      <div id="classe-en-ligne" className="mt-10 scroll-mt-24">
         {dogfitPrestations
           .filter((prestation) => prestation.id === "classe-en-ligne")
           .map((prestation) => (
