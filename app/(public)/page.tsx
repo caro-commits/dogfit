@@ -90,6 +90,58 @@ export default function HomePage() {
         </Container>
       </section>
 
+      <section className="bg-brand-cream-dark py-20">
+        <Container>
+          <h2 className="text-center text-2xl font-bold text-brand-brown sm:text-3xl">
+            Comment se déroule le suivi ?
+          </h2>
+          <p className="mx-auto mt-3 max-w-xl text-center text-sm text-brand-brown/70">
+            Un accompagnement pas à pas, personnalisé à votre chien du début
+            à la fin.
+          </p>
+          <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              {
+                step: "1",
+                title: "Prise de contact",
+                text: "Vous me parlez de votre chien et de vos objectifs, je réponds à vos questions.",
+                color: "bg-brand-turquoise",
+              },
+              {
+                step: "2",
+                title: "Bilan & programme",
+                text: "Un questionnaire, puis un programme d'exercices personnalisé, adapté à votre chien.",
+                color: "bg-brand-orange",
+              },
+              {
+                step: "3",
+                title: "Vidéos & corrections",
+                text: "Vous m'envoyez vos vidéos d'exercices, je les corrige avec notes et conseils.",
+                color: "bg-brand-brown-light",
+              },
+              {
+                step: "4",
+                title: "Suivi continu",
+                text: "Échanges réguliers sur le groupe Facebook privé, réponses sous 24 à 48h.",
+                color: "bg-brand-turquoise-dark",
+              },
+            ].map((item) => (
+              <div key={item.step}>
+                <div
+                  className={`mb-4 flex h-10 w-10 items-center justify-center rounded-full text-sm font-bold text-white ${item.color}`}
+                >
+                  {item.step}
+                </div>
+                <h3 className="text-lg font-bold text-brand-brown">
+                  {item.title}
+                </h3>
+                <p className="mt-2 text-sm text-brand-brown/70">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
       <section className="py-20">
         <Container>
           <h2 className="mb-10 text-center text-2xl font-bold text-brand-brown sm:text-3xl">
