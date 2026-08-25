@@ -11,12 +11,37 @@ export function VideoUpload() {
   const [title, setTitle] = useState("");
   const [status, setStatus] = useState<"idle" | "uploading" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const [fileSizeLabel, setFileSizeLabel] = useState("");
+
+  const SIZE_LIMIT_MB = 50;
+
+  function handleFileChange() {
+    const file = fileInput.current?.files?.[0];
+    if (!file) {
+      setFileSizeLabel("");
+      return;
+    }
+    const sizeMb = file.size / (1024 * 1024);
+    setFileSizeLabel(
+      sizeMb > SIZE_LIMIT_MB
+        ? `${sizeMb.toFixed(0)} Mo — dépasse la limite de ${SIZE_LIMIT_MB} Mo, l'envoi échouera. Compressez la vidéo avant de réessayer.`
+        : `${sizeMb.toFixed(0)} Mo`
+    );
+  }
 
   async function handleUpload() {
     const file = fileInput.current?.files?.[0];
     if (!file || !title.trim()) {
       setStatus("error");
       setErrorMessage("Merci de donner un titre et de choisir un fichier vidéo.");
+      return;
+    }
+
+    if (file.size > SIZE_LIMIT_MB * 1024 * 1024) {
+      setStatus("error");
+      setErrorMessage(
+        `Cette vidéo fait ${(file.size / (1024 * 1024)).toFixed(0)} Mo, ce qui dépasse la limite de ${SIZE_LIMIT_MB} Mo. Compressez-la (résolution ou durée plus faible) avant de réessayer.`
+      );
       return;
     }
 
@@ -32,7 +57,11 @@ export function VideoUpload() {
 
     if (uploadError) {
       setStatus("error");
-      setErrorMessage("Échec de l'envoi : " + uploadError.message);
+      setErrorMessage(
+        /size|large|payload/i.test(uploadError.message)
+          ? `Cette vidéo est trop volumineuse pour être envoyée (limite actuelle : ${SIZE_LIMIT_MB} Mo). Compressez-la avant de réessayer.`
+          : "Échec de l'envoi : " + uploadError.message
+      );
       return;
     }
 
@@ -80,8 +109,18 @@ export function VideoUpload() {
             ref={fileInput}
             type="file"
             accept="video/*"
+            onChange={handleFileChange}
             className="mt-1 block w-full text-sm"
           />
+          {fileSizeLabel && (
+            <p
+              className={`mt-1 text-xs ${
+                fileSizeLabel.includes("dépasse") ? "text-red-700" : "text-brand-brown/50"
+              }`}
+            >
+              {fileSizeLabel}
+            </p>
+          )}
         </div>
         {status === "error" && (
           <p className="text-sm text-red-700">{errorMessage}</p>
@@ -95,8 +134,9 @@ export function VideoUpload() {
         </Button>
         <p className="text-xs text-brand-brown/50">
           L&apos;envoi se fait directement depuis votre ordinateur — pas
-          besoin de passer par YouTube ou Vimeo. Selon la taille du fichier
-          et votre connexion, l&apos;envoi peut prendre quelques minutes.
+          besoin de passer par YouTube ou Vimeo. Taille maximale :{" "}
+          {SIZE_LIMIT_MB} Mo par vidéo. Selon la taille du fichier et votre
+          connexion, l&apos;envoi peut prendre quelques minutes.
         </p>
       </div>
     </div>
