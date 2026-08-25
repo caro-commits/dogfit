@@ -40,6 +40,11 @@ export default async function ConnexionPage({
           </label>
           <RememberedPasswordInput id="password" name="password" required />
         </div>
+        <p className="text-right text-sm">
+          <Link href="/mot-de-passe-oublie" className="font-semibold text-brand-turquoise-dark hover:underline">
+            Mot de passe oublié ?
+          </Link>
+        </p>
         <Button type="submit" className="w-full">
           Se connecter
         </Button>
