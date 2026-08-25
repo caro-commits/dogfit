@@ -124,8 +124,9 @@ export default function HomePage() {
             Prêt·e à commencer avec votre chien ?
           </h2>
           <p className="max-w-xl text-brand-cream/80">
-            Contactez-moi pour démarrer un suivi : je crée votre espace
-            élève et vous transmets vos accès personnellement.
+            Contactez-moi pour démarrer un suivi : en attendant la
+            plateforme, les échanges et corrections se font sur un groupe
+            Facebook privé, personnalisé pour vous et votre chien.
           </p>
           <LinkButton href="/inscription">Mon espace élève</LinkButton>
         </Container>
