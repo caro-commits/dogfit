@@ -74,7 +74,7 @@ export default function HomePage() {
               },
               {
                 title: "Un vrai suivi",
-                text: "Retrouvez votre progression, vos exercices et vos corrections dans votre espace élève.",
+                text: "Retrouvez vos exercices dans votre espace élève ; le suivi et les corrections se font pour l'instant sur un groupe Facebook privé, en attendant la plateforme complète.",
                 color: "bg-brand-brown-light",
               },
             ].map((item) => (
