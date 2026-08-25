@@ -60,44 +60,15 @@ export default function HomePage() {
 
       <section className="py-20">
         <Container>
-          <div className="grid gap-10 sm:grid-cols-3">
-            {[
-              {
-                title: "Des cours structurés",
-                text: "Vidéos, fiches PDF et exercices progressifs pour avancer à votre rythme.",
-                color: "bg-brand-turquoise",
-              },
-              {
-                title: "Des corrections personnalisées",
-                text: "Envoyez vos exercices, je les corrige avec note, commentaires et conseils.",
-                color: "bg-brand-orange",
-              },
-              {
-                title: "Un vrai suivi",
-                text: "Retrouvez vos exercices dans votre espace élève ; le suivi et les corrections se font pour l'instant sur un groupe Facebook privé, en attendant la plateforme complète.",
-                color: "bg-brand-brown-light",
-              },
-            ].map((item) => (
-              <div key={item.title}>
-                <div className={`mb-4 h-10 w-10 rounded-full ${item.color}`} />
-                <h3 className="text-lg font-bold text-brand-brown">
-                  {item.title}
-                </h3>
-                <p className="mt-2 text-sm text-brand-brown/70">{item.text}</p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      <section className="bg-brand-cream-dark py-20">
-        <Container>
           <h2 className="text-center text-2xl font-bold text-brand-brown sm:text-3xl">
             Comment se déroule le suivi ?
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-center text-sm text-brand-brown/70">
-            Un accompagnement pas à pas, personnalisé à votre chien du début
-            à la fin.
+            Des cours structurés, des corrections personnalisées et un vrai
+            suivi : un accompagnement pas à pas, adapté à votre chien du
+            début à la fin. Pour l&apos;instant, le suivi et les corrections
+            se font sur un groupe Facebook privé, en attendant la
+            plateforme complète.
           </p>
           <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
             {[
