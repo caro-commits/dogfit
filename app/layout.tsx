@@ -14,6 +14,9 @@ const siteDescription =
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.dogfit-mariedemaris.fr"),
+  verification: {
+    google: "lz3Rol9lJpg3Jaq0C-t96nDLeWSHnVn4jIFvTAvp0mw",
+  },
   title: {
     default: siteTitle,
     template: "%s | DOGFIT",
