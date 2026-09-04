@@ -62,8 +62,8 @@ export default async function CourseDetailPage({
         </div>
       )}
 
-      <div className="mt-10 flex items-center gap-6 rounded-2xl bg-brand-cream-dark p-6">
-        <p className="text-2xl font-extrabold text-brand-brown">
+      <div className="mt-10 flex flex-wrap items-center gap-6 rounded-2xl bg-brand-cream-dark p-6">
+        <p className="shrink-0 whitespace-nowrap text-2xl font-extrabold text-brand-brown">
           {(course.price_cents / 100).toFixed(0)} €
         </p>
         <LinkButton href="/inscription">Accéder à ce cours</LinkButton>

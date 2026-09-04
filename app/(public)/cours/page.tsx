@@ -181,7 +181,9 @@ export default async function CoursesPage() {
               className="flex items-center justify-between gap-4 rounded-xl bg-brand-cream-dark px-4 py-3"
             >
               <span className="text-sm text-brand-brown">{item.label}</span>
-              <span className="font-bold text-brand-turquoise-dark">{item.price}</span>
+              <span className="shrink-0 whitespace-nowrap font-bold text-brand-turquoise-dark">
+                {item.price}
+              </span>
             </div>
           ))}
         </div>
