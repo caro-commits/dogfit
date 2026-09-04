@@ -10,7 +10,10 @@ const leftLinksBeforePrestations = [
   { href: "/fitness-canin", label: "Fitness canin" },
 ];
 
-const leftLinksAfterPrestations = [{ href: "/blog", label: "Blog" }];
+const leftLinksAfterPrestations = [
+  { href: "/stages", label: "Stages" },
+  { href: "/blog", label: "Blog" },
+];
 
 const rightLinks = [
   { href: "/temoignages", label: "Témoignages" },
@@ -22,7 +25,6 @@ const prestationsSubLinks = [
   { href: "/cours#classe-en-ligne", label: "Classe en ligne" },
   { href: "/cours#presentiel", label: "Cours en présentiel" },
   { href: "/cours#formules", label: "Coaching en ligne" },
-  { href: "/stages", label: "Stages" },
 ];
 
 function NavLink({ href, label }: { href: string; label: string }) {
