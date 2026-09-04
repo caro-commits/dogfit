@@ -46,7 +46,8 @@ export function SiteFooter() {
           <p className="text-sm font-semibold text-brand-brown">Le site</p>
           <ul className="mt-3 space-y-2 text-sm text-brand-brown/70">
             <li><Link href="/presentation" className="hover:text-brand-turquoise-dark">Présentation</Link></li>
-            <li><Link href="/cours" className="hover:text-brand-turquoise-dark">Prestations</Link></li>
+            <li><Link href="/cours" className="hover:text-brand-turquoise-dark">Coaching</Link></li>
+            <li><Link href="/stages" className="hover:text-brand-turquoise-dark">Stages</Link></li>
             <li><Link href="/blog" className="hover:text-brand-turquoise-dark">Blog</Link></li>
             <li><Link href="/evenements" className="hover:text-brand-turquoise-dark">Événements</Link></li>
           </ul>

@@ -184,7 +184,7 @@ export const dogfitPrestations = [
     name: "Stage",
     description:
       "J'encadre des stages de fitness canin, puis des stages de technique de saut, pour progresser en sécurité, en groupe.",
-    href: "#technique-saut",
+    href: "/stages",
     hrefLabel: "Voir le programme",
   },
 ] as const;

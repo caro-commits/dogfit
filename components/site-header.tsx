@@ -22,7 +22,7 @@ const prestationsSubLinks = [
   { href: "/cours#classe-en-ligne", label: "Classe en ligne" },
   { href: "/cours#presentiel", label: "Cours en présentiel" },
   { href: "/cours#formules", label: "Coaching en ligne" },
-  { href: "/cours#technique-saut", label: "Stages" },
+  { href: "/stages", label: "Stages" },
 ];
 
 function NavLink({ href, label }: { href: string; label: string }) {
@@ -43,7 +43,7 @@ function PrestationsNavLink() {
         href="/cours"
         className="text-sm font-medium text-brand-brown/80 transition-colors hover:text-brand-turquoise-dark"
       >
-        Prestations
+        Coaching
       </Link>
       <div className="invisible absolute left-1/2 top-full w-56 -translate-x-1/2 pt-3 opacity-0 transition-opacity duration-150 group-hover:visible group-hover:opacity-100">
         <div className="overflow-hidden rounded-2xl bg-white py-2 shadow-lg ring-1 ring-brand-brown/10">
@@ -162,7 +162,7 @@ export function SiteHeader() {
             {leftLinksBeforePrestations.map((link) => (
               <MobileNavLink key={link.href} {...link} onClick={close} />
             ))}
-            <MobileNavLink href="/cours" label="Prestations" onClick={close} />
+            <MobileNavLink href="/cours" label="Coaching" onClick={close} />
             <div className="flex flex-col border-l-2 border-brand-turquoise/30 pl-3">
               {prestationsSubLinks.map((link) => (
                 <MobileNavLink

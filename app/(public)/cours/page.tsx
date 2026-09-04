@@ -13,26 +13,21 @@ import {
   dogfitRenewalExample,
   dogfitMateriel,
   dogfitMaterielImages,
-  dogfitJumpStage,
 } from "@/lib/placeholder-data";
-import { getEvents } from "@/lib/data/public-content";
-import { TravelMap } from "@/components/travel-map";
 
 export const metadata = {
-  title: "Prestations",
+  title: "Coaching",
   description:
-    "Cours en ligne, coaching personnalisé, séances en présentiel et stages de fitness canin ou technique de saut : découvrez les formules DOGFIT et leurs tarifs.",
+    "Cours en ligne, coaching personnalisé et séances en présentiel : découvrez les formules DOGFIT et leurs tarifs.",
 };
 
-export default async function CoursesPage() {
-  const events = await getEvents();
-
+export default function CoursesPage() {
   return (
     <Container className="py-16">
       <div className="flex flex-wrap items-start justify-between gap-4">
         <div>
           <p className="text-sm font-semibold uppercase tracking-wide text-brand-turquoise-dark">
-            Prestations
+            Coaching
           </p>
           <h1 className="mt-2 text-3xl font-extrabold text-brand-brown sm:text-4xl">
             Tout ce que propose DOGFIT
@@ -161,7 +156,7 @@ export default async function CoursesPage() {
           <li>
             •{" "}
             <Link
-              href="#technique-saut"
+              href="/stages#technique-saut"
               className="font-semibold text-brand-orange hover:underline"
             >
               Technique de saut
@@ -389,137 +384,6 @@ export default async function CoursesPage() {
 
         <div className="mt-10">
           <LinkButton href="/contact" variant="accent">Être recontacté·e</LinkButton>
-        </div>
-      </div>
-
-      <div id="technique-saut" className="mt-20 scroll-mt-24 border-t border-brand-brown/10 pt-16">
-        <p className="text-sm font-semibold uppercase tracking-wide text-brand-turquoise-dark">
-          En stage
-        </p>
-        <h2 className="mt-2 text-2xl font-extrabold text-brand-brown sm:text-3xl">
-          Stages
-        </h2>
-        <ul className="mt-4 space-y-1 text-brand-brown">
-          <li>• Fitness</li>
-          <li>• Technique de saut</li>
-        </ul>
-
-        <h3 className="mt-10 text-lg font-bold text-brand-turquoise-dark">
-          Technique de saut
-        </h3>
-        <p className="mt-4 max-w-2xl font-semibold text-brand-brown">
-          Votre chien...
-        </p>
-        <ul className="mt-3 max-w-2xl space-y-2 text-sm text-brand-brown/70">
-          {dogfitJumpStage.hooks.map((hook) => (
-            <li key={hook} className="flex gap-2">
-              <span className="text-brand-turquoise-dark">•</span>
-              {hook}
-            </li>
-          ))}
-        </ul>
-        <p className="mt-4 max-w-2xl text-sm text-brand-brown/70">
-          Ou peut-être avez-vous un jeune chien et souhaitez-vous lui
-          apprendre à sauter sur de bonnes bases, dans le respect de son
-          développement ?
-        </p>
-
-        <h4 className="mt-10 font-bold text-brand-brown">
-          Au programme
-        </h4>
-        <ul className="mt-4 max-w-2xl space-y-2 text-sm text-brand-brown/70">
-          {dogfitJumpStage.programme.map((item) => (
-            <li key={item} className="flex gap-2">
-              <span className="text-brand-turquoise-dark">•</span>
-              {item}
-            </li>
-          ))}
-        </ul>
-
-        <div className="mt-10 grid gap-6 sm:grid-cols-2">
-          <div className="rounded-2xl bg-brand-cream-dark p-6">
-            <h4 className="font-bold text-brand-brown">Conditions</h4>
-            <ul className="mt-3 space-y-2 text-sm text-brand-brown/70">
-              {dogfitJumpStage.conditions.map((item) => (
-                <li key={item} className="flex gap-2">
-                  <span className="text-brand-turquoise-dark">•</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="rounded-2xl bg-brand-cream-dark p-6">
-            <h4 className="font-bold text-brand-brown">
-              Infrastructures à prévoir (organisateur)
-            </h4>
-            <ul className="mt-3 space-y-2 text-sm text-brand-brown/70">
-              {dogfitJumpStage.infrastructures.map((item) => (
-                <li key={item} className="flex gap-2">
-                  <span className="text-brand-turquoise-dark">•</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        <h3 className="mt-14 text-lg font-bold text-brand-brown">
-          Formules possibles
-        </h3>
-        <ul className="mt-4 max-w-2xl space-y-2 text-sm text-brand-brown/70">
-          {dogfitJumpStage.formules.map((item) => (
-            <li key={item} className="flex gap-2">
-              <span className="text-brand-turquoise-dark">•</span>
-              {item}
-            </li>
-          ))}
-        </ul>
-        <p className="mt-3 max-w-2xl text-xs text-brand-brown/50">
-          En demi-journée, groupe de 4 binômes : matin fitness spécial saut,
-          après-midi technique de saut. Je me déplace généralement dans
-          un rayon d&apos;environ 3h de route — pour une distance plus
-          importante, contactez-moi pour étudier la formule adaptée.
-        </p>
-        <div className="mt-6 max-w-2xl">
-          <TravelMap events={events} />
-        </div>
-
-        <h3 className="mt-10 text-lg font-bold text-brand-brown">
-          Horaires type
-        </h3>
-        <ul className="mt-4 max-w-2xl space-y-2 text-sm text-brand-brown/70">
-          {dogfitJumpStage.horaires.map((item) => (
-            <li key={item} className="flex gap-2">
-              <span className="text-brand-turquoise-dark">•</span>
-              {item}
-            </li>
-          ))}
-        </ul>
-
-        <h3 className="mt-10 text-lg font-bold text-brand-brown">
-          Chaque participant devra prévoir
-        </h3>
-        <ul className="mt-4 max-w-2xl space-y-2 text-sm text-brand-brown/70">
-          {dogfitJumpStage.aPrevoir.map((item) => (
-            <li key={item} className="flex gap-2">
-              <span className="text-brand-turquoise-dark">•</span>
-              {item}
-            </li>
-          ))}
-        </ul>
-
-        <h3 className="mt-10 text-lg font-bold text-brand-brown">Tarifs</h3>
-        <p className="mt-4 max-w-2xl text-sm text-brand-brown/70">
-          Les tarifs sont établis sur devis, selon le lieu du stage. Le devis
-          comprend les honoraires d&apos;intervention, les frais de
-          déplacement, et les frais d&apos;hébergement si la distance ou les
-          horaires ne permettent pas un aller-retour le jour même.
-          L&apos;organisateur reste libre de fixer le tarif demandé aux
-          participants.
-        </p>
-
-        <div className="mt-8">
-          <LinkButton href="/contact" variant="accent">Organiser un stage</LinkButton>
         </div>
       </div>
     </Container>

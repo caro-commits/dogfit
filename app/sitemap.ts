@@ -19,6 +19,7 @@ const staticRoutes = [
   "/presentation",
   "/fitness-canin",
   "/cours",
+  "/stages",
   "/blog",
   "/temoignages",
   "/faq",

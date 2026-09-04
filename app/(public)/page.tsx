@@ -49,7 +49,7 @@ export default function HomePage() {
               et/ou les performances de votre chien, où que vous soyez.
             </p>
             <div className="mt-8 flex flex-wrap justify-end gap-4">
-              <LinkButton href="/cours" variant="accent">Découvrir les prestations</LinkButton>
+              <LinkButton href="/cours" variant="accent">Découvrir le coaching</LinkButton>
               <LinkButton href="/presentation" variant="ghost-light">
                 Qui suis-je ?
               </LinkButton>
