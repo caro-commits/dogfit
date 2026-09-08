@@ -29,6 +29,7 @@ export async function generateMetadata({
       type: "article",
       publishedTime: new Date(post.published_at).toISOString(),
       authors: ["Marie Démaris"],
+      images: ["/og/dogfit.jpg"],
     },
   };
 }

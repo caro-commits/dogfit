@@ -18,7 +18,11 @@ export async function generateMetadata({
     title: course.title,
     description: course.description,
     alternates: { canonical: `/cours/${slug}` },
-    openGraph: { title: course.title, description: course.description },
+    openGraph: {
+      title: course.title,
+      description: course.description,
+      images: ["/og/dogfit.jpg"],
+    },
   };
 }
 
