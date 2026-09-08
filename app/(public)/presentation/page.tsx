@@ -1,19 +1,45 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { Caveat } from "next/font/google";
 import { Container } from "@/components/container";
 import { LinkButton } from "@/components/button";
+import { JsonLd } from "@/components/json-ld";
+import { dogfitContact } from "@/lib/placeholder-data";
 
 const caveat = Caveat({ subsets: ["latin"], weight: ["600"] });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Présentation",
   description:
     "Je suis Marie Démaris, Certified Canine Fitness Trainer (CCFT) et FitPAWS Master Trainer : découvrez mon parcours, de cavalière professionnelle à coach fitness canin.",
+  alternates: { canonical: "/presentation" },
+};
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Marie Démaris",
+  jobTitle: "Coach en fitness canin",
+  description:
+    "Certified Canine Fitness Trainer (CCFT) et FitPAWS Master Trainer, spécialisée dans la préparation physique et le bien-être du chien de sport.",
+  url: "https://www.dogfit-mariedemaris.fr/presentation",
+  image: "https://www.dogfit-mariedemaris.fr/presentation/marie-et-son-chien.jpg",
+  worksFor: {
+    "@type": "Organization",
+    name: "DOGFIT",
+    url: "https://www.dogfit-mariedemaris.fr",
+  },
+  hasCredential: [
+    "Certified Canine Fitness Trainer (CCFT) — University of Tennessee",
+    "FitPAWS Master Trainer",
+  ],
+  sameAs: [dogfitContact.facebookPage, dogfitContact.facebook],
 };
 
 export default function PresentationPage() {
   return (
     <Container className="py-16">
+      <JsonLd data={personJsonLd} />
       <div className="grid gap-12 lg:grid-cols-[2fr_1fr]">
         <div>
           <p className="text-sm font-semibold uppercase tracking-wide text-brand-turquoise-dark">

@@ -8,6 +8,7 @@ export const metadata = {
   title: "Témoignages",
   description:
     "Découvrez les retours des propriétaires de chiens que j'accompagne en fitness canin, à travers un suivi en ligne ou en présentiel.",
+  alternates: { canonical: "/temoignages" },
 };
 
 const statusMessages: Record<string, { text: string; tone: string }> = {

@@ -352,6 +352,7 @@ export const dogfitContact = {
   email: "dogfit.md@gmail.com",
   phone: "06 59 49 28 24",
   facebook: "https://www.facebook.com/marie.demaris.3/?locale=fr_FR",
+  facebookPage: "https://www.facebook.com/p/DogFit-100063865088432/",
 } as const;
 
 // Pas d'événements d'exemple : à ajouter directement via /admin/evenements

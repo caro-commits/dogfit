@@ -1,13 +1,15 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/container";
 import { LinkButton } from "@/components/button";
+import { JsonLd } from "@/components/json-ld";
 import { getCourseBySlug } from "@/lib/data/public-content";
 
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ slug: string }>;
-}) {
+}): Promise<Metadata> {
   const { slug } = await params;
   const course = await getCourseBySlug(slug);
   if (!course) return {};
@@ -15,6 +17,7 @@ export async function generateMetadata({
   return {
     title: course.title,
     description: course.description,
+    alternates: { canonical: `/cours/${slug}` },
     openGraph: { title: course.title, description: course.description },
   };
 }
@@ -31,8 +34,27 @@ export default async function CourseDetailPage({
 
   const lessons = "lessons" in course ? course.lessons ?? [] : [];
 
+  const courseJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    name: course.title,
+    description: course.description,
+    provider: {
+      "@type": "Organization",
+      name: "DOGFIT",
+      url: "https://www.dogfit-mariedemaris.fr",
+    },
+    offers: {
+      "@type": "Offer",
+      price: (course.price_cents / 100).toFixed(2),
+      priceCurrency: "EUR",
+      category: "Coaching fitness canin",
+    },
+  };
+
   return (
     <Container className="py-16">
+      <JsonLd data={courseJsonLd} />
       <p className="text-sm font-semibold uppercase tracking-wide text-brand-turquoise-dark">
         Programme
       </p>

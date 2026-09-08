@@ -1,16 +1,33 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { Container } from "@/components/container";
+import { JsonLd } from "@/components/json-ld";
 import { placeholderFaqs } from "@/lib/placeholder-data";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "FAQ",
   description:
     "Toutes les réponses à vos questions sur le coaching fitness canin DOGFIT : suivi, matériel nécessaire, tarifs et fonctionnement.",
+  alternates: { canonical: "/faq" },
+};
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: placeholderFaqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer.replace(/\s+/g, " ").trim(),
+    },
+  })),
 };
 
 export default function FaqPage() {
   return (
     <Container className="py-16">
+      <JsonLd data={faqJsonLd} />
       <p className="text-sm font-semibold uppercase tracking-wide text-brand-turquoise-dark">
         Questions fréquentes
       </p>

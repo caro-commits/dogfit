@@ -1,29 +1,49 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { Container } from "@/components/container";
 import { LinkButton } from "@/components/button";
+import { JsonLd } from "@/components/json-ld";
 import { placeholderTestimonials, dogfitContact } from "@/lib/placeholder-data";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
+
+const siteUrl = "https://www.dogfit-mariedemaris.fr";
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
+  "@id": `${siteUrl}/#business`,
   name: "DOGFIT — Marie Démaris",
   description:
     "Coaching fitness canin par Marie Démaris : cours en ligne, suivi personnalisé et corrections d'exercices pour progresser avec votre chien.",
-  url: "https://www.dogfit-mariedemaris.fr",
+  url: siteUrl,
   telephone: dogfitContact.phone,
   email: dogfitContact.email,
-  image: "https://www.dogfit-mariedemaris.fr/brand/logo.png",
-  sameAs: [dogfitContact.facebook],
-  areaServed: "FR",
+  image: `${siteUrl}/og/dogfit.jpg`,
+  logo: `${siteUrl}/brand/logo.png`,
+  priceRange: "€€",
+  sameAs: [dogfitContact.facebookPage, dogfitContact.facebook],
+  areaServed: { "@type": "Country", name: "France" },
+  knowsAbout: [
+    "Fitness canin",
+    "Préparation physique du chien de sport",
+    "Renforcement musculaire canin",
+    "Proprioception du chien",
+    "Technique de saut en agility",
+  ],
+  founder: {
+    "@type": "Person",
+    name: "Marie Démaris",
+    jobTitle: "Coach en fitness canin",
+  },
 };
 
 export default function HomePage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLd data={jsonLd} />
       <section className="relative overflow-hidden bg-brand-brown">
         <Image
           src="/presentation/marie-et-son-chien.jpg"

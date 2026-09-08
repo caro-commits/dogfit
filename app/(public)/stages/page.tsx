@@ -8,6 +8,7 @@ export const metadata = {
   title: "Stages",
   description:
     "Stages de fitness canin et de technique de saut encadrés par Marie Démaris, chez les clubs et organisateurs : programme, conditions, infrastructures, tarifs et prochains événements.",
+  alternates: { canonical: "/stages" },
 };
 
 function formatDate(date: string) {

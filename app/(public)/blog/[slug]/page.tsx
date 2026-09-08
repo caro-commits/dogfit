@@ -1,12 +1,14 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/container";
+import { JsonLd } from "@/components/json-ld";
 import { getBlogPostBySlug } from "@/lib/data/public-content";
 
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ slug: string }>;
-}) {
+}): Promise<Metadata> {
   const { slug } = await params;
   const post = await getBlogPostBySlug(slug);
   if (!post) return {};
@@ -20,7 +22,14 @@ export async function generateMetadata({
   return {
     title: post.title,
     description,
-    openGraph: { title: post.title, description, type: "article" },
+    alternates: { canonical: `/blog/${slug}` },
+    openGraph: {
+      title: post.title,
+      description,
+      type: "article",
+      publishedTime: new Date(post.published_at).toISOString(),
+      authors: ["Marie Démaris"],
+    },
   };
 }
 
@@ -34,8 +43,26 @@ export default async function BlogPostPage({
 
   if (!post) notFound();
 
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    datePublished: new Date(post.published_at).toISOString(),
+    author: { "@type": "Person", name: "Marie Démaris" },
+    publisher: {
+      "@type": "Organization",
+      name: "DOGFIT",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.dogfit-mariedemaris.fr/brand/logo.png",
+      },
+    },
+    mainEntityOfPage: `https://www.dogfit-mariedemaris.fr/blog/${slug}`,
+  };
+
   return (
     <Container className="max-w-3xl py-16">
+      <JsonLd data={articleJsonLd} />
       <p className="text-xs font-medium uppercase tracking-wide text-brand-orange">
         {new Date(post.published_at).toLocaleDateString("fr-FR", {
           day: "numeric",

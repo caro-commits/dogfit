@@ -7,6 +7,7 @@ export const metadata = {
   title: "Le fitness canin, c'est quoi ?",
   description:
     "Mobilité, renforcement musculaire, proprioception : découvrez ce qu'est le fitness canin et à quels chiens il s'adresse.",
+  alternates: { canonical: "/fitness-canin" },
 };
 
 const piliers = [

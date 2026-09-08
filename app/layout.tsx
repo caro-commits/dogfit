@@ -29,13 +29,20 @@ export const metadata: Metadata = {
     siteName: "DOGFIT",
     locale: "fr_FR",
     type: "website",
-    images: [{ url: "/brand/logo.png", width: 1119, height: 1120, alt: "DOGFIT" }],
+    images: [
+      {
+        url: "/og/dogfit.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Marie Démaris, coach en fitness canin, et son chien",
+      },
+    ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: siteTitle,
     description: siteDescription,
-    images: ["/brand/logo.png"],
+    images: ["/og/dogfit.jpg"],
   },
 };
 

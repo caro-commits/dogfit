@@ -32,12 +32,22 @@ export function SiteFooter() {
             </li>
             <li>
               <a
+                href={dogfitContact.facebookPage}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-brand-turquoise-dark"
+              >
+                Page Facebook DogFit
+              </a>
+            </li>
+            <li>
+              <a
                 href={dogfitContact.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-brand-turquoise-dark"
               >
-                Facebook
+                Facebook (Marie Démaris)
               </a>
             </li>
           </ul>

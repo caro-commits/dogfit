@@ -7,6 +7,7 @@ export const metadata = {
   title: "Contact",
   description:
     "Une question sur le coaching fitness canin ? Contactez-moi pour démarrer un suivi personnalisé avec votre chien.",
+  alternates: { canonical: "/contact" },
 };
 
 const statusMessages: Record<string, { text: string; tone: string }> = {
@@ -78,12 +79,22 @@ export default async function ContactPage({
             </li>
             <li>
               <a
+                href={dogfitContact.facebookPage}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-brand-turquoise-dark"
+              >
+                Page Facebook DogFit
+              </a>
+            </li>
+            <li>
+              <a
                 href={dogfitContact.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-brand-turquoise-dark"
               >
-                Facebook
+                Facebook (Marie Démaris)
               </a>
             </li>
           </ul>

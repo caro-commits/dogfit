@@ -19,6 +19,7 @@ export const metadata = {
   title: "Coaching",
   description:
     "Cours en ligne, coaching personnalisé et séances en présentiel : découvrez les formules DOGFIT et leurs tarifs.",
+  alternates: { canonical: "/cours" },
 };
 
 export default function CoursesPage() {
