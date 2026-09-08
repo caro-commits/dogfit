@@ -48,8 +48,8 @@ export function SiteFooter() {
             <li><Link href="/presentation" className="hover:text-brand-turquoise-dark">Présentation</Link></li>
             <li><Link href="/cours" className="hover:text-brand-turquoise-dark">Coaching</Link></li>
             <li><Link href="/stages" className="hover:text-brand-turquoise-dark">Stages</Link></li>
+            <li><Link href="/stages#evenements" className="hover:text-brand-turquoise-dark">Événements</Link></li>
             <li><Link href="/blog" className="hover:text-brand-turquoise-dark">Blog</Link></li>
-            <li><Link href="/evenements" className="hover:text-brand-turquoise-dark">Événements</Link></li>
           </ul>
         </div>
         <div>
