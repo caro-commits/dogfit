@@ -11,6 +11,11 @@ export const metadata = {
   alternates: { canonical: "/cours/presentiel/technique-de-saut" },
 };
 
+const tarifs = [
+  { label: "1er rendez-vous bilan", price: "70 €" },
+  { label: "Séance présentielle de 30 minutes", price: "25 €" },
+];
+
 export default function TechniqueDeSautPresentielPage() {
   return (
     <Container className="py-16">
@@ -62,15 +67,23 @@ export default function TechniqueDeSautPresentielPage() {
         >
           stages technique de saut
         </Link>
-        . Les tarifs des séances individuelles sont détaillés sur la page{" "}
-        <Link
-          href="/cours/presentiel"
-          className="font-semibold text-brand-orange hover:underline"
-        >
-          Cours en présentiel
-        </Link>
         .
       </p>
+
+      <h2 className="mt-12 font-bold text-brand-brown">Tarifs</h2>
+      <div className="mt-4 max-w-md space-y-3">
+        {tarifs.map((item) => (
+          <div
+            key={item.label}
+            className="flex items-center justify-between gap-4 rounded-xl bg-brand-cream-dark px-4 py-3"
+          >
+            <span className="text-sm text-brand-brown">{item.label}</span>
+            <span className="shrink-0 whitespace-nowrap font-bold text-brand-turquoise-dark">
+              {item.price}
+            </span>
+          </div>
+        ))}
+      </div>
 
       <div className="mt-8">
         <LinkButton href="/contact" variant="accent">
