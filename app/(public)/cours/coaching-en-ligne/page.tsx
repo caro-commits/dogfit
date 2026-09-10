@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Container } from "@/components/container";
 import { LinkButton } from "@/components/button";
 import {
@@ -197,7 +198,25 @@ export default function CoachingEnLignePage() {
         ))}
       </div>
 
-      <div className="mt-10">
+      <p className="mt-10 max-w-2xl text-sm text-brand-brown/70">
+        Vous préférez travailler en présentiel ? Découvrez les{" "}
+        <Link
+          href="/cours/presentiel"
+          className="font-semibold text-brand-orange hover:underline"
+        >
+          cours en présentiel
+        </Link>{" "}
+        ou la{" "}
+        <Link
+          href="/cours/classe-en-ligne"
+          className="font-semibold text-brand-orange hover:underline"
+        >
+          classe en ligne
+        </Link>
+        .
+      </p>
+
+      <div className="mt-8">
         <LinkButton href="/contact" variant="accent">
           Être recontacté·e
         </LinkButton>

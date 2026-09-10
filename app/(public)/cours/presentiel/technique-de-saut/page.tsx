@@ -69,6 +69,30 @@ export default function TechniqueDeSautPresentielPage() {
         </Link>
         .
       </p>
+      <p className="mt-3 max-w-2xl text-sm text-brand-brown/70">
+        Vous cherchez plutôt du renforcement général ? Voir le{" "}
+        <Link
+          href="/cours/presentiel/fitness"
+          className="font-semibold text-brand-orange hover:underline"
+        >
+          fitness en présentiel
+        </Link>
+        . Vous préférez travailler à distance ? Découvrez le{" "}
+        <Link
+          href="/cours/coaching-en-ligne"
+          className="font-semibold text-brand-orange hover:underline"
+        >
+          coaching en ligne
+        </Link>{" "}
+        ou la{" "}
+        <Link
+          href="/cours/classe-en-ligne"
+          className="font-semibold text-brand-orange hover:underline"
+        >
+          classe en ligne
+        </Link>
+        .
+      </p>
 
       <h2 className="mt-12 font-bold text-brand-brown">Tarifs</h2>
       <div className="mt-4 max-w-md space-y-3">

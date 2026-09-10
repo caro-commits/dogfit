@@ -50,6 +50,16 @@ export default function FitnessPresentielPage() {
           progressif et adapté, que l&apos;on travaille ensemble puis que vous
           refaites à la maison entre les séances.
         </p>
+        <p>
+          Vous débutez ? La page{" "}
+          <Link
+            href="/fitness-canin"
+            className="font-semibold text-brand-orange hover:underline"
+          >
+            Le fitness canin, c&apos;est quoi ?
+          </Link>{" "}
+          explique les principes et à quels chiens il s&apos;adresse.
+        </p>
       </div>
 
       <h2 className="mt-8 font-bold text-brand-brown">Le travail porte sur</h2>
@@ -99,15 +109,28 @@ export default function FitnessPresentielPage() {
         refaire les exercices facilement à la maison entre les séances.
       </p>
       <p className="mt-3 max-w-2xl text-sm text-brand-brown/70">
-        Il existe également des{" "}
+        Vous travaillez le saut ? Voir la{" "}
+        <Link
+          href="/cours/presentiel/technique-de-saut"
+          className="font-semibold text-brand-orange hover:underline"
+        >
+          technique de saut en présentiel
+        </Link>
+        . Vous préférez travailler à distance ? Découvrez le{" "}
         <Link
           href="/cours/coaching-en-ligne"
           className="font-semibold text-brand-orange hover:underline"
         >
-          classes et accompagnements en ligne
+          coaching en ligne
         </Link>{" "}
-        si vous préférez travailler à distance ou avec plus de flexibilité dans
-        l&apos;organisation.
+        ou la{" "}
+        <Link
+          href="/cours/classe-en-ligne"
+          className="font-semibold text-brand-orange hover:underline"
+        >
+          classe en ligne
+        </Link>
+        .
       </p>
 
       <div className="mt-8">

@@ -66,7 +66,25 @@ export default function PresentielPage() {
         ))}
       </div>
 
-      <div className="mt-10">
+      <p className="mt-8 max-w-2xl text-sm text-brand-brown/70">
+        Vous préférez travailler à distance ? Découvrez le{" "}
+        <Link
+          href="/cours/coaching-en-ligne"
+          className="font-semibold text-brand-orange hover:underline"
+        >
+          coaching en ligne
+        </Link>{" "}
+        ou la{" "}
+        <Link
+          href="/cours/classe-en-ligne"
+          className="font-semibold text-brand-orange hover:underline"
+        >
+          classe en ligne
+        </Link>
+        .
+      </p>
+
+      <div className="mt-8">
         <LinkButton href="/contact" variant="accent">
           Être recontacté·e
         </LinkButton>
