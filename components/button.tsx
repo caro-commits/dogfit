@@ -37,18 +37,24 @@ export function LinkButton({
   variant = "primary",
   className = "",
   onClick,
+  target,
+  rel,
   children,
 }: {
   href: string;
   variant?: Variant;
   className?: string;
   onClick?: () => void;
+  target?: string;
+  rel?: string;
   children: React.ReactNode;
 }) {
   return (
     <Link
       href={href}
       onClick={onClick}
+      target={target}
+      rel={rel ?? (target === "_blank" ? "noopener noreferrer" : undefined)}
       className={`${base} ${variantClasses[variant]} ${className}`}
     >
       {children}

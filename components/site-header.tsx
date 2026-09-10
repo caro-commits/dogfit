@@ -22,9 +22,9 @@ const rightLinks = [
 ];
 
 const prestationsSubLinks = [
-  { href: "/cours#classe-en-ligne", label: "Classe en ligne" },
-  { href: "/cours#presentiel", label: "Cours en présentiel" },
-  { href: "/cours#formules", label: "Coaching en ligne" },
+  { href: "/cours/classe-en-ligne", label: "Classe en ligne" },
+  { href: "/cours/presentiel", label: "Cours en présentiel" },
+  { href: "/cours/coaching-en-ligne", label: "Coaching en ligne" },
 ];
 
 function NavLink({ href, label }: { href: string; label: string }) {

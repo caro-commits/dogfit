@@ -10,7 +10,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/tarifs",
-        destination: "/cours#formules",
+        destination: "/cours/coaching-en-ligne",
         permanent: true,
       },
     ];

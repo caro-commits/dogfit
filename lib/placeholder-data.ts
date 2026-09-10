@@ -158,9 +158,8 @@ export const dogfitPrestations = [
       "Fitness canin, tout pour bien débuter",
       "Échauffement et récupération, pour bien accompagner son chien",
     ],
-    href: "https://www.canissimoenligne.fr/nos-formations/",
-    hrefLabel: "Voir les formations",
-    external: true,
+    href: "/cours/classe-en-ligne",
+    hrefLabel: "En savoir plus",
   },
   {
     id: "presentiel",
@@ -168,7 +167,7 @@ export const dogfitPrestations = [
     description:
       "Retrouvez-moi chez moi pour un bilan et un plan d'entraînement adapté à votre chien.",
     topics: ["Fitness", "Technique de saut"],
-    href: "#presentiel",
+    href: "/cours/presentiel",
     hrefLabel: "Voir les informations",
   },
   {
@@ -176,7 +175,7 @@ export const dogfitPrestations = [
     name: "Coaching personnalisé en ligne",
     description:
       "Vous ne pouvez pas vous déplacer, ou préférez organiser vos séances selon votre emploi du temps ? Je vous crée un suivi sur un groupe Facebook privé.",
-    href: "#formules",
+    href: "/cours/coaching-en-ligne",
     hrefLabel: "Voir les formules",
   },
   {
@@ -188,6 +187,9 @@ export const dogfitPrestations = [
     hrefLabel: "Voir le programme",
   },
 ] as const;
+
+// Plateforme externe hébergeant les formations pré-enregistrées de Marie.
+export const canissimoUrl = "https://www.canissimoenligne.fr/nos-formations/";
 
 // Contenu du stage "Technique de saut et fitness adapté aux sauts",
 // destiné aux clubs/organisateurs qui accueillent Marie pour une journée
