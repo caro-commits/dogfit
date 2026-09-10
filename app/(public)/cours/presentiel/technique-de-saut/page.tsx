@@ -62,7 +62,7 @@ export default function TechniqueDeSautPresentielPage() {
         Pour un travail en groupe, sur une journée ou une demi-journée,
         découvrez les{" "}
         <Link
-          href="/stages#technique-saut"
+          href="/stages/saut"
           className="font-semibold text-brand-orange hover:underline"
         >
           stages technique de saut
