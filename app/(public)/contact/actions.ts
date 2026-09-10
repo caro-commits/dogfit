@@ -26,14 +26,27 @@ export async function submitContactMessage(formData: FormData) {
 
   if (!error && process.env.RESEND_API_KEY) {
     const resend = new Resend(process.env.RESEND_API_KEY);
-    const { error: emailError } = await resend.emails.send({
-      from: "DOGFIT <onboarding@resend.dev>",
-      to: dogfitContact.email,
+    // RESEND_FROM doit utiliser un domaine vérifié dans Resend une fois
+    // dogfit-mariedemaris.fr configuré ; onboarding@resend.dev n'autorise
+    // l'envoi que vers l'adresse du compte Resend.
+    const from = process.env.RESEND_FROM ?? "DOGFIT <onboarding@resend.dev>";
+    const to = process.env.CONTACT_NOTIFICATION_EMAIL ?? dogfitContact.email;
+    const { data, error: emailError } = await resend.emails.send({
+      from,
+      to,
       replyTo: email,
       subject: `Nouveau message de ${name} — formulaire DOGFIT`,
       text: `De : ${name} (${email})\n\n${message}`,
     });
-    if (emailError) console.error("Resend error:", emailError);
+    if (emailError) {
+      console.error("Resend error:", emailError);
+    } else {
+      console.log("Resend: message envoyé", data?.id, "->", to);
+    }
+  } else if (!error && !process.env.RESEND_API_KEY) {
+    console.warn(
+      "RESEND_API_KEY absent : message enregistré en base mais aucun e-mail envoyé.",
+    );
   }
 
   redirect(error ? "/contact?status=error" : "/contact?status=success");
