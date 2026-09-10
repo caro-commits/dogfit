@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Container } from "@/components/container";
 import { LinkButton } from "@/components/button";
+import { ArrowIcon } from "@/components/icons";
 
 export const metadata = {
   title: "Cours en présentiel",
@@ -8,6 +9,21 @@ export const metadata = {
     "Séances de fitness canin en présentiel avec Marie Démaris : bilan complet, programme personnalisé, travail de la technique de saut. Tarifs et fonctionnement.",
   alternates: { canonical: "/cours/presentiel" },
 };
+
+const disciplines = [
+  {
+    href: "/cours/presentiel/fitness",
+    title: "Fitness",
+    description:
+      "Bilan postural, programme personnalisé et travail de la mobilité, du renforcement musculaire et de la proprioception.",
+  },
+  {
+    href: "/cours/presentiel/technique-de-saut",
+    title: "Technique de saut",
+    description:
+      "Séances individuelles dédiées au geste de saut : prise d'appel, gestion des foulées, coordination et contrôle du corps.",
+  },
+];
 
 const tarifs = [
   { label: "1er rendez-vous bilan", price: "70 €" },
@@ -35,20 +51,28 @@ export default function PresentielPage() {
           personnalisé.
         </p>
       </div>
-      <ul className="mt-4 space-y-1 text-brand-brown">
-        <li>• Fitness</li>
-        <li>
-          •{" "}
+      <div className="mt-6 grid max-w-3xl gap-4 sm:grid-cols-2">
+        {disciplines.map((discipline) => (
           <Link
-            href="/stages#technique-saut"
-            className="font-semibold text-brand-orange hover:underline"
+            key={discipline.href}
+            href={discipline.href}
+            className="flex flex-col rounded-2xl bg-white p-6 shadow-sm ring-1 ring-brand-brown/5 transition-shadow hover:shadow-md"
           >
-            Technique de saut
+            <h2 className="text-lg font-bold text-brand-brown">
+              {discipline.title}
+            </h2>
+            <p className="mt-2 flex-1 text-sm text-brand-brown/70">
+              {discipline.description}
+            </p>
+            <span className="mt-4 flex items-center gap-1.5 text-sm font-semibold text-brand-orange">
+              En savoir plus
+              <ArrowIcon className="h-4 w-4 text-brand-orange" />
+            </span>
           </Link>
-        </li>
-      </ul>
+        ))}
+      </div>
 
-      <h2 className="mt-8 text-lg font-bold text-brand-brown">Tarifs</h2>
+      <h2 className="mt-12 text-lg font-bold text-brand-brown">Tarifs</h2>
       <div className="mt-4 max-w-md space-y-3">
         {tarifs.map((item) => (
           <div

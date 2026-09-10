@@ -21,6 +21,8 @@ const staticRoutes = [
   "/cours",
   "/cours/classe-en-ligne",
   "/cours/presentiel",
+  "/cours/presentiel/fitness",
+  "/cours/presentiel/technique-de-saut",
   "/cours/coaching-en-ligne",
   "/stages",
   "/blog",
